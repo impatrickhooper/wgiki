@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Ultimate Member
+   ========================================================================== */
+
+/* Additional styles for Ultimate Member plugin */
+.um {
+  margin: 0 auto;
+
+  /* Ultimate Member link styles */
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    text-decoration: none !important;
+  }
+}
+
+/* Styles for an Ultimate Member button */
+.um-button {
+  @extend .btn-large; // Use btn-large class from Materialize
+  background-color: $wgi_green !important;
+  border: none !important;
+  border-radius: 2px !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  outline: 0 !important;
+  padding: 0 2rem !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  vertical-align: middle !important;
+
+  /* Remove min-width */
+  .um-center & {
+    min-width: 0 !important;
+  }
+
+  /* Remove padding on search buttons */
+  .um-search-submit & {
+    padding: 0 !important;
+  }
+
+  /* Make buttons slightly transparent on hover */
+  &:hover {
+    opacity: 0.5 !important;
+    transition: all 0.3s;
+  }
+}
+
+/* Alternate link styles for Ultimate Member */
+a.um-link-alt {
+  &,
+  &:hover,
+  &:active,
+  &:visited {
+    text-decoration: none !important;
+  }
+}
+
+/* Adjust margins for recaptcha error */
+.g-recaptcha ~ .um-field-error {
+  margin-bottom: 30px;
+  margin-top: -18px;
+}
+
+/* Styles for Ultimate Member labels */
+.um-field-label label {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+/* Styles for Ultimate Member edit profile/gear icon on profile page */
+.um-dropdown,
+.um-profile-edit {
+
+  /* Make links gray by default */
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    color: $text_gray !important;
+    opacity: 1;
+  }
+
+  /* Make links green on hover */
+  a:hover {
+    color: $wgi_green !important;
+  }
+}
+
+/* Styles for Ultimate Member profile header */
+.um-header {
+  border-bottom: 0;
+  padding: 0;
+}
+
+/* styles for Ultimate Member profile meta */
+.um-meta {
+  margin-bottom: 1.5em !important;
+
+  span {
+    font-size: 1rem !important;
+  }
+
+  &-text {
+    font-size: 1rem !important;
+    margin: 0 auto 1.5em !important;
+    max-width: 30rem;
+    padding: 0 !important;
+
+    p {
+      font-style: italic;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+/* Styles for an Ultimate Member field */
+.um-field {
+  padding-top: 1.5em !important;
+
+  /* Remove padding from the first field */
+  &:first-of-type {
+    padding: 0 !important;
+  }
+
+  /* No margin on a field-block h4 */
+  &-block h4 {
+    margin: 0 !important;
+  }
+
+  /* Normal font size on field-value */
+  &-value {
+    font-size: 1rem !important;
+  }
+}
+
+/* Styles for Ultimate Member profile body */
+.um-profile-body {
+  padding-top: 0 !important;
+}
+
+/* Styles for an Ultimate Member profile row/section */
+.um-row {
+  margin-bottom: 3em !important;
+}
+
+/* Styles for Ultimate Member directory search */
+.um-search {
+  padding: 0 0 3em !important;
+
+  /* Styles for search filter */
+  &-filter {
+    padding-bottom: 0.5em !important;
+
+    /* Hide > 3 filters on small devices */
+    &:nth-of-type(n+4) {
+      @include breakpoint($mq_um) {
+        display: none;
+      }
+    }
+  }
+
+  /* Styles for search submit button */
+  &-submit {
+    margin-top: 1em;
+  }
+}
+
+/* More specific styles for Ultimate Member directory search  */
+div.um-directory .um-search {
+
+  /* On all devices except large, remove top padding */
+  @include breakpoint($mq_not_large) {
+    padding-top: 0 !important;
+  }
+
+  /* On devices small by Ultimate Member standards, make search buttons inline and half-width */
+  & .um-search-submit a.um-button {
+    @include breakpoint($mq_um) {
+      display: inline-block !important;
+      min-width: 0 !important;
+      margin: 0 1% 15px !important;
+      width: 46% !important;
+    }
+  }
+}
+
+/* Styles for a member in the Ultimate Member directory */
+.um-member {
+  border: 0 !important;
+  border-radius: 0.25em;
+  @extend .z-depth-1;
+
+  /**
+   * Set member division colors in directory
+   *
+   * 1. Loop through divisons and colors in map
+   * 2. Build selector based on division value
+   * 3. Make photo background color the division color
+   * 4. Make member card links the division color
+   */
+  @each $division, $color in $division_colors {
+    &.#{$division} {
+      .um-member-photo {
+        background-color: $color;
+      }
+
+      .um-member-card a {
+        &, i {
+          color: $color !important;
+        }
+      }
+    }
+  }
+
+  /* Styles for a members photo in the directory */
+  .um-member-photo {
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    margin-bottom: 0.75em;
+    padding: 0.75em 0 0.5em !important;
+
+    /* Give a thicker border to a member photo */
+    img {
+      border-width: 3px !important;
+    }
+  }
+
+  /* Styles for a member card */
+  .um-member-card {
+
+    /* Normal font size for member name */
+    .um-member-name {
+      font-size: 1rem;
+    }
+
+    /* Styles for a tagline */
+    .um-member-tagline {
+      font-size: 1rem !important;
+      font-weight: 400;
+      line-height: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+    }
+
+    /* Styles for the metalines */
+    .um-member-metaline {
+      font-size: 0.875rem !important;
+
+      span {
+        text-align: left !important;
+      }
+    }
+  }
+}
+
+/* Make active page in directory navigation a circle */
+.um-members-pagi span.current {
+  border-radius: 50%;
+}

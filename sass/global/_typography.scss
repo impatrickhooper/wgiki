@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Make default font size 100% */
+html {
+  font-size: 100%;
+}
+
+/* Adjust h1 font size */
+h1 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+
+  /* Reduce size slightly on all but large devices */
+  @include breakpoint($mq_not_large) {
+    font-size: 2.75rem;
+    line-height: 3.25rem;
+  }
+}
+
+/* Adjust h2 font size */
+h2 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+
+  /* Reduce size slightly on all but large devices */
+  @include breakpoint($mq_not_large) {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+/* Make blockquotes italicized */
+blockquote {
+  font-style: italic;
+}

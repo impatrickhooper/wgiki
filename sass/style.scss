@@ -1,0 +1,55 @@
+/*!
+Theme Name: WGIki
+Theme URI: http://underscores.me/
+Author: wgi.buzz
+Author URI: http://www.wantmangroup.com
+Description: A theme for the WGI Wiki based off of WGIki starter theme.
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wgiki
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+@import "base/variables";
+@import "base/mixins";
+@import "base/normalize";
+
+/* =========================================================================
+   Vendors
+   ========================================================================= */
+@import "vendors/sassy-maps/memo";
+@import "vendors/breakpoint/breakpoint";
+@import "vendors/font-awesome/font-awesome";
+@import "vendors/materialize/materialize";
+
+/* =========================================================================
+   Global
+   ========================================================================= */
+@import "global/structure";
+@import "global/typography";
+@import "global/color";
+
+/* =========================================================================
+   Layout
+   ========================================================================= */
+@import "layout/grid/grid";
+@import "layout/content";
+
+/* =========================================================================
+   Components
+   ========================================================================= */
+@import "components/ultimate-member";
+@import "components/datepicker";
+
+/* =========================================================================
+   Pages
+   ========================================================================= */

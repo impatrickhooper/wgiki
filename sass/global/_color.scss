@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Color
+   ========================================================================== */
+
+/* Make links green by default */
+a,
+a:active,
+a:hover,
+a:visited {
+  color: $wgi_green;
+}
+
+/* When hovering on links, make slightly transparent */
+a:active,
+a:hover {
+  opacity: 0.5;
+}
+
+.touch a[target="_blank"] {
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+}
+
+/* Make body text color gray */
+body {
+  color: $text_gray;
+}
+
+/* Make heading text color slightly darker gray than text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading_gray;
+}
+
+/* Give blockquotes a gray left border */
+blockquote {
+  border-left-color: $wgi_gray;
+}

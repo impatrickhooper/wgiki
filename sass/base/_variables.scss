@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Media Queries
+   ========================================================================== */
+
+/* Media query sizes */
+$small_max: 40rem; // 640px, usually
+$medium_min: 40.0625rem; // 641px, usually
+$medium_max: 62rem; // 992px, usually
+$large_min: 62.0625rem; // 993px, usually
+$large_max : 75rem; // 1200px, usually
+$um_max: 34.25rem; // 548px, usually
+
+/* Breakpoint sizes */
+$mq_small: max-width $small_max; // @media (max-width: 40rem)
+$mq_medium: $medium_min $medium_max; //  @media (min-width: 40.0625rem) and (max-width: 62rem)
+$mq_large: $large_min $large_max; //  @media (min-width: 62.0625rem) and (max-width: 75rem)
+$mq_medium_large: $medium_min $large_max; // @media (min-width: 40.0625rem) and (max-width: 75rem)
+$mq_not_large: max-width $medium_max; // @media (max-width: 62rem)
+$mq_um: max-width $um_max; // @media (max-width: 34.25rem)
+
+/* Colors
+   ========================================================================== */
+
+/* Map of colors for divisions  */
+$division_colors: (
+  accounting-and-administration: #00A653,
+  civil: #e15258,
+  creative: #8dc63f,
+  environmental: #F9845B,
+  human-resources: #fbb03b,
+  information-technology: #637a91,
+  landscape-architecture: #c25975,
+  planning: #f092b0,
+  roadway: #39ADD1,
+  structures: #00CAD6,
+  sue: #838CC7,
+  survey: #7D669E,
+  transportation-planning: #3079AB,
+  utilities: #53BBB4
+);
+
+$heading_gray: #555; // for headings (h1, h2, h3, h4, h5, h6)
+$text_gray: #666; // for body text
+$wgi_gray: #ABB1A7; // WGI company gray
+$wgi_green: #00833E; // WGI company green
+$white: #fff;
+
+/* Icons
+   ========================================================================== */
+
+/* Map of icons for files */
+$filetype_icons: (
+  doc: "\f1c2",
+  docx: "\f1c2",
+  docm: "\f1c2",
+  eps: "\f1c5",
+  gif: "\f1c5",
+  jpeg: "\f1c5",
+  jpg: "\f1c5",
+  pdf: "\f1c1",
+  png: "\f1c5",
+  ppt: "\f1c4",
+  pptx: "\f1c4",
+  tiff: "\f1c5",
+  xls: "\f1c3",
+  xlsx: "\f1c3"
+);

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+/* Styles for the main header (entry title) on a page */
+h1.entry-title {
+  margin: 2.1rem 0;
+  text-align: center;
+
+  /* Create the gray border after an entry title */
+  &:after {
+    content: '';
+    background-color: $heading_gray;
+    display: block;
+    height: 4px;
+    margin: 8px auto 0;
+    width: 72px;
+  }
+}

@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Date Picker
+   ========================================================================== */
+
+/* Styles for Date Picker */
+.picker {
+  font-weight: 400;
+
+  /* No outline for date-picker */
+  &, &--focused {
+    outline: 0;
+  }
+
+  /* Change date display color to green */
+  &__date-display {
+    background-color: $wgi_green;
+  }
+
+  /* Weekday display to lighter shade of green */
+  &__weekday-display {
+    background-color: #007638;
+  }
+
+  /* White background for the rest */
+  &__box,
+  &__header,
+  &__footer,
+  &__day--highlighted {
+    background: $white !important;
+  }
+
+  /* Border for year select dropdown */
+  &__select--year {
+    border: 1px solid #f2f2f2 !important;
+  }
+
+  /* Calendar next/prev arrows more transparent on hover */
+  &__nav {
+    &--next,
+    &--prev {
+      &:hover {
+        background: $white !important;
+        opacity: 0.5;
+
+        /* Full opacity on touch devices */
+        .touch & {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /* Styles for a day on the calendar */
+  &__day {
+    transform: scale(1) !important;
+
+    /* Black and bold on hover */
+    &:hover {
+      background: $white !important;
+      color: #000;
+      font-weight: 600;
+
+      /* Normal gray and weight on touch devices */
+      .touch & {
+        color: $text_gray;
+        font-weight: 400;
+      }
+    }
+
+    /* Make today green */
+    &.picker__day--today {
+      color: $wgi_green !important;
+
+      &:hover {
+        color: $wgi_green;
+      }
+    }
+
+    /* Make selected day in green circle with white text */
+    &.picker__day--selected {
+      background-color: $wgi_green !important;
+      border-radius: 50%;
+      color: $white !important;
+    }
+  }
+
+  /* Date picker footer styles */
+  &__footer {
+
+    /* Bold text, green text, and slightly green background on focus for buttons */
+    button {
+      font-weight: 600;
+
+      &.picker__today,
+      &.picker__close {
+        color: $wgi_green;
+
+        &:focus {
+          background-color: #80C19E;
+        }
+      }
+    }
+  }
+}
