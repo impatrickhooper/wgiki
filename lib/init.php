@@ -1,19 +1,5 @@
 <?php
 /**
- * Initialization options for WGIki theme.
- *
- * @package WGIki
- */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-  $content_width = 640; /* pixels */
-}
-
-<?php
-/**
  * WGIki functions and definitions
  *
  * @package WGIki
