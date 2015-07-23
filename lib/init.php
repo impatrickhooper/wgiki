@@ -110,11 +110,26 @@ add_action( 'widgets_init', 'wgiki_widgets_init' );
 
 /* Allow uploading of .svg and .eps files */
 add_filter('upload_mimes', 'custom_upload_mimes');
-function custom_upload_mimes ( $existing_mimes=array() ) {
+function custom_upload_mimes( $existing_mimes=array() ) {
   $existing_mimes['svg'] = 'mime/type';
   $existing_mimes['eps'] = 'mime/type';
   return $existing_mimes;
 }
+
+/* Hide admin bar on front end */
+add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Hide backend from all but administrators, editors, and content managers
+ */
+add_action('init', 'hide_dashboard');
+function hide_dashboard() {
+  if (is_admin() && !current_user_can('administrator') && !current_user_can('editor') && !current_user_can('manager_accounting_admin') && !current_user_can('manager_civil') && !current_user_can('manager_creative') && !current_user_can('manager_environmental') && !current_user_can('manager_hr') && !current_user_can('manager_it') && !current_user_can('manager_landscape_arch') && !current_user_can('manager_planning') && !current_user_can('manager_roadway') && !current_user_can('manager_structures') && !current_user_can('manager_sue') && !current_user_can('manager_survey') && !current_user_can('manager_trans_planning') && !current_user_can('manager_utilities') && !(defined( 'DOING_AJAX' ) && DOING_AJAX)) {
+    wp_redirect(site_url());
+    exit;
+  }
+}
+
 
 /*
  * Custom rewrite rules for protecting WGI files
