@@ -7,18 +7,13 @@
 
 /*
  * Create custom post types
- *
- * 1. Initialize array of division short and long names
- * 2. Initialize menu position counter
- * 3. Loop through each division in array
- *    a. Call register_custom_post_types function
- *    b. Call register_custom_taxonomies function
- *    c. Call register_custom_roles function
- *    d.
- *    e. Increment menu position counter
  */
+
+/* Hook into init and add create_cusotm_post_types */
 add_action('init', 'create_custom_post_types', 0);
 function create_custom_post_types() {
+
+  /* Initialize array of division short and long names */
   $divisions = array(
     "accounting_admin"  => "Accounting & Administration",
     "civil"             => "Civil",
@@ -36,24 +31,32 @@ function create_custom_post_types() {
     "utilities"         => "Utilities"
   );
 
+  /* Initialize menu position counter */
   $menu_position = 30;
 
+  /* Loop through divisions as key, value */
   foreach ($divisions as $key => $value) {
+
+    /* Register custom post types using function */
     register_custom_post_type($key, $value, $menu_position);
+
+    /* Register custom taxonomies using function */
     register_custom_taxonomies($key);
+
+    /* Register custom roles using function */
     register_custom_roles($key, $value);
+
+    /* Increment menu position counter */
     $menu_position++;
   }
 }
 
 /*
  * Register custom post types
- *
- * 1. Initialize array of labels for this division post type
- * 2. Initialize array of arguments for this division post type
- * 3. Register the post type using the division short name and args
  */
 function register_custom_post_type($key, $value, $menu_position) {
+
+  /* Create custom post type labels */
   $cpt_labels = array(
     'name'                => _x($value, 'Post Type General Name', 'twentyfifteen'),
     'singular_name'       => _x('Resource', 'Post Type Singular Name', 'twentyfifteen'),
@@ -69,27 +72,31 @@ function register_custom_post_type($key, $value, $menu_position) {
     'not_found_in_trash'  => __('Not found in Trash', 'twentyfifteen'),
   );
 
+  /* Create custom post type arguments */
   $cpt_args = array(
-    'labels'          => $cpt_labels,
-    'supports'        => array('title', 'editor', 'revisions'),
-    'public'          => true,
-    'menu_position'   => $menu_position,
+    'labels'            => $cpt_labels,
+    'supports'          => array('title', 'editor', 'revisions'),
+    'public'            => true,
+    'menu_position'     => $menu_position,
     'menu_icon'       => 'dashicons-networking',
-    'capability_type' => array($key . '_resource', $key . '_resources'),
-    'map_meta_cap'    => true,
+    'show_in_admin_bar' => false,
+    'rewrite'           => array(
+      'slug' => preg_replace('/_/i', '-', $key)
+    ),
+    'capability_type'   => array($key . '_resource', $key . '_resources'),
+    'map_meta_cap'      => true,
   );
 
+  /* Register each divison post type */
   register_post_type($key, $cpt_args);
 }
 
 /*
  * Register custom taxonomies
- *
- * 1. Initialize array of labels for this division taxonomy
- * 2. Initialize array of arguments for this division taxonomy
- * 3. Register the taxnonomy using the division short name and args
  */
 function register_custom_taxonomies($key) {
+
+  /* Create custom taxonomy labels */
   $tax_labels = array(
     'name'                       => _x('Categories', 'taxonomy general name'),
     'singular_name'              => _x('Category', 'taxonomy singular name'),
@@ -107,12 +114,16 @@ function register_custom_taxonomies($key) {
     'menu_name'                  => __('Categories'),
   );
 
+  /* Create custom taxonomy arguments */
   $tax_args = array(
     'labels'                => $tax_labels,
     'show_ui'               => true,
     'show_admin_column'     => true,
     'update_count_callback' => '_update_post_term_count',
     'query_var'             => false,
+    'rewrite'               => array(
+      'slug'  => preg_replace('/_/i', '-', $key)
+    ),
     'capabilities'          => array(
       'manage_terms'  =>  'edit_' . $key . '_resources',
       'edit_terms'    =>  'edit_' . $key . '_resources',
@@ -121,15 +132,15 @@ function register_custom_taxonomies($key) {
     ),
   );
 
-  register_taxonomy($key, $key, $tax_args);
+  /* Register custom taxonomy */
+  register_taxonomy($key . '_tax', $key, $tax_args);
 }
-
 
 /*
  * Register custom roles
  *
  * 1. Add "Manager" role for each division
- *    a. Has basic capabilities to manage media and read
+ *    a. Has basic capabilities to manage media, delete posts, and read
  */
 function register_custom_roles($key, $value) {
  add_role('manager_' . $key,
@@ -137,7 +148,7 @@ function register_custom_roles($key, $value) {
           array(
             'read'              => true,
             'edit_posts'        => false,
-            'delete_posts'      => false,
+            'delete_posts'      => true,
             'publish_posts'     => false,
             'upload_files'      => true,
           )
@@ -146,16 +157,11 @@ function register_custom_roles($key, $value) {
 
 /*
  * Register custom capabilities
- *
- * 1. Intializes array of division short names
- * 2. Loops through each division short name in array
- *    a. Creates an array of roles containing division specific, editor, and administrator
- *    b. Loops through array of roles
- *      i. Adds capabilities to needed to manage this division
  */
 add_action('admin_init','register_custom_capabilities', 999);
 function register_custom_capabilities() {
 
+  /* Initialize array of divisions */
   $division_keys = array(
     "accounting_admin",
     "civil",
@@ -173,9 +179,13 @@ function register_custom_capabilities() {
     "utilities"
   );
 
+  /* Loop through each division in the array */
   foreach ($division_keys as $division_key) {
+
+    /* Declare array of roles that should be able to manage this division */
     $division_roles = array('manager_' . $division_key, 'editor' , 'administrator');
 
+    /* Loop through roles and add necessary capabilities */
     foreach($division_roles as $division_role) {
       $role = get_role($division_role);
       $role->add_cap('read');
@@ -191,4 +201,54 @@ function register_custom_capabilities() {
       $role->add_cap('delete_published_' . $division_key . '_resources');
     }
   }
+}
+
+/*
+ * Replace taxonomy slug with post type slug in url
+ */
+
+/* Add taxonomy_slug_rewrite function to rewrite rules filter */
+add_filter('generate_rewrite_rules', 'taxonomy_slug_rewrite');
+function taxonomy_slug_rewrite($wp_rewrite) {
+
+  /* Initialize array to hold rules */
+  $rules = array();
+
+  /* Get all custom taxonomies */
+  $taxonomies = get_taxonomies(array('_builtin' => false), 'objects');
+
+  /* Get all custom post types */
+  $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects');
+
+  /* Loop through custom post types */
+  foreach ($post_types as $post_type) {
+
+    /* Loop through custom taxonomies */
+    foreach ($taxonomies as $taxonomy) {
+
+      /* Loop through objects this taxonomy is assigned to */
+      foreach ($taxonomy->object_type as $object_type) {
+
+        /* Replace underscores with hyphens */
+        $regex_object_type = preg_replace('/_/i', '-', $object_type);
+
+        /* If the object type (with hyphens) is equal to the slug for a post type, do stuff */
+        if ($regex_object_type == $post_type->rewrite['slug']) {
+
+          /* Get all terms for this taxonomy */
+          $terms = get_categories(array('type' => $object_type, 'taxonomy' => $taxonomy->name, 'hide_empty' => 0));
+
+          /* For each term, do stuff */
+          foreach ($terms as $term) {
+
+            /* Add a rewrite rule for each term that uses the post type slug */
+            $rules[$regex_object_type . '/' . $term->slug . '/?$'] = 'index.php?' . $term->taxonomy . '=' . $term->slug;
+          }
+        }
+      }
+    }
+  }
+
+  /* Add custom rules to WordPress rewrite rules */
+  $wp_rewrite->rules = $rules + $wp_rewrite->rules;
 }
