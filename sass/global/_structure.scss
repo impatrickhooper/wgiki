@@ -19,3 +19,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Create left space equal to the size of the sidebar */
+#content,
+#colphon {
+  padding-left: 280px;
+
+  /* Remove the left padding on all but large screens */
+  @include breakpoint($mq_not_large) {
+    padding-left: 0;
+  }
+}

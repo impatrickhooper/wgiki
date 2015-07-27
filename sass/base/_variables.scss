@@ -11,7 +11,6 @@ $medium_min: 40.0625rem; // 641px, usually
 $medium_max: 62rem; // 992px, usually
 $large_min: 62.0625rem; // 993px, usually
 $large_max : 75rem; // 1200px, usually
-$um_max: 34.25rem; // 548px, usually
 
 /* Breakpoint sizes */
 $mq_small: max-width $small_max; // @media (max-width: 40rem)
@@ -19,26 +18,25 @@ $mq_medium: $medium_min $medium_max; //  @media (min-width: 40.0625rem) and (max
 $mq_large: $large_min $large_max; //  @media (min-width: 62.0625rem) and (max-width: 75rem)
 $mq_medium_large: $medium_min $large_max; // @media (min-width: 40.0625rem) and (max-width: 75rem)
 $mq_not_large: max-width $medium_max; // @media (max-width: 62rem)
-$mq_um: max-width $um_max; // @media (max-width: 34.25rem)
 
 /* Colors
    ========================================================================== */
 
 /* Map of colors for divisions  */
 $division_colors: (
-  accounting-and-administration: #00A653,
+  accounting-admin: #00A653,
   civil: #e15258,
   creative: #8dc63f,
   environmental: #F9845B,
-  human-resources: #fbb03b,
-  information-technology: #637a91,
-  landscape-architecture: #c25975,
+  hr: #fbb03b,
+  it: #637a91,
+  landscape-arch: #c25975,
   planning: #f092b0,
   roadway: #39ADD1,
   structures: #00CAD6,
   sue: #838CC7,
   survey: #7D669E,
-  transportation-planning: #3079AB,
+  trans-planning: #3079AB,
   utilities: #53BBB4
 );
 

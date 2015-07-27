@@ -42,3 +42,21 @@ h6 {
 blockquote {
   border-left-color: $wgi_gray;
 }
+
+/**
+ * Set division-specific colors for sidebar
+ *
+ * 1. Loop through division colors map
+ * 2. Build selector based on division name
+ * 3. Give sidebar a specific color based on division (post type) color
+ */
+@each $division, $color in $division_colors {
+
+  .side-nav {
+    background-color: $wgi_green;
+
+    &.#{$division} {
+      background-color: $color;
+    }
+  }
+}

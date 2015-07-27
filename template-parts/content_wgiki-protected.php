@@ -70,7 +70,9 @@
   elseif (isset($_GET['file']) && !is_user_logged_in()) {
     auth_redirect();
   }
-  /* Otherwise... */
+  /* Otherwise redirect to the home page */
   else {
+    wp_redirect(home_url());
+    exit();
   }
 ?>

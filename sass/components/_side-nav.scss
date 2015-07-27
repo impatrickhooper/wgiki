@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Navigation | Side Nav
+   ========================================================================= */
+
+/* Styles for side nav */
+#main-nav.side-nav {
+
+  /* side nav link styles */
+  a {
+    color: $white;
+    font-size: 1.125em;
+    height: auto;
+    line-height: 1.5;
+    padding: 0.75em 0 0.75em 16px;
+  }
+
+  /* side nav list item styles */
+  .side-nav_item {
+    height: auto;
+    line-height: 1.5;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &-second a {
+      font-size: 0.875em;
+      padding: 0.5em 0 0.5em 40px;
+
+      .fa {
+        width: 20px;
+      }
+    }
+  }
+
+  /* a few styles for Font Awesome icons in side nav */
+  .fa {
+    display: inline-block;
+    width: 24px;
+  }
+}
