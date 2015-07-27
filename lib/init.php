@@ -139,15 +139,15 @@ function hide_dashboard() {
  * 3. For all uploads with provided extensions, redirect to resources page
  * 4. Pass query parameter with file name
  */
-//add_filter('mod_rewrite_rules', 'wgiki_htaccess_rules');
-//function wgiki_htaccess_rules( $rules ) {
-//  $wgiki_rules = <<<EOD
-//\n# BEGIN WGIki
-//<IfModule mod_rewrite.c>
-//RewriteEngine On
-//RewriteRule ^wp-content/uploads/(.+)$ https://wgiki.com/protected/?file=$1 [QSA,L]
-//</IfModule>
-//# END WGIki\n\n
-//EOD;
-//  return $wgiki_rules . $rules;
-//}
+add_filter('mod_rewrite_rules', 'wgiki_htaccess_rules');
+function wgiki_htaccess_rules($rules) {
+  $wgiki_rules = <<<EOD
+\n# BEGIN WGIki
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^wp-content/uploads/(.+)$ http://wgiki.dev/protected/?file=$1 [QSA,L]
+</IfModule>
+# END WGIki\n\n
+EOD;
+  return $wgiki_rules . $rules;
+}
