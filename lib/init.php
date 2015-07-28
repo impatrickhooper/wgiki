@@ -130,7 +130,6 @@ function hide_dashboard() {
   }
 }
 
-
 /*
  * Custom rewrite rules for protecting WGI files
  *
@@ -145,7 +144,7 @@ function wgiki_htaccess_rules($rules) {
 \n# BEGIN WGIki
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^wp-content/uploads/(.+)$ http://wgiki.com/protected/?file=$1 [QSA,L]
+RewriteRule ^wp-content/uploads/(.+)$ https://wgiki.com/protected/?file=$1 [QSA,L]
 </IfModule>
 # END WGIki\n\n
 EOD;

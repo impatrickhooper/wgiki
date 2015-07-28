@@ -5,6 +5,9 @@
 /* Styles for side nav */
 #main-nav.side-nav {
 
+  /* Default side nav color is WGI green */
+  background-color: $wgi_green;
+
   /* side nav link styles */
   a {
     color: $white;

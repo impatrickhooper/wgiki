@@ -5,7 +5,26 @@
  * @package WGIki
  */
 
-add_filter( 'the_content', 'tgm_io_shortcode_empty_paragraph_fix' );
+/**
+ * Return the division corresponding to the current page.
+ *
+ */
+function getPageDivision() {
+  /* Initialize empty array and division variable to hold uri matches */
+  $page_uri = array();
+  $page_division = '';
+
+  /* Grab the first part of the URL after the first / and store in page_uri */
+  preg_match('/\/{1}([\w-_.]+)\/?/i', $_SERVER['REQUEST_URI'], $page_uri);
+
+  /* If the match was not empty, set the division to the matched part */
+  if (count($page_uri) > 1) {
+    $page_division = $page_uri[1];
+  }
+
+  return $page_division;
+}
+
 /**
  * Filters the content to remove any extra paragraph or break tags
  * caused by shortcodes.
@@ -15,6 +34,7 @@ add_filter( 'the_content', 'tgm_io_shortcode_empty_paragraph_fix' );
  * @param string $content  String of HTML content.
  * @return string $content Amended string of HTML content.
  */
+add_filter( 'the_content', 'tgm_io_shortcode_empty_paragraph_fix' );
 function tgm_io_shortcode_empty_paragraph_fix( $content ) {
   $array = array(
     '<p>['    => '[',
@@ -22,50 +42,4 @@ function tgm_io_shortcode_empty_paragraph_fix( $content ) {
     ']<br />' => ']'
   );
   return strtr( $content, $array );
-}
-
-/* Pagination for custom queries */
-function pagination($numpages = '', $pagerange = '', $paged='') {
-
-  if (empty($pagerange)) {
-    $pagerange = 2;
-  }
-
-  global $paged;
-  if (empty($paged)) {
-    $paged = 1;
-  }
-  if ($numpages == '') {
-    global $wp_query;
-    $numpages = $wp_query->max_num_pages;
-    if(!$numpages) {
-        $numpages = 1;
-    }
-  }
-
-  $pagination_args = array(
-    'base'            => get_pagenum_link(1) . '%_%',
-    'format'          => 'page/%#%',
-    'total'           => $numpages,
-    'current'         => $paged,
-    'show_all'        => False,
-    'end_size'        => 1,
-    'mid_size'        => $pagerange,
-    'prev_next'       => True,
-    'prev_text'       => __('&laquo;'),
-    'next_text'       => __('&raquo;'),
-    'type'            => 'plain',
-    'add_args'        => false,
-    'add_fragment'    => ''
-  );
-
-  $paginate_links = paginate_links($pagination_args);
-
-  if ($paginate_links) {
-    $output = "<nav class='custom-pagination'>";
-    $output .= $paginate_links;
-    $output .= "</nav>";
-
-    return $output;
-  }
 }

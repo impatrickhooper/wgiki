@@ -21,7 +21,9 @@
 
 <body <?php body_class(); ?>>
 
-  <div id="page" class="hfeed site">
+  <?php $page_division = getPageDivision(); ?>
+
+  <div id="page" class="<?php echo $page_division; ?> hfeed site">
 
     <header id="masthead" class="site-header clearfix" role="banner">
 

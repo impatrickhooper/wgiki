@@ -44,18 +44,18 @@ blockquote {
 }
 
 /**
- * Set division-specific colors for sidebar
+ * Set division-specific colors
  *
  * 1. Loop through division colors map
- * 2. Build selector based on division name
- * 3. Give sidebar a specific color based on division (post type) color
+ * 2. Set colors based on divison
  */
 @each $division, $color in $division_colors {
 
-  .side-nav {
-    background-color: $wgi_green;
+  /* Build selector based on division of a page */
+  #page.#{$division} {
 
-    &.#{$division} {
+    /* Change the side nav color to match division */
+    #main-nav.side-nav {
       background-color: $color;
     }
   }

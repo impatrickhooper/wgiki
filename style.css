@@ -10163,80 +10163,93 @@ blockquote {
   border-left-color: #ABB1A7; }
 
 /**
- * Set division-specific colors for sidebar
+ * Set division-specific colors
  *
  * 1. Loop through division colors map
- * 2. Build selector based on division name
- * 3. Give sidebar a specific color based on division (post type) color
+ * 2. Set colors based on divison
  */
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.accounting-admin {
+/* Build selector based on division of a page */
+#page.accounting-admin {
+  /* Change the side nav color to match division */ }
+  #page.accounting-admin #main-nav.side-nav {
     background-color: #00A653; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.civil {
+/* Build selector based on division of a page */
+#page.civil {
+  /* Change the side nav color to match division */ }
+  #page.civil #main-nav.side-nav {
     background-color: #e15258; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.creative {
+/* Build selector based on division of a page */
+#page.creative {
+  /* Change the side nav color to match division */ }
+  #page.creative #main-nav.side-nav {
     background-color: #8dc63f; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.environmental {
+/* Build selector based on division of a page */
+#page.environmental {
+  /* Change the side nav color to match division */ }
+  #page.environmental #main-nav.side-nav {
     background-color: #F9845B; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.hr {
+/* Build selector based on division of a page */
+#page.hr {
+  /* Change the side nav color to match division */ }
+  #page.hr #main-nav.side-nav {
     background-color: #fbb03b; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.it {
+/* Build selector based on division of a page */
+#page.it {
+  /* Change the side nav color to match division */ }
+  #page.it #main-nav.side-nav {
     background-color: #637a91; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.landscape-arch {
+/* Build selector based on division of a page */
+#page.landscape-arch {
+  /* Change the side nav color to match division */ }
+  #page.landscape-arch #main-nav.side-nav {
     background-color: #c25975; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.planning {
+/* Build selector based on division of a page */
+#page.planning {
+  /* Change the side nav color to match division */ }
+  #page.planning #main-nav.side-nav {
     background-color: #f092b0; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.roadway {
+/* Build selector based on division of a page */
+#page.roadway {
+  /* Change the side nav color to match division */ }
+  #page.roadway #main-nav.side-nav {
     background-color: #39ADD1; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.structures {
+/* Build selector based on division of a page */
+#page.structures {
+  /* Change the side nav color to match division */ }
+  #page.structures #main-nav.side-nav {
     background-color: #00CAD6; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.sue {
+/* Build selector based on division of a page */
+#page.sue {
+  /* Change the side nav color to match division */ }
+  #page.sue #main-nav.side-nav {
     background-color: #838CC7; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.survey {
+/* Build selector based on division of a page */
+#page.survey {
+  /* Change the side nav color to match division */ }
+  #page.survey #main-nav.side-nav {
     background-color: #7D669E; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.trans-planning {
+/* Build selector based on division of a page */
+#page.trans-planning {
+  /* Change the side nav color to match division */ }
+  #page.trans-planning #main-nav.side-nav {
     background-color: #3079AB; }
 
-.side-nav {
-  background-color: #00833E; }
-  .side-nav.utilities {
+/* Build selector based on division of a page */
+#page.utilities {
+  /* Change the side nav color to match division */ }
+  #page.utilities #main-nav.side-nav {
     background-color: #53BBB4; }
 
 /* =========================================================================
@@ -11616,6 +11629,8 @@ h1.entry-title {
    ========================================================================= */
 /* Styles for side nav */
 #main-nav.side-nav {
+  /* Default side nav color is WGI green */
+  background-color: #00833E;
   /* side nav link styles */
   /* side nav list item styles */
   /* a few styles for Font Awesome icons in side nav */ }
