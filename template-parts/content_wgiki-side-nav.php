@@ -22,19 +22,8 @@
   <ul class="site-navigation">
 
   <?php
-    /**
-     * Menu Page query arguments
-     *
-     * 1. Sort by title, A-Z
-     * 2. Exclude Home and Protected page
-     * 3. Query the pages
-     */
-    $menu_args = array(
-      'sort_order'  => 'asc',
-      'sort_column' => 'post_title',
-      'exclude'     => '770, 768'
-    );
-    $menu_pages = get_pages($menu_args);
+    /* Get menu pages, excluding Home and Protected */
+    $menu_pages = getDivisionPages('768, 770');
 
     /* For each menu page, do stuff */
     foreach($menu_pages as $menu_page):
@@ -58,18 +47,8 @@
           /* Append _tax to create taxonomy name */
           $category_name = $category_type . '_tax';
 
-          /**
-           * Categories query arguments
-           *
-           * 1. Type is the current division type
-           * 2. Name is the current division name + _tax
-           * 3. Query categories
-           */
-          $category_args = array(
-            'type'      => $category_type,
-            'taxonomy'  => $category_name
-          );
-          $category_pages = get_categories($category_args);
+          /* Get category pages */
+          $category_pages = getDivisionCategories($category_type, $category_name);
 
           /* If the categories query is not empty, do stuff */
           if (!empty($category_pages)):

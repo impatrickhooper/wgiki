@@ -7,22 +7,53 @@
 
 /**
  * Return the division corresponding to the current page.
- *
  */
 function getPageDivision() {
   /* Initialize empty array and division variable to hold uri matches */
   $page_uri = array();
-  $page_division = '';
 
   /* Grab the first part of the URL after the first / and store in page_uri */
   preg_match('/\/{1}([\w-_.]+)\/?/i', $_SERVER['REQUEST_URI'], $page_uri);
 
   /* If the match was not empty, set the division to the matched part */
   if (count($page_uri) > 1) {
-    $page_division = $page_uri[1];
+    return $page_uri[1];
   }
 
-  return $page_division;
+  return '';
+}
+
+/**
+ * Return a query of pages.
+ *
+ * 1. Sort by title, A-Z
+ * 2. Exclude specified pages
+ * 3. Query the pages
+ */
+function getDivisionPages($excluded_pages) {
+  $menu_args = array(
+    'sort_order'  => 'asc',
+    'sort_column' => 'post_title',
+    'exclude'     => $excluded_pages
+  );
+
+  return get_pages($menu_args);
+}
+
+/**
+ * Return a query of categories for a division page.
+ *
+ * 1. Type is the current division type
+ * 2. Name is the current division name + _tax
+ * 3. Query categories
+ */
+function getDivisionCategories($category_type, $category_name) {
+  $category_args = array(
+    'type'      => $category_type,
+    'taxonomy'  => $category_name
+  );
+
+  return get_categories($category_args);
 }
 
 /**

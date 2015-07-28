@@ -78,7 +78,7 @@ function register_custom_post_type($key, $value, $menu_position) {
     'supports'          => array('title', 'editor', 'revisions'),
     'public'            => true,
     'menu_position'     => $menu_position,
-    'menu_icon'       => 'dashicons-networking',
+    'menu_icon'         => 'dashicons-networking',
     'show_in_admin_bar' => false,
     'rewrite'           => array(
       'slug' => preg_replace('/_/i', '-', $key)
@@ -242,7 +242,7 @@ function taxonomy_slug_rewrite($wp_rewrite) {
           foreach ($terms as $term) {
 
             /* Add a rewrite rule for each term that uses the post type slug */
-            $rules[$regex_object_type . '/' . $term->slug . '/?$'] = 'index.php?' . $term->taxonomy . '=' . $term->slug;
+            $rules[$regex_object_type . '/' . $term->slug . '/?$'] = 'index.php?' . 'taxonomy=' . $term->taxonomy . '&term=' . $term->slug;
           }
         }
       }

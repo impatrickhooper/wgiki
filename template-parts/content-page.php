@@ -38,13 +38,11 @@
     }
     /* Otherwise, just load the default content of the page */
     else {
-      echo '<div class="grid-container">'; // Output a grid-container wrapper to constrain max-width
       the_content();
       wp_link_pages( array(
         'before' => '<div class="page-links">' . __( 'Pages:', 'wgiinformer' ),
         'after'  => '</div>',
       ) );
-      echo '</div>';
     }
   ?>
 
