@@ -11631,6 +11631,7 @@ h1.entry-title {
 #main-nav.side-nav {
   /* Default side nav color is WGI green */
   background-color: #00833E;
+  width: 280px;
   /* side nav link styles */
   /* side nav list item styles */
   /* a few styles for Font Awesome icons in side nav */ }
