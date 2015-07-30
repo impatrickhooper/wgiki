@@ -1,9 +1,17 @@
 <?php
 /**
- * Load assets for WGIki theme.
+ * Assets for WGIki theme.
  *
  * @package WGIki
  */
+
+/* Allow uploading of .svg and .eps files */
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes( $existing_mimes=array() ) {
+  $existing_mimes['svg'] = 'mime/type';
+  $existing_mimes['eps'] = 'mime/type';
+  return $existing_mimes;
+}
 
 /* Load theme assets (scripts and stylesheets) */
 add_action('wp_enqueue_scripts', 'wgiki_scripts');

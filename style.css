@@ -35,9 +35,9 @@ WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, 
    Mixins
    ========================================================================== */
 /**
- * Vertical align
+ * Line Clamp
  *
- * Position an element in the middle of its parent
+ * Cut off text at specified number of lines
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -4071,7 +4071,7 @@ ul {
   ul li {
     list-style-type: none; }
 
-.clearfix {
+.clearfix, .cards, .card_top {
   clear: both; }
 
 .z-depth-0 {
@@ -4083,7 +4083,7 @@ ul {
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
-.z-depth-2 {
+.z-depth-2, #main-nav.side-nav {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .z-depth-3 {
@@ -10097,14 +10097,6 @@ img {
   max-width: 100%;
   height: auto; }
 
-/* Create left space equal to the size of the sidebar */
-#content, #colphon {
-  padding-left: 280px;
-  /* Remove the left padding on all but large screens */ }
-  @media  (max-width: 62rem) {
-    #content, #colphon {
-      padding-left: 0; } }
-
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -10168,89 +10160,298 @@ blockquote {
  * 1. Loop through division colors map
  * 2. Set colors based on divison
  */
-/* Build selector based on division of a page */
-#page.accounting-admin {
-  /* Change the side nav color to match division */ }
-  #page.accounting-admin #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.accounting-admin #main-nav.side-nav, .card_top-accounting-admin, .btn-accounting-admin {
+  background-color: #00A653; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-accounting-admin:active, .btn-accounting-admin:hover {
+  background-color: #00c060; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-accounting-admin {
+  border-left-color: #00A653; }
+  .card-resource-accounting-admin .btn, .card-resource-accounting-admin .btn-large {
     background-color: #00A653; }
+  .card-resource-accounting-admin .fa.resrc-type {
+    color: #00A653; }
 
-/* Build selector based on division of a page */
-#page.civil {
-  /* Change the side nav color to match division */ }
-  #page.civil #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.civil #main-nav.side-nav, .card_top-civil, .btn-civil {
+  background-color: #e15258; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-civil:active, .btn-civil:hover {
+  background-color: #e5686d; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-civil {
+  border-left-color: #e15258; }
+  .card-resource-civil .btn, .card-resource-civil .btn-large {
     background-color: #e15258; }
+  .card-resource-civil .fa.resrc-type {
+    color: #e15258; }
 
-/* Build selector based on division of a page */
-#page.creative {
-  /* Change the side nav color to match division */ }
-  #page.creative #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.creative #main-nav.side-nav, .card_top-creative, .btn-creative {
+  background-color: #8dc63f; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-creative:active, .btn-creative:hover {
+  background-color: #99cc53; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-creative {
+  border-left-color: #8dc63f; }
+  .card-resource-creative .btn, .card-resource-creative .btn-large {
     background-color: #8dc63f; }
+  .card-resource-creative .fa.resrc-type {
+    color: #8dc63f; }
 
-/* Build selector based on division of a page */
-#page.environmental {
-  /* Change the side nav color to match division */ }
-  #page.environmental #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.environmental #main-nav.side-nav, .card_top-environmental, .btn-environmental {
+  background-color: #F9845B; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-environmental:active, .btn-environmental:hover {
+  background-color: #fa9674; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-environmental {
+  border-left-color: #F9845B; }
+  .card-resource-environmental .btn, .card-resource-environmental .btn-large {
     background-color: #F9845B; }
+  .card-resource-environmental .fa.resrc-type {
+    color: #F9845B; }
 
-/* Build selector based on division of a page */
-#page.hr {
-  /* Change the side nav color to match division */ }
-  #page.hr #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.hr #main-nav.side-nav, .card_top-hr, .btn-hr {
+  background-color: #fbb03b; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-hr:active, .btn-hr:hover {
+  background-color: #fcba54; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-hr {
+  border-left-color: #fbb03b; }
+  .card-resource-hr .btn, .card-resource-hr .btn-large {
     background-color: #fbb03b; }
+  .card-resource-hr .fa.resrc-type {
+    color: #fbb03b; }
 
-/* Build selector based on division of a page */
-#page.it {
-  /* Change the side nav color to match division */ }
-  #page.it #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.it #main-nav.side-nav, .card_top-it, .btn-it {
+  background-color: #637a91; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-it:active, .btn-it:hover {
+  background-color: #70879d; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-it {
+  border-left-color: #637a91; }
+  .card-resource-it .btn, .card-resource-it .btn-large {
     background-color: #637a91; }
+  .card-resource-it .fa.resrc-type {
+    color: #637a91; }
 
-/* Build selector based on division of a page */
-#page.landscape-arch {
-  /* Change the side nav color to match division */ }
-  #page.landscape-arch #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.landscape-arch #main-nav.side-nav, .card_top-landscape-arch, .btn-landscape-arch {
+  background-color: #c25975; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-landscape-arch:active, .btn-landscape-arch:hover {
+  background-color: #c96c85; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-landscape-arch {
+  border-left-color: #c25975; }
+  .card-resource-landscape-arch .btn, .card-resource-landscape-arch .btn-large {
     background-color: #c25975; }
+  .card-resource-landscape-arch .fa.resrc-type {
+    color: #c25975; }
 
-/* Build selector based on division of a page */
-#page.planning {
-  /* Change the side nav color to match division */ }
-  #page.planning #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.planning #main-nav.side-nav, .card_top-planning, .btn-planning {
+  background-color: #f092b0; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-planning:active, .btn-planning:hover {
+  background-color: #f3a8c0; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-planning {
+  border-left-color: #f092b0; }
+  .card-resource-planning .btn, .card-resource-planning .btn-large {
     background-color: #f092b0; }
+  .card-resource-planning .fa.resrc-type {
+    color: #f092b0; }
 
-/* Build selector based on division of a page */
-#page.roadway {
-  /* Change the side nav color to match division */ }
-  #page.roadway #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.roadway #main-nav.side-nav, .card_top-roadway, .btn-roadway {
+  background-color: #39ADD1; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-roadway:active, .btn-roadway:hover {
+  background-color: #4eb6d6; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-roadway {
+  border-left-color: #39ADD1; }
+  .card-resource-roadway .btn, .card-resource-roadway .btn-large {
     background-color: #39ADD1; }
+  .card-resource-roadway .fa.resrc-type {
+    color: #39ADD1; }
 
-/* Build selector based on division of a page */
-#page.structures {
-  /* Change the side nav color to match division */ }
-  #page.structures #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.structures #main-nav.side-nav, .card_top-structures, .btn-structures {
+  background-color: #00CAD6; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-structures:active, .btn-structures:hover {
+  background-color: #00e2f0; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-structures {
+  border-left-color: #00CAD6; }
+  .card-resource-structures .btn, .card-resource-structures .btn-large {
     background-color: #00CAD6; }
+  .card-resource-structures .fa.resrc-type {
+    color: #00CAD6; }
 
-/* Build selector based on division of a page */
-#page.sue {
-  /* Change the side nav color to match division */ }
-  #page.sue #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.sue #main-nav.side-nav, .card_top-sue, .btn-sue {
+  background-color: #838CC7; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-sue:active, .btn-sue:hover {
+  background-color: #959ccf; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-sue {
+  border-left-color: #838CC7; }
+  .card-resource-sue .btn, .card-resource-sue .btn-large {
     background-color: #838CC7; }
+  .card-resource-sue .fa.resrc-type {
+    color: #838CC7; }
 
-/* Build selector based on division of a page */
-#page.survey {
-  /* Change the side nav color to match division */ }
-  #page.survey #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.survey #main-nav.side-nav, .card_top-survey, .btn-survey {
+  background-color: #7D669E; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-survey:active, .btn-survey:hover {
+  background-color: #8a76a8; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-survey {
+  border-left-color: #7D669E; }
+  .card-resource-survey .btn, .card-resource-survey .btn-large {
     background-color: #7D669E; }
+  .card-resource-survey .fa.resrc-type {
+    color: #7D669E; }
 
-/* Build selector based on division of a page */
-#page.trans-planning {
-  /* Change the side nav color to match division */ }
-  #page.trans-planning #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.trans-planning #main-nav.side-nav, .card_top-trans-planning, .btn-trans-planning {
+  background-color: #3079AB; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-trans-planning:active, .btn-trans-planning:hover {
+  background-color: #3687bf; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-trans-planning {
+  border-left-color: #3079AB; }
+  .card-resource-trans-planning .btn, .card-resource-trans-planning .btn-large {
     background-color: #3079AB; }
+  .card-resource-trans-planning .fa.resrc-type {
+    color: #3079AB; }
 
-/* Build selector based on division of a page */
-#page.utilities {
-  /* Change the side nav color to match division */ }
-  #page.utilities #main-nav.side-nav {
+/* Build selector based on division for page, top of card, and button */
+#page.utilities #main-nav.side-nav, .card_top-utilities, .btn-utilities {
+  background-color: #53BBB4; }
+
+/* For division buttons, slightly lighten the hover color */
+.btn-utilities:active, .btn-utilities:hover {
+  background-color: #65c2bc; }
+
+/* For division resource card, color buttons, border, and icon */
+.card-resource-utilities {
+  border-left-color: #53BBB4; }
+  .card-resource-utilities .btn, .card-resource-utilities .btn-large {
     background-color: #53BBB4; }
+  .card-resource-utilities .fa.resrc-type {
+    color: #53BBB4; }
+
+.fa.resrc-type-article:before {
+  content: '\f1ea'; }
+
+.fa.resrc-type-external-link:before {
+  content: '\f08e'; }
+
+.fa.resrc-type-multiple-files:before {
+  content: '\f0c5'; }
+
+.fa.resrc-type-avi:before {
+  content: '\f1c8'; }
+
+.fa.resrc-type-doc:before {
+  content: '\f1c2'; }
+
+.fa.resrc-type-docx:before {
+  content: '\f1c2'; }
+
+.fa.resrc-type-flv:before {
+  content: '\f1c8'; }
+
+.fa.resrc-type-gif:before {
+  content: '\f1c5'; }
+
+.fa.resrc-type-jpeg:before {
+  content: '\f1c5'; }
+
+.fa.resrc-type-jpg:before {
+  content: '\f1c5'; }
+
+.fa.resrc-type-mov:before {
+  content: '\f1c8'; }
+
+.fa.resrc-type-mp4:before {
+  content: '\f1c8'; }
+
+.fa.resrc-type-pdf:before {
+  content: '\f1c1'; }
+
+.fa.resrc-type-png:before {
+  content: '\f1c5'; }
+
+.fa.resrc-type-ppt:before {
+  content: '\f1c4'; }
+
+.fa.resrc-type-pptx:before {
+  content: '\f1c4'; }
+
+.fa.resrc-type-svg:before {
+  content: '\f1c5'; }
+
+.fa.resrc-type-tiff:before {
+  content: '\f1c5'; }
+
+.fa.resrc-type-wmv:before {
+  content: '\f1c8'; }
+
+.fa.resrc-type-xls:before {
+  content: '\f1c3'; }
+
+.fa.resrc-type-xlsx:before {
+  content: '\f1c3'; }
+
+.fa.resrc-type-zip:before {
+  content: '\f1c6'; }
+
+.fa.resrc-type-other:before {
+  content: '\f0f6'; }
 
 /* =========================================================================
    Layout
@@ -10275,7 +10476,7 @@ blockquote {
   width: 0;
   height: 0; }
 
-.grid-container:before, .grid-5:before, .mobile-grid-5:before, .tablet-grid-5:before, .grid-10:before, .mobile-grid-10:before, .tablet-grid-10:before, .grid-15:before, .mobile-grid-15:before, .tablet-grid-15:before, .grid-20:before, .mobile-grid-20:before, .tablet-grid-20:before, .grid-25:before, .mobile-grid-25:before, .tablet-grid-25:before, .grid-30:before, .mobile-grid-30:before, .tablet-grid-30:before, .grid-35:before, .mobile-grid-35:before, .tablet-grid-35:before, .grid-40:before, .mobile-grid-40:before, .tablet-grid-40:before, .grid-45:before, .mobile-grid-45:before, .tablet-grid-45:before, .grid-50:before, .mobile-grid-50:before, .tablet-grid-50:before, .grid-55:before, .mobile-grid-55:before, .tablet-grid-55:before, .grid-60:before, .mobile-grid-60:before, .tablet-grid-60:before, .grid-65:before, .mobile-grid-65:before, .tablet-grid-65:before, .grid-70:before, .mobile-grid-70:before, .tablet-grid-70:before, .grid-75:before, .mobile-grid-75:before, .tablet-grid-75:before, .grid-80:before, .mobile-grid-80:before, .tablet-grid-80:before, .grid-85:before, .mobile-grid-85:before, .tablet-grid-85:before, .grid-90:before, .mobile-grid-90:before, .tablet-grid-90:before, .grid-95:before, .mobile-grid-95:before, .tablet-grid-95:before, .grid-100:before, .mobile-grid-100:before, .tablet-grid-100:before, .grid-33:before, .mobile-grid-33:before, .tablet-grid-33:before, .grid-66:before, .mobile-grid-66:before, .tablet-grid-66:before, .clearfix:before, .grid-container:after, .grid-5:after, .mobile-grid-5:after, .tablet-grid-5:after, .grid-10:after, .mobile-grid-10:after, .tablet-grid-10:after, .grid-15:after, .mobile-grid-15:after, .tablet-grid-15:after, .grid-20:after, .mobile-grid-20:after, .tablet-grid-20:after, .grid-25:after, .mobile-grid-25:after, .tablet-grid-25:after, .grid-30:after, .mobile-grid-30:after, .tablet-grid-30:after, .grid-35:after, .mobile-grid-35:after, .tablet-grid-35:after, .grid-40:after, .mobile-grid-40:after, .tablet-grid-40:after, .grid-45:after, .mobile-grid-45:after, .tablet-grid-45:after, .grid-50:after, .mobile-grid-50:after, .tablet-grid-50:after, .grid-55:after, .mobile-grid-55:after, .tablet-grid-55:after, .grid-60:after, .mobile-grid-60:after, .tablet-grid-60:after, .grid-65:after, .mobile-grid-65:after, .tablet-grid-65:after, .grid-70:after, .mobile-grid-70:after, .tablet-grid-70:after, .grid-75:after, .mobile-grid-75:after, .tablet-grid-75:after, .grid-80:after, .mobile-grid-80:after, .tablet-grid-80:after, .grid-85:after, .mobile-grid-85:after, .tablet-grid-85:after, .grid-90:after, .mobile-grid-90:after, .tablet-grid-90:after, .grid-95:after, .mobile-grid-95:after, .tablet-grid-95:after, .grid-100:after, .mobile-grid-100:after, .tablet-grid-100:after, .grid-33:after, .mobile-grid-33:after, .tablet-grid-33:after, .grid-66:after, .mobile-grid-66:after, .tablet-grid-66:after, .clearfix:after {
+.grid-container:before, .grid-5:before, .mobile-grid-5:before, .tablet-grid-5:before, .grid-10:before, .mobile-grid-10:before, .tablet-grid-10:before, .grid-15:before, .mobile-grid-15:before, .tablet-grid-15:before, .grid-20:before, .mobile-grid-20:before, .tablet-grid-20:before, .grid-25:before, .mobile-grid-25:before, .tablet-grid-25:before, .grid-30:before, .mobile-grid-30:before, .tablet-grid-30:before, .grid-35:before, .mobile-grid-35:before, .tablet-grid-35:before, .grid-40:before, .mobile-grid-40:before, .tablet-grid-40:before, .grid-45:before, .mobile-grid-45:before, .tablet-grid-45:before, .grid-50:before, .mobile-grid-50:before, .tablet-grid-50:before, .grid-55:before, .mobile-grid-55:before, .tablet-grid-55:before, .grid-60:before, .mobile-grid-60:before, .tablet-grid-60:before, .grid-65:before, .mobile-grid-65:before, .tablet-grid-65:before, .grid-70:before, .mobile-grid-70:before, .tablet-grid-70:before, .grid-75:before, .mobile-grid-75:before, .tablet-grid-75:before, .grid-80:before, .mobile-grid-80:before, .tablet-grid-80:before, .grid-85:before, .mobile-grid-85:before, .tablet-grid-85:before, .grid-90:before, .mobile-grid-90:before, .tablet-grid-90:before, .grid-95:before, .mobile-grid-95:before, .tablet-grid-95:before, .grid-100:before, .mobile-grid-100:before, .tablet-grid-100:before, .grid-33:before, .mobile-grid-33:before, .tablet-grid-33:before, .grid-66:before, .mobile-grid-66:before, .tablet-grid-66:before, .clearfix:before, .cards:before, .card_top:before, .grid-container:after, .grid-5:after, .mobile-grid-5:after, .tablet-grid-5:after, .grid-10:after, .mobile-grid-10:after, .tablet-grid-10:after, .grid-15:after, .mobile-grid-15:after, .tablet-grid-15:after, .grid-20:after, .mobile-grid-20:after, .tablet-grid-20:after, .grid-25:after, .mobile-grid-25:after, .tablet-grid-25:after, .grid-30:after, .mobile-grid-30:after, .tablet-grid-30:after, .grid-35:after, .mobile-grid-35:after, .tablet-grid-35:after, .grid-40:after, .mobile-grid-40:after, .tablet-grid-40:after, .grid-45:after, .mobile-grid-45:after, .tablet-grid-45:after, .grid-50:after, .mobile-grid-50:after, .tablet-grid-50:after, .grid-55:after, .mobile-grid-55:after, .tablet-grid-55:after, .grid-60:after, .mobile-grid-60:after, .tablet-grid-60:after, .grid-65:after, .mobile-grid-65:after, .tablet-grid-65:after, .grid-70:after, .mobile-grid-70:after, .tablet-grid-70:after, .grid-75:after, .mobile-grid-75:after, .tablet-grid-75:after, .grid-80:after, .mobile-grid-80:after, .tablet-grid-80:after, .grid-85:after, .mobile-grid-85:after, .tablet-grid-85:after, .grid-90:after, .mobile-grid-90:after, .tablet-grid-90:after, .grid-95:after, .mobile-grid-95:after, .tablet-grid-95:after, .grid-100:after, .mobile-grid-100:after, .tablet-grid-100:after, .grid-33:after, .mobile-grid-33:after, .tablet-grid-33:after, .grid-66:after, .mobile-grid-66:after, .tablet-grid-66:after, .clearfix:after, .cards:after, .card_top:after {
   content: ".";
   display: block;
   overflow: hidden;
@@ -10285,10 +10486,10 @@ blockquote {
   width: 0;
   height: 0; }
 
-.grid-container:after, .grid-5:after, .mobile-grid-5:after, .tablet-grid-5:after, .grid-10:after, .mobile-grid-10:after, .tablet-grid-10:after, .grid-15:after, .mobile-grid-15:after, .tablet-grid-15:after, .grid-20:after, .mobile-grid-20:after, .tablet-grid-20:after, .grid-25:after, .mobile-grid-25:after, .tablet-grid-25:after, .grid-30:after, .mobile-grid-30:after, .tablet-grid-30:after, .grid-35:after, .mobile-grid-35:after, .tablet-grid-35:after, .grid-40:after, .mobile-grid-40:after, .tablet-grid-40:after, .grid-45:after, .mobile-grid-45:after, .tablet-grid-45:after, .grid-50:after, .mobile-grid-50:after, .tablet-grid-50:after, .grid-55:after, .mobile-grid-55:after, .tablet-grid-55:after, .grid-60:after, .mobile-grid-60:after, .tablet-grid-60:after, .grid-65:after, .mobile-grid-65:after, .tablet-grid-65:after, .grid-70:after, .mobile-grid-70:after, .tablet-grid-70:after, .grid-75:after, .mobile-grid-75:after, .tablet-grid-75:after, .grid-80:after, .mobile-grid-80:after, .tablet-grid-80:after, .grid-85:after, .mobile-grid-85:after, .tablet-grid-85:after, .grid-90:after, .mobile-grid-90:after, .tablet-grid-90:after, .grid-95:after, .mobile-grid-95:after, .tablet-grid-95:after, .grid-100:after, .mobile-grid-100:after, .tablet-grid-100:after, .grid-33:after, .mobile-grid-33:after, .tablet-grid-33:after, .grid-66:after, .mobile-grid-66:after, .tablet-grid-66:after, .clearfix:after {
+.grid-container:after, .grid-5:after, .mobile-grid-5:after, .tablet-grid-5:after, .grid-10:after, .mobile-grid-10:after, .tablet-grid-10:after, .grid-15:after, .mobile-grid-15:after, .tablet-grid-15:after, .grid-20:after, .mobile-grid-20:after, .tablet-grid-20:after, .grid-25:after, .mobile-grid-25:after, .tablet-grid-25:after, .grid-30:after, .mobile-grid-30:after, .tablet-grid-30:after, .grid-35:after, .mobile-grid-35:after, .tablet-grid-35:after, .grid-40:after, .mobile-grid-40:after, .tablet-grid-40:after, .grid-45:after, .mobile-grid-45:after, .tablet-grid-45:after, .grid-50:after, .mobile-grid-50:after, .tablet-grid-50:after, .grid-55:after, .mobile-grid-55:after, .tablet-grid-55:after, .grid-60:after, .mobile-grid-60:after, .tablet-grid-60:after, .grid-65:after, .mobile-grid-65:after, .tablet-grid-65:after, .grid-70:after, .mobile-grid-70:after, .tablet-grid-70:after, .grid-75:after, .mobile-grid-75:after, .tablet-grid-75:after, .grid-80:after, .mobile-grid-80:after, .tablet-grid-80:after, .grid-85:after, .mobile-grid-85:after, .tablet-grid-85:after, .grid-90:after, .mobile-grid-90:after, .tablet-grid-90:after, .grid-95:after, .mobile-grid-95:after, .tablet-grid-95:after, .grid-100:after, .mobile-grid-100:after, .tablet-grid-100:after, .grid-33:after, .mobile-grid-33:after, .tablet-grid-33:after, .grid-66:after, .mobile-grid-66:after, .tablet-grid-66:after, .clearfix:after, .cards:after, .card_top:after {
   clear: both; }
 
-.grid-container, .grid-5, .mobile-grid-5, .tablet-grid-5, .grid-10, .mobile-grid-10, .tablet-grid-10, .grid-15, .mobile-grid-15, .tablet-grid-15, .grid-20, .mobile-grid-20, .tablet-grid-20, .grid-25, .mobile-grid-25, .tablet-grid-25, .grid-30, .mobile-grid-30, .tablet-grid-30, .grid-35, .mobile-grid-35, .tablet-grid-35, .grid-40, .mobile-grid-40, .tablet-grid-40, .grid-45, .mobile-grid-45, .tablet-grid-45, .grid-50, .mobile-grid-50, .tablet-grid-50, .grid-55, .mobile-grid-55, .tablet-grid-55, .grid-60, .mobile-grid-60, .tablet-grid-60, .grid-65, .mobile-grid-65, .tablet-grid-65, .grid-70, .mobile-grid-70, .tablet-grid-70, .grid-75, .mobile-grid-75, .tablet-grid-75, .grid-80, .mobile-grid-80, .tablet-grid-80, .grid-85, .mobile-grid-85, .tablet-grid-85, .grid-90, .mobile-grid-90, .tablet-grid-90, .grid-95, .mobile-grid-95, .tablet-grid-95, .grid-100, .mobile-grid-100, .tablet-grid-100, .grid-33, .mobile-grid-33, .tablet-grid-33, .grid-66, .mobile-grid-66, .tablet-grid-66, .clearfix {
+.grid-container, .grid-5, .mobile-grid-5, .tablet-grid-5, .grid-10, .mobile-grid-10, .tablet-grid-10, .grid-15, .mobile-grid-15, .tablet-grid-15, .grid-20, .mobile-grid-20, .tablet-grid-20, .grid-25, .mobile-grid-25, .tablet-grid-25, .grid-30, .mobile-grid-30, .tablet-grid-30, .grid-35, .mobile-grid-35, .tablet-grid-35, .grid-40, .mobile-grid-40, .tablet-grid-40, .grid-45, .mobile-grid-45, .tablet-grid-45, .grid-50, .mobile-grid-50, .tablet-grid-50, .grid-55, .mobile-grid-55, .tablet-grid-55, .grid-60, .mobile-grid-60, .tablet-grid-60, .grid-65, .mobile-grid-65, .tablet-grid-65, .grid-70, .mobile-grid-70, .tablet-grid-70, .grid-75, .mobile-grid-75, .tablet-grid-75, .grid-80, .mobile-grid-80, .tablet-grid-80, .grid-85, .mobile-grid-85, .tablet-grid-85, .grid-90, .mobile-grid-90, .tablet-grid-90, .grid-95, .mobile-grid-95, .tablet-grid-95, .grid-100, .mobile-grid-100, .tablet-grid-100, .grid-33, .mobile-grid-33, .tablet-grid-33, .grid-66, .mobile-grid-66, .tablet-grid-66, .clearfix, .cards, .card_top {
   /* <IE7> */
   *zoom: 1;
   /* </IE7> */ }
@@ -10296,7 +10497,7 @@ blockquote {
 .grid-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 75rem;
+  max-width: 100%;
   padding-left: 1.5em;
   padding-right: 1.5em; }
 
@@ -11608,6 +11809,21 @@ blockquote {
 /* ==========================================================================
    Content
    ========================================================================== */
+/* Create left space equal to the size of the sidebar */
+#page {
+  padding: 0 3em 1.5em;
+  /* If this is a page with the side nav, give left padding to account for this */ }
+  @media  (max-width: 40rem) {
+    #page {
+      padding-left: 1em;
+      padding-right: 1em; } }
+  #page.has-side-nav {
+    padding-left: 328px;
+    /* Remove the left padding on all but large screens */ }
+    @media  (max-width: 62rem) {
+      #page.has-side-nav {
+        padding-left: 1em; } }
+
 /* Styles for the main header (entry title) on a page */
 h1.entry-title {
   margin: 2.1rem 0;
@@ -11621,6 +11837,10 @@ h1.entry-title {
     margin: 8px auto 0;
     width: 72px; }
 
+/* Slightly increase the font size of an entry description */
+.entry-description {
+  font-size: 1.125rem; }
+
 /* =========================================================================
    Components
    ========================================================================= */
@@ -11629,12 +11849,13 @@ h1.entry-title {
    ========================================================================= */
 /* Styles for side nav */
 #main-nav.side-nav {
-  /* Default side nav color is WGI green */
+  /* Give a little more shadow */
+  /* Default side nav color is WGI green and width 280px */
   background-color: #00833E;
   width: 280px;
-  /* side nav link styles */
-  /* side nav list item styles */
-  /* a few styles for Font Awesome icons in side nav */ }
+  /* Side nav link styles */
+  /* Side nav list item styles */
+  /* A few styles for Font Awesome icons in side nav */ }
   #main-nav.side-nav a {
     color: #fff;
     font-size: 1.125em;
@@ -11644,20 +11865,225 @@ h1.entry-title {
   #main-nav.side-nav .side-nav_item {
     height: auto;
     line-height: 1.5;
-    padding: 0; }
+    padding: 0;
+    /* Transparent on hover */
+    /* Styles for second level of list items */ }
     #main-nav.side-nav .side-nav_item:hover {
       background-color: transparent; }
     #main-nav.side-nav .side-nav_item-second a {
       font-size: 0.875em;
-      padding: 0.5em 0 0.5em 40px; }
+      padding: 0.5em 0 0.5em 40px;
+      /* Standard icon width for alignment purposes */ }
       #main-nav.side-nav .side-nav_item-second a .fa {
         width: 20px; }
   #main-nav.side-nav .fa {
     display: inline-block;
     width: 24px; }
 
+/* ==========================================================================
+   Cards
+   ========================================================================= */
+/* Make cards container clear their children */
+/* Give the cards a little breathing room */
+.card-container {
+  padding: 1.25em 0.75em; }
+
+/* Card styles */
+.card {
+  /* Slightly rounded corners and relative position */
+  border-radius: 0.25em;
+  margin: 0;
+  position: relative;
+  /* Left and right padding for different layout pieces */
+  /* Styles for the top of a card */
+  /* Some top padding for the middle of a card */
+  /* Some bottom padding for the bottom of a card */
+  /* Styles for the main card link */
+  /* For the item count, add some styles */
+  /* Make card type slightly lighter gray */
+  /* Card title styles */
+  /* Card description styles */
+  /* Center align some parts of a card on small screens */ }
+  .card_top, .card_middle, .card_bottom {
+    padding: 0 1.5em; }
+  .card_top {
+    /* Round the top corners */
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    color: #fff;
+    /* Styles for the icon */ }
+    .card_top .fa {
+      font-size: 1.25rem;
+      line-height: 2.8;
+      margin-right: 0.5em;
+      vertical-align: bottom; }
+  .card_middle {
+    padding-top: 1.5em; }
+  .card_bottom {
+    padding-bottom: 1.5em; }
+  .card .card_link {
+    color: #666;
+    display: block;
+    /* Don't alter opacity on hover */ }
+    .card .card_link:hover, .card .card_link:active {
+      opacity: 1; }
+  .card .num-items {
+    float: right;
+    font-size: 0.875rem;
+    line-height: 4;
+    /* Styles for the icon */ }
+    .card .num-items .fa {
+      font-size: 0.875rem;
+      line-height: 4;
+      margin-right: 0.5em; }
+  .card_type {
+    color: #A9A9A9; }
+  .card_title {
+    font-size: 1.5rem;
+    height: 2.2em;
+    margin-bottom: 0;
+    overflow: hidden;
+    /* Line clamp for webkit */
+    /* Line clamp for non-webkit */ }
+    .webkit .card_title {
+      /* If this is webkit browser, use line clamp */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+    .no-webkit .card_title {
+      /* If this is webkit browser, use line clamp */
+      position: relative; }
+      .no-webkit .card_title:after {
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff 50%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%);
+        bottom: 0;
+        content: "";
+        height: 1.1em;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        width: 25%; }
+  .card_description {
+    font-size: 0.875rem;
+    height: 4.5em;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    /* Line clamp for webkit */
+    /* Line clamp for non-webkit */ }
+    .webkit .card_description {
+      /* If this is webkit browser, use line clamp */
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; }
+    .no-webkit .card_description {
+      /* If this is webkit browser, use line clamp */
+      position: relative; }
+      .no-webkit .card_description:after {
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff 50%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%);
+        bottom: 0;
+        content: "";
+        height: 1.5em;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        width: 25%; }
+  @media  (max-width: 40rem) {
+    .card_middle, .card_bottom {
+      text-align: center; } }
+
+/* Specific styles for cards to look like a stack of cards */
+.card-stack {
+  overflow: visible;
+  /* Styles for pseudo-elements that give a card some depth */
+  /* Different height for before element */
+  /* On hover, increase the height of the pseudo-elements to generate expansion */ }
+  .card-stack:after, .card-stack:before {
+    background: #fff;
+    border-radius: 0 0 0.25em 0.25em;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12) inset, 0 2px 0 rgba(0, 0, 0, 0.08);
+    content: "";
+    display: block;
+    height: 5px;
+    left: 10px;
+    right: 10px;
+    position: absolute;
+    top: 100%;
+    -webkit-transition: 0.125s ease-in-out;
+            transition: 0.125s ease-in-out; }
+  .card-stack:before {
+    height: 10px;
+    left: 20px;
+    right: 20px; }
+  .card-stack:hover:before {
+    height: 20px; }
+  .card-stack:hover:after {
+    height: 10px; }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================= */
+/* Display buttons inline block and make text white */
+.btn, .btn-large, .btn:active, .btn-large:active, .btn:hover, .btn-large:hover, .btn:visited, .btn-large:visited {
+  color: #fff;
+  display: inline-block; }
+
 /* =========================================================================
    Pages
    ========================================================================= */
+/* ==========================================================================
+   Home
+   ========================================================================= */
+/* ==========================================================================
+   Taxonomy Pages
+   ========================================================================= */
+/* Specific styles for resource cards on taxonomy pages */
+.cards-resources {
+  /* Modify the padding on the container - no need for left/right */
+  /* Card styles */ }
+  .cards-resources .card-container {
+    padding: 0.5em 0; }
+  .cards-resources .card {
+    /* Give a big left border to look like tab and some padding */
+    border-left-style: solid;
+    border-left-width: 0.5em;
+    padding: 0.75em 1.5em;
+    /* Center align text on small screen */
+    /* More transparent on hover */
+    /* Right padding equivalent to width of absolutely positioned button */
+    /* Position the action button absolutely to the right and center */
+    /* Increase title font size */
+    /* Give icon a right margin */
+    /* Style updated date: smaller and lighter color */ }
+    @media  (max-width: 40rem) {
+      .cards-resources .card {
+        text-align: center; } }
+    .cards-resources .card_link:active, .cards-resources .card_link:hover {
+      opacity: 0.5; }
+    .cards-resources .card_info {
+      padding-right: 8em; }
+      @media  (max-width: 40rem) {
+        .cards-resources .card_info {
+          padding-right: 0; } }
+    .cards-resources .card_action {
+      position: absolute;
+      right: 1.5em;
+      top: 2.375em;
+      /* Move back into normal flow on small devices */ }
+      @media  (max-width: 40rem) {
+        .cards-resources .card_action {
+          margin-top: 1.5em;
+          padding-bottom: 0.75em;
+          position: static; } }
+    .cards-resources .card_name {
+      font-size: 1.5rem; }
+    .cards-resources .card .resrc-type {
+      margin-right: 0.25em; }
+    .cards-resources .card_updated {
+      color: #A9A9A9;
+      font-size: 0.75em;
+      font-weight: 300;
+      margin-bottom: 0; }
+
 
 /*# sourceMappingURL=style.css.map */

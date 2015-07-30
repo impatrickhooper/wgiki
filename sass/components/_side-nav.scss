@@ -5,11 +5,14 @@
 /* Styles for side nav */
 #main-nav.side-nav {
 
+  /* Give a little more shadow */
+  @extend .z-depth-2;
+
   /* Default side nav color is WGI green and width 280px */
   background-color: $wgi_green;
   width: 280px;
 
-  /* side nav link styles */
+  /* Side nav link styles */
   a {
     color: $white;
     font-size: 1.125em;
@@ -18,27 +21,30 @@
     padding: 0.75em 0 0.75em 16px;
   }
 
-  /* side nav list item styles */
+  /* Side nav list item styles */
   .side-nav_item {
     height: auto;
     line-height: 1.5;
     padding: 0;
 
+    /* Transparent on hover */
     &:hover {
       background-color: transparent;
     }
 
+    /* Styles for second level of list items */
     &-second a {
       font-size: 0.875em;
       padding: 0.5em 0 0.5em 40px;
 
+      /* Standard icon width for alignment purposes */
       .fa {
         width: 20px;
       }
     }
   }
 
-  /* a few styles for Font Awesome icons in side nav */
+  /* A few styles for Font Awesome icons in side nav */
   .fa {
     display: inline-block;
     width: 24px;

@@ -12,6 +12,7 @@ $wgiki_includes = [
   'lib/post-types.php', // Custom post types
   'lib/shortcodes.php', // Custom shortcodes
   'lib/assets.php', // Assets (scripts and stylesheets)
+  'lib/rewrite-rules.php', // Custom rewrite rules
   'lib/custom-header.php',
   'lib/template-tags.php',
   'lib/extras.php',

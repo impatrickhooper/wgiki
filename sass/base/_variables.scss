@@ -40,6 +40,7 @@ $division_colors: (
   utilities: #53BBB4
 );
 
+$alternate_gray: #A9A9A9; // for a slightly lighter shady of gray
 $heading_gray: #555; // for headings (h1, h2, h3, h4, h5, h6)
 $text_gray: #666; // for body text
 $wgi_gray: #ABB1A7; // WGI company gray
@@ -50,8 +51,8 @@ $white: #fff;
    ========================================================================== */
 
 /* Map of icons for files */
-$filetype_icons: (
-  article: "\f02d",
+$file_type_icons: (
+  article: "\f1ea",
   external-link: "\f08e",
   multiple-files: "\f0c5",
   avi: "\f1c8",

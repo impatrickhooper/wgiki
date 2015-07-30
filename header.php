@@ -21,13 +21,18 @@
 
 <body <?php body_class(); ?>>
 
-  <?php $page_division = getPageDivision(); ?>
+<?php $page_division = getPageDivision(); ?>
 
-  <div id="page" class="<?php echo $page_division; ?> hfeed site">
+  <div id="page" class="<?php if (!is_front_page()) { echo 'has-side-nav '; } echo $page_division; ?> hfeed site">
 
     <header id="masthead" class="site-header clearfix" role="banner">
 
-      <?php get_template_part('template-parts/content_wgiki', 'side-nav'); ?>
+    <?php
+      /* Load the side nav on all but home page */
+      if (!is_front_page()) {
+        get_template_part('template-parts/content_wgiki', 'side-nav');
+      }
+    ?>
 
     </header><!-- #masthead -->
 

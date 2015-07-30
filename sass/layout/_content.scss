@@ -2,6 +2,26 @@
    Content
    ========================================================================== */
 
+/* Create left space equal to the size of the sidebar */
+#page {
+  padding: 0 3em 1.5em;
+
+  @include breakpoint($mq_small) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /* If this is a page with the side nav, give left padding to account for this */
+  &.has-side-nav {
+    padding-left: 328px;
+
+    /* Remove the left padding on all but large screens */
+    @include breakpoint($mq_not_large) {
+      padding-left: 1em;
+    }
+  }
+}
+
 /* Styles for the main header (entry title) on a page */
 h1.entry-title {
   margin: 2.1rem 0;
@@ -16,4 +36,9 @@ h1.entry-title {
     margin: 8px auto 0;
     width: 72px;
   }
+}
+
+/* Slightly increase the font size of an entry description */
+.entry-description {
+  font-size: 1.125rem;
 }

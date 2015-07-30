@@ -7,7 +7,7 @@
 ?>
 
 <?php
-  $page_division = getPageDivision();
+  $page_div = getPageDivision();
 ?>
 
 <a href="#" data-activates="main-nav" class="right side-nav_collapse hide-on-large-only waves-effect waves-circle">
@@ -22,52 +22,53 @@
   <ul class="site-navigation">
 
   <?php
-    /* Get menu pages, excluding Home and Protected */
-    $menu_pages = getDivisionPages('768, 770');
+    /* Get menu pages based on division post types */
+    $menu_pages = getDivisionPostTypes();
 
     /* For each menu page, do stuff */
     foreach($menu_pages as $menu_page):
+      $menu_page_type = $menu_page->name;
   ?>
 
     <li class="side-nav_item side-nav_item-first">
-      <a href="<?php echo get_permalink($menu_page->ID) ?>">
-        <i class="fa fa-book"></i><?php echo $menu_page->post_title; ?>
+      <a href="<?php echo get_post_type_archive_link($menu_page_type) ?>">
+        <i class="fa fa-book"></i><?php echo $menu_page->label; ?>
       </a>
 
       <?php
         /* Get the name of the current menu page */
-        $menu_page_name = $menu_page->post_name;
+        $menu_page_name = $menu_page->rewrite['slug'];
 
         /* If the menu page name is the same as the current division, do stuff */
-        if ($menu_page_name == $page_division) :
+        if ($menu_page_name == $page_div) :
 
           /* Replace hypens with underscores to get taxonomy type */
-          $category_type = preg_replace('/-/i', '_', $page_division);
+          $cat_type = $menu_page_type;
 
           /* Append _tax to create taxonomy name */
-          $category_name = $category_type . '_tax';
+          $cat_name = $cat_type . '_tax';
 
           /* Get category pages */
-          $category_pages = getDivisionCategories($category_type, $category_name);
+          $cat_pages = getDivisionCategories($cat_type, $cat_name);
 
           /* If the categories query is not empty, do stuff */
-          if (!empty($category_pages)):
+          if (!empty($cat_pages)):
       ?>
 
         <ul class="site-navigation_categories">
 
-      <?php
+          <?php
             /* For each category, do stuff */
-            foreach ($category_pages as $category_page):
-      ?>
+            foreach ($cat_pages as $cat_page):
+          ?>
 
           <li class="side-nav_item side-nav_item-second">
-            <a href="<?php echo get_term_link($category_page); ?>">
-              <i class="fa fa-bookmark"></i><?php echo $category_page->cat_name; ?>
+            <a href="<?php echo get_term_link($cat_page); ?>">
+              <i class="fa fa-bookmark"></i><?php echo $cat_page->cat_name; ?>
             </a>
           </li>
 
-      <?php endforeach; ?>
+          <?php endforeach; ?>
 
         </ul>
 
@@ -78,7 +79,10 @@
 
     </li>
 
-  <?php endforeach; ?>
+  <?php
+    endforeach;
+    wp_reset_postdata();
+  ?>
 
   </ul>
 

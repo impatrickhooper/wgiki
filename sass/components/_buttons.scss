@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================= */
+
+/* Display buttons inline block and make text white */
+.btn,
+.btn:active,
+.btn:hover,
+.btn:visited {
+  color: $white;
+  display: inline-block;
+}

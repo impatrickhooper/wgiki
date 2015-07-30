@@ -51,12 +51,35 @@ blockquote {
  */
 @each $division, $color in $division_colors {
 
-  /* Build selector based on division of a page */
-  #page.#{$division} {
+  /* Build selector based on division for page, top of card, and button */
+  #page.#{$division} #main-nav.side-nav,
+  .card_top-#{$division},
+  .btn-#{$division} {
+    background-color: $color;
+  }
 
-    /* Change the side nav color to match division */
-    #main-nav.side-nav {
+  /* For division buttons, slightly lighten the hover color */
+  .btn-#{$division}:active,
+  .btn-#{$division}:hover {
+    background-color: lighten($color, 5%);
+  }
+
+  /* For division resource card, color buttons, border, and icon */
+  .card-resource-#{$division} {
+    border-left-color: $color;
+
+    .btn {
       background-color: $color;
     }
+
+    .fa.resrc-type {
+      color: $color;
+    }
+  }
+}
+
+@each $file_type, $icon in $file_type_icons {
+  .fa.resrc-type-#{$file_type}:before {
+    content: '#{$icon}';
   }
 }

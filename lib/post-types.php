@@ -80,6 +80,7 @@ function register_custom_post_type($key, $value, $menu_position) {
     'menu_position'     => $menu_position,
     'menu_icon'         => 'dashicons-networking',
     'show_in_admin_bar' => false,
+    'has_archive'       => true,
     'rewrite'           => array(
       'slug' => preg_replace('/_/i', '-', $key)
     ),
@@ -107,10 +108,10 @@ function register_custom_taxonomies($key) {
     'update_item'                => __('Update Category'),
     'add_new_item'               => __('Add New Category'),
     'new_item_name'              => __('New Category Name'),
-    'separate_items_with_commas' => __('Separate categories with commas'),
-    'add_or_remove_items'        => __('Add or remove categories'),
-    'choose_from_most_used'      => __('Choose from the most used categories'),
-    'not_found'                  => __('No categories found.'),
+    'separate_items_with_commas' => __('Separate Categories with commas'),
+    'add_or_remove_items'        => __('Add or remove Categories'),
+    'choose_from_most_used'      => __('Choose from the most used Categories'),
+    'not_found'                  => __('No Categories found.'),
     'menu_name'                  => __('Categories'),
   );
 
@@ -201,54 +202,4 @@ function register_custom_capabilities() {
       $role->add_cap('delete_published_' . $division_key . '_resources');
     }
   }
-}
-
-/*
- * Replace taxonomy slug with post type slug in url
- */
-
-/* Add taxonomy_slug_rewrite function to rewrite rules filter */
-add_filter('generate_rewrite_rules', 'taxonomy_slug_rewrite');
-function taxonomy_slug_rewrite($wp_rewrite) {
-
-  /* Initialize array to hold rules */
-  $rules = array();
-
-  /* Get all custom taxonomies */
-  $taxonomies = get_taxonomies(array('_builtin' => false), 'objects');
-
-  /* Get all custom post types */
-  $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects');
-
-  /* Loop through custom post types */
-  foreach ($post_types as $post_type) {
-
-    /* Loop through custom taxonomies */
-    foreach ($taxonomies as $taxonomy) {
-
-      /* Loop through objects this taxonomy is assigned to */
-      foreach ($taxonomy->object_type as $object_type) {
-
-        /* Replace underscores with hyphens */
-        $regex_object_type = preg_replace('/_/i', '-', $object_type);
-
-        /* If the object type (with hyphens) is equal to the slug for a post type, do stuff */
-        if ($regex_object_type == $post_type->rewrite['slug']) {
-
-          /* Get all terms for this taxonomy */
-          $terms = get_categories(array('type' => $object_type, 'taxonomy' => $taxonomy->name, 'hide_empty' => 0));
-
-          /* For each term, do stuff */
-          foreach ($terms as $term) {
-
-            /* Add a rewrite rule for each term that uses the post type slug */
-            $rules[$regex_object_type . '/' . $term->slug . '/?$'] = 'index.php?' . 'taxonomy=' . $term->taxonomy . '&term=' . $term->slug;
-          }
-        }
-      }
-    }
-  }
-
-  /* Add custom rules to WordPress rewrite rules */
-  $wp_rewrite->rules = $rules + $wp_rewrite->rules;
 }

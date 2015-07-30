@@ -108,14 +108,6 @@ function wgiki_widgets_init() {
 }
 add_action( 'widgets_init', 'wgiki_widgets_init' );
 
-/* Allow uploading of .svg and .eps files */
-add_filter('upload_mimes', 'custom_upload_mimes');
-function custom_upload_mimes( $existing_mimes=array() ) {
-  $existing_mimes['svg'] = 'mime/type';
-  $existing_mimes['eps'] = 'mime/type';
-  return $existing_mimes;
-}
-
 /* Hide admin bar on front end */
 add_filter('show_admin_bar', '__return_false');
 
@@ -128,25 +120,4 @@ function hide_dashboard() {
     wp_redirect(site_url());
     exit;
   }
-}
-
-/*
- * Custom rewrite rules for protecting WGI files
- *
- * 1. Add comment to block off this section of rules so it's clearly theme-related
- * 2. Turn on RewriteEngine if module exists
- * 3. For all uploads with provided extensions, redirect to resources page
- * 4. Pass query parameter with file name
- */
-add_filter('mod_rewrite_rules', 'wgiki_htaccess_rules');
-function wgiki_htaccess_rules($rules) {
-  $wgiki_rules = <<<EOD
-\n# BEGIN WGIki
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule ^wp-content/uploads/(.+)$ https://wgiki.com/protected/?file=$1 [QSA,L]
-</IfModule>
-# END WGIki\n\n
-EOD;
-  return $wgiki_rules . $rules;
 }

@@ -30,6 +30,9 @@
       case 768:
         $page_name = 'protected';
         break;
+      case 770:
+        $page_name = 'home';
+        break;
     }
 
     /* Check if a template part exists for this page name, and if it does, load it */

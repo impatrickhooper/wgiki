@@ -3,12 +3,32 @@
    ========================================================================== */
 
 /**
- * Vertical align
+ * Line Clamp
  *
- * Position an element in the middle of its parent
+ * Cut off text at specified number of lines
  */
-@mixin vertical-align {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+@mixin line-clamp($num_lines, $line-height, $is_webkit) {
+
+  /* If this is webkit browser, use line clamp */
+  @if $is_webkit {
+    display: -webkit-box;
+    -webkit-line-clamp: $num-lines;
+    -webkit-box-orient: vertical;
+  }
+
+  /* Otherwise, add a linear gradient to mask 25% of end of overflow line */
+  @else {
+    position: relative;
+
+    &:after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+      bottom: 0;
+      content: "";
+      height: #{$line-height};
+      position: absolute;
+      right: 0;
+      text-align: right;
+      width: 25%;
+    }
+  }
 }

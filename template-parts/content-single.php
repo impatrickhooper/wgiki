@@ -22,6 +22,8 @@
 
   <footer class="entry-footer">
 
+    <?php wgiki_entry_footer(); ?>
+
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 

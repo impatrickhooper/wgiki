@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Taxonomy Pages
+   ========================================================================= */
+
+/* Specific styles for resource cards on taxonomy pages */
+.cards-resources {
+
+  /* Modify the padding on the container - no need for left/right */
+  .card-container {
+    padding: 0.5em 0;
+  }
+
+  /* Card styles */
+  .card {
+
+    /* Give a big left border to look like tab and some padding */
+    border-left-style: solid;
+    border-left-width: 0.5em;
+    padding: 0.75em 1.5em;
+
+    /* Center align text on small screen */
+    @include breakpoint($mq_small) {
+      text-align: center;
+    }
+
+    /* More transparent on hover */
+    &_link:active,
+    &_link:hover {
+      opacity: 0.5;
+    }
+
+    /* Right padding equivalent to width of absolutely positioned button */
+    &_info {
+      padding-right: 8em;
+
+      @include breakpoint($mq_small) {
+        padding-right: 0;
+      }
+    }
+
+    /* Position the action button absolutely to the right and center */
+    &_action {
+      position: absolute;
+      right: 1.5em;
+      top: 2.375em;
+
+      /* Move back into normal flow on small devices */
+      @include breakpoint($mq_small) {
+        margin-top: 1.5em;
+        padding-bottom: 0.75em;
+        position: static;
+      }
+    }
+
+    /* Increase title font size */
+    &_name {
+      font-size: 1.5rem;
+    }
+
+    /* Give icon a right margin */
+    .resrc-type {
+      margin-right: 0.25em;
+    }
+
+    /* Style updated date: smaller and lighter color */
+    &_updated {
+      color: $alternate_gray;
+      font-size: 0.75em;
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+  }
+}

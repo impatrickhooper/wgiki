@@ -24,20 +24,19 @@ function getPageDivision() {
 }
 
 /**
- * Return a query of pages.
+ * Return a query of custom post types (divisions).
  *
- * 1. Sort by title, A-Z
- * 2. Exclude specified pages
- * 3. Query the pages
+ * 1. Only public post types
+ * 2. Not built in to WordPress core (so, custom types)
+ * 3. Query post types and return results as objects
  */
-function getDivisionPages($excluded_pages) {
-  $menu_args = array(
-    'sort_order'  => 'asc',
-    'sort_column' => 'post_title',
-    'exclude'     => $excluded_pages
+function getDivisionPostTypes() {
+  $div_args = array(
+    'public' => true,
+    '_builtin' => false
   );
 
-  return get_pages($menu_args);
+  return get_post_types($div_args, 'objects');
 }
 
 /**
@@ -45,15 +44,45 @@ function getDivisionPages($excluded_pages) {
  *
  * 1. Type is the current division type
  * 2. Name is the current division name + _tax
- * 3. Query categories
+ * 3. Query categories and return results
  */
-function getDivisionCategories($category_type, $category_name) {
-  $category_args = array(
-    'type'      => $category_type,
-    'taxonomy'  => $category_name
+function getDivisionCategories($cat_type, $cat_name) {
+  $cat_args = array(
+    'type'      => $cat_type,
+    'taxonomy'  => $cat_name
   );
 
-  return get_categories($category_args);
+  return get_categories($cat_args);
+}
+
+/**
+ * Return a query of posts for a custom taxonomy.
+ *
+ * 1. Unlimited number of posts
+ * 2. Post type is the current division type
+ * 3. Order by title, A-Z
+ * 4. Query by taxonomy
+ *    a. Taxonomy is current division taxonomy
+ *    b. Search field is term_id
+ *    c. Term ID is current category's ID
+ * 5. Query posts and return results
+ */
+function getCategoryResources($div_type, $div_tax, $cat_term_id) {
+  $resrc_args = array(
+    'numberposts' => -1,
+    'post_type'   => $div_type,
+    'orderby'     => 'title',
+    'order'       => 'ASC',
+    'tax_query'   => array(
+      array(
+        'taxonomy' => $div_tax,
+        'field'    => 'term_id',
+        'terms'    => $cat_term_id
+      )
+    )
+  );
+
+  return get_posts($resrc_args);
 }
 
 /**

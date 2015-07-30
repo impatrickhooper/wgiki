@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Cards
+   ========================================================================= */
+
+/* Make cards container clear their children */
+.cards {
+  @extend .clearfix;
+}
+
+/* Give the cards a little breathing room */
+.card-container {
+  padding: 1.25em 0.75em;
+}
+
+/* Card styles */
+.card {
+
+  /* Slightly rounded corners and relative position */
+  border-radius: 0.25em;
+  margin: 0;
+  position: relative;
+
+  /* Left and right padding for different layout pieces */
+  &_top,
+  &_middle,
+  &_bottom {
+    padding: 0 1.5em;
+  }
+
+  /* Styles for the top of a card */
+  &_top {
+    @extend .clearfix;
+
+    /* Round the top corners */
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+    color: $white;
+
+    /* Styles for the icon */
+    .fa {
+      font-size: 1.25rem;
+      line-height: 2.8;
+      margin-right: 0.5em;
+      vertical-align: bottom;
+    }
+  }
+
+  /* Some top padding for the middle of a card */
+  &_middle {
+    padding-top: 1.5em;
+  }
+
+  /* Some bottom padding for the bottom of a card */
+  &_bottom {
+    padding-bottom: 1.5em;
+  }
+
+  /* Styles for the main card link */
+  .card_link {
+    color: $text_gray;
+    display: block;
+
+    /* Don't alter opacity on hover */
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  /* For the item count, add some styles */
+  .num-items {
+    float: right;
+    font-size: 0.875rem;
+    line-height: 4;
+
+    /* Styles for the icon */
+    .fa {
+      font-size: 0.875rem;
+      line-height: 4;
+      margin-right: 0.5em;
+    }
+  }
+
+  /* Make card type slightly lighter gray */
+  &_type {
+    color: $alternate_gray;
+  }
+
+  /* Card title styles */
+  &_title {
+    font-size: 1.5rem;
+    height: 2.2em;
+    margin-bottom: 0;
+    overflow: hidden;
+
+    /* Line clamp for webkit */
+    .webkit & {
+      @include line-clamp(2, '1.1em', $is_webkit: true);
+    }
+
+    /* Line clamp for non-webkit */
+    .no-webkit & {
+      @include line-clamp(2, '1.1em', $is_webkit: false);
+    }
+  }
+
+  /* Card description styles */
+  &_description {
+    font-size: 0.875rem;
+    height: 4.5em;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+
+    /* Line clamp for webkit */
+    .webkit & {
+      @include line-clamp(3, '1.5em', $is_webkit: true);
+    }
+
+    /* Line clamp for non-webkit */
+    .no-webkit & {
+      @include line-clamp(3, '1.5em', $is_webkit: false);
+    }
+  }
+
+  /* Center align some parts of a card on small screens */
+  &_middle,
+  &_bottom {
+    @include breakpoint($mq_small) {
+      text-align: center;
+    }
+  }
+}
+
+/* Specific styles for cards to look like a stack of cards */
+.card-stack {
+  overflow: visible;
+
+  /* Styles for pseudo-elements that give a card some depth */
+  &:after,
+  &:before {
+    background: #fff;
+    border-radius: 0 0 0.25em 0.25em;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12) inset, 0 2px 0 rgba(0, 0, 0, 0.08);
+    content: "";
+    display: block;
+    height: 5px;
+    left: 10px;
+    right: 10px;
+    position: absolute;
+    top: 100%;
+    transition: 0.125s ease-in-out;
+  }
+
+  /* Different height for before element */
+  &:before {
+    height: 10px;
+    left: 20px;
+    right: 20px;
+  }
+
+  /* On hover, increase the height of the pseudo-elements to generate expansion */
+  &:hover {
+    &:before {
+      height: 20px;
+    }
+
+    &:after {
+      height: 10px;
+    }
+  }
+}
