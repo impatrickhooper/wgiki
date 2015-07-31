@@ -56,7 +56,7 @@
               if (!empty($resrc_tags)) {
 
                 /* Output an arrow */
-                echo ' -> ';
+                echo ' > ';
                 $tag_count = count($resrc_tags); // Get the number of tags
 
                 /* Loop through each tag */
