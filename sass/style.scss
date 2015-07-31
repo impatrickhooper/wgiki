@@ -48,6 +48,8 @@ WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, 
    Components
    ========================================================================= */
 @import "components/side-nav";
+@import "components/icons";
+@import "components/search";
 @import "components/cards";
 @import "components/buttons";
 
@@ -56,3 +58,4 @@ WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, 
    ========================================================================= */
 @import "pages/home";
 @import "pages/taxonomy";
+@import "pages/single";

@@ -58,18 +58,21 @@ get_header(); ?>
           <div class="card card-resource card-resource-<?php echo $div_name; ?>">
             <a class="card_link" href="<?php echo $resrc_link; ?>" target="<?php echo $resrc_targ; ?>">
               <div class="card_info">
-                <div class="card_type">Resource</div>
+                <div class="card_type"><?php echo ucwords(preg_replace('/-/i', ' ', $resrc_type)); ?></div>
                 <h6 class="card_name"><i class="fa resrc-type resrc-type-<?php echo $resrc_file_type; ?>"></i><?php echo $resrc->post_title; ?></h6>
                 <p class="card_updated">Updated <?php echo get_post_modified_time('F j, Y', false, $resrc_id); ?></p>
-              </div>
-            </a>
+              </div><!-- .card_info -->
+            </a><!-- .card_link -->
             <div class="card_action">
               <a href="<?php echo $resrc_link; ?>" target="<?php echo $resrc_targ; ?>" class="btn">View</a>
-            </div>
-          </div>
-        </div>
+            </div><!-- .card_action -->
+          </div><!-- .card.card-resource -->
+        </div><!-- .card-container -->
 
-        <?php endforeach; ?>
+      <?php
+          endforeach;
+        wp_reset_postdata();
+      ?>
 
       </div><!-- .cards-resources -->
     </main><!-- #main -->

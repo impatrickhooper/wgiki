@@ -10,6 +10,40 @@
 /* Give the cards a little breathing room */
 .card-container {
   padding: 1.25em 0.75em;
+
+  /* Remove left padding for every 4th card when they're in rows of 3 */
+  &:nth-of-type(3n+1) {
+    @include breakpoint($mq_large) {
+      padding-left: 0;
+    }
+  }
+
+  /* Remove right padding for every 3rd card when they're in rows of 3 */
+  &:nth-of-type(3n) {
+    @include breakpoint($mq_large) {
+      padding-right: 0;
+    }
+  }
+
+  /* Remove left padding for every 3rd card when they're in rows of 2 */
+  &:nth-of-type(2n+1) {
+    @include breakpoint($mq_medium) {
+      padding-left: 0;
+    }
+  }
+
+  /* Remove right padding for every 2nd card when they're in rows of 2 */
+  &:nth-of-type(2n) {
+    @include breakpoint($mq_medium) {
+      padding-right: 0;
+    }
+  }
+
+  /* Remove left and right padding for all cards on small devices */
+  @include breakpoint($mq_small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* Card styles */
@@ -19,6 +53,14 @@
   border-radius: 0.25em;
   margin: 0;
   position: relative;
+  transition: all 0.25s;
+
+  /* Scale to slightly larger size on hover */
+  &:active,
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.25s;
+  }
 
   /* Left and right padding for different layout pieces */
   &_top,
@@ -148,7 +190,7 @@
     right: 10px;
     position: absolute;
     top: 100%;
-    transition: 0.125s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   /* Different height for before element */

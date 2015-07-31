@@ -35,6 +35,21 @@ WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, 
    Mixins
    ========================================================================== */
 /**
+ * Word Wrap
+ *
+ * Stop words (i.e. long URLs) from breaking outside the container
+ */
+/**
+ * Color Input Placeholder
+ *
+ * Set input placeholder color for all browsers
+ */
+/**
+ * Color Links
+ *
+ * Set link color for all states
+ */
+/**
  * Line Clamp
  *
  * Cut off text at specified number of lines
@@ -374,7 +389,7 @@ td, th {
   font-weight: normal;
   font-style: normal; }
 
-.fa {
+.fa, .repo a[href^="http"]:before, .repo a[href$=".article"]:before, .repo a[href$=".external-link"]:before, .repo a[href$=".multiple-files"]:before, .repo a[href$=".avi"]:before, .repo a[href$=".doc"]:before, .repo a[href$=".docx"]:before, .repo a[href$=".flv"]:before, .repo a[href$=".gif"]:before, .repo a[href$=".jpeg"]:before, .repo a[href$=".jpg"]:before, .repo a[href$=".mov"]:before, .repo a[href$=".mp4"]:before, .repo a[href$=".pdf"]:before, .repo a[href$=".png"]:before, .repo a[href$=".ppt"]:before, .repo a[href$=".pptx"]:before, .repo a[href$=".svg"]:before, .repo a[href$=".tiff"]:before, .repo a[href$=".wmv"]:before, .repo a[href$=".xls"]:before, .repo a[href$=".xlsx"]:before, .repo a[href$=".zip"]:before, .repo a[href$=".other"]:before, .single #page #content .edit-link .post-edit-link {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -434,9 +449,9 @@ td, th {
 .pull-left {
   float: left; }
 
-.fa.pull-left {
+.fa.pull-left, .repo a.pull-left[href^="http"]:before, .repo a.pull-left[href$=".article"]:before, .repo a.pull-left[href$=".external-link"]:before, .repo a.pull-left[href$=".multiple-files"]:before, .repo a.pull-left[href$=".avi"]:before, .repo a.pull-left[href$=".doc"]:before, .repo a.pull-left[href$=".docx"]:before, .repo a.pull-left[href$=".flv"]:before, .repo a.pull-left[href$=".gif"]:before, .repo a.pull-left[href$=".jpeg"]:before, .repo a.pull-left[href$=".jpg"]:before, .repo a.pull-left[href$=".mov"]:before, .repo a.pull-left[href$=".mp4"]:before, .repo a.pull-left[href$=".pdf"]:before, .repo a.pull-left[href$=".png"]:before, .repo a.pull-left[href$=".ppt"]:before, .repo a.pull-left[href$=".pptx"]:before, .repo a.pull-left[href$=".svg"]:before, .repo a.pull-left[href$=".tiff"]:before, .repo a.pull-left[href$=".wmv"]:before, .repo a.pull-left[href$=".xls"]:before, .repo a.pull-left[href$=".xlsx"]:before, .repo a.pull-left[href$=".zip"]:before, .repo a.pull-left[href$=".other"]:before, .single #page #content .edit-link .pull-left.post-edit-link {
   margin-right: .3em; }
-.fa.pull-right {
+.fa.pull-right, .repo a.pull-right[href^="http"]:before, .repo a.pull-right[href$=".article"]:before, .repo a.pull-right[href$=".external-link"]:before, .repo a.pull-right[href$=".multiple-files"]:before, .repo a.pull-right[href$=".avi"]:before, .repo a.pull-right[href$=".doc"]:before, .repo a.pull-right[href$=".docx"]:before, .repo a.pull-right[href$=".flv"]:before, .repo a.pull-right[href$=".gif"]:before, .repo a.pull-right[href$=".jpeg"]:before, .repo a.pull-right[href$=".jpg"]:before, .repo a.pull-right[href$=".mov"]:before, .repo a.pull-right[href$=".mp4"]:before, .repo a.pull-right[href$=".pdf"]:before, .repo a.pull-right[href$=".png"]:before, .repo a.pull-right[href$=".ppt"]:before, .repo a.pull-right[href$=".pptx"]:before, .repo a.pull-right[href$=".svg"]:before, .repo a.pull-right[href$=".tiff"]:before, .repo a.pull-right[href$=".wmv"]:before, .repo a.pull-right[href$=".xls"]:before, .repo a.pull-right[href$=".xlsx"]:before, .repo a.pull-right[href$=".zip"]:before, .repo a.pull-right[href$=".other"]:before, .single #page #content .edit-link .pull-right.post-edit-link {
   margin-left: .3em; }
 
 .fa-spin {
@@ -704,7 +719,7 @@ td, th {
 .fa-photo:before, .fa-image:before, .fa-picture-o:before {
   content: "\f03e"; }
 
-.fa-pencil:before {
+.fa-pencil:before, .single #page #content .edit-link .post-edit-link:before {
   content: "\f040"; }
 
 .fa-map-marker:before {
@@ -10097,6 +10112,13 @@ img {
   max-width: 100%;
   height: auto; }
 
+a {
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word; }
+
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -10131,10 +10153,6 @@ blockquote {
 /* ==========================================================================
    Color
    ========================================================================== */
-/* Make links green by default */
-a, a:active, a:hover, a:visited {
-  color: #00833E; }
-
 /* When hovering on links, make slightly transparent */
 a:active, a:hover {
   opacity: 0.5; }
@@ -10173,8 +10191,12 @@ blockquote {
   border-left-color: #00A653; }
   .card-resource-accounting-admin .btn, .card-resource-accounting-admin .btn-large {
     background-color: #00A653; }
-  .card-resource-accounting-admin .fa.resrc-type {
+  .card-resource-accounting-admin .fa.resrc-type, .card-resource-accounting-admin .repo a.resrc-type[href^="http"]:before, .repo .card-resource-accounting-admin a.resrc-type[href^="http"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".article"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".external-link"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".multiple-files"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".avi"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".doc"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".docx"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".flv"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".gif"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".jpeg"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".jpg"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".mov"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".mp4"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".pdf"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".png"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".ppt"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".pptx"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".svg"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".tiff"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".wmv"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".xls"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".xlsx"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".zip"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".other"]:before, .card-resource-accounting-admin .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-accounting-admin .resrc-type.post-edit-link {
     color: #00A653; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.accounting-admin .hentry a, .single #page.accounting-admin .hentry a:active, .single #page.accounting-admin .hentry a:hover, .single #page.accounting-admin .hentry a:visited {
+  color: #00A653; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.civil #main-nav.side-nav, .card_top-civil, .btn-civil {
@@ -10189,8 +10211,12 @@ blockquote {
   border-left-color: #e15258; }
   .card-resource-civil .btn, .card-resource-civil .btn-large {
     background-color: #e15258; }
-  .card-resource-civil .fa.resrc-type {
+  .card-resource-civil .fa.resrc-type, .card-resource-civil .repo a.resrc-type[href^="http"]:before, .repo .card-resource-civil a.resrc-type[href^="http"]:before, .card-resource-civil .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-civil a.resrc-type[href$=".article"]:before, .card-resource-civil .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-civil a.resrc-type[href$=".external-link"]:before, .card-resource-civil .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-civil a.resrc-type[href$=".multiple-files"]:before, .card-resource-civil .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-civil a.resrc-type[href$=".avi"]:before, .card-resource-civil .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-civil a.resrc-type[href$=".doc"]:before, .card-resource-civil .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-civil a.resrc-type[href$=".docx"]:before, .card-resource-civil .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-civil a.resrc-type[href$=".flv"]:before, .card-resource-civil .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-civil a.resrc-type[href$=".gif"]:before, .card-resource-civil .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-civil a.resrc-type[href$=".jpeg"]:before, .card-resource-civil .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-civil a.resrc-type[href$=".jpg"]:before, .card-resource-civil .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-civil a.resrc-type[href$=".mov"]:before, .card-resource-civil .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-civil a.resrc-type[href$=".mp4"]:before, .card-resource-civil .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-civil a.resrc-type[href$=".pdf"]:before, .card-resource-civil .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-civil a.resrc-type[href$=".png"]:before, .card-resource-civil .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-civil a.resrc-type[href$=".ppt"]:before, .card-resource-civil .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-civil a.resrc-type[href$=".pptx"]:before, .card-resource-civil .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-civil a.resrc-type[href$=".svg"]:before, .card-resource-civil .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-civil a.resrc-type[href$=".tiff"]:before, .card-resource-civil .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-civil a.resrc-type[href$=".wmv"]:before, .card-resource-civil .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-civil a.resrc-type[href$=".xls"]:before, .card-resource-civil .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-civil a.resrc-type[href$=".xlsx"]:before, .card-resource-civil .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-civil a.resrc-type[href$=".zip"]:before, .card-resource-civil .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-civil a.resrc-type[href$=".other"]:before, .card-resource-civil .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-civil .resrc-type.post-edit-link {
     color: #e15258; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.civil .hentry a, .single #page.civil .hentry a:active, .single #page.civil .hentry a:hover, .single #page.civil .hentry a:visited {
+  color: #e15258; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.creative #main-nav.side-nav, .card_top-creative, .btn-creative {
@@ -10205,8 +10231,12 @@ blockquote {
   border-left-color: #8dc63f; }
   .card-resource-creative .btn, .card-resource-creative .btn-large {
     background-color: #8dc63f; }
-  .card-resource-creative .fa.resrc-type {
+  .card-resource-creative .fa.resrc-type, .card-resource-creative .repo a.resrc-type[href^="http"]:before, .repo .card-resource-creative a.resrc-type[href^="http"]:before, .card-resource-creative .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-creative a.resrc-type[href$=".article"]:before, .card-resource-creative .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-creative a.resrc-type[href$=".external-link"]:before, .card-resource-creative .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-creative a.resrc-type[href$=".multiple-files"]:before, .card-resource-creative .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-creative a.resrc-type[href$=".avi"]:before, .card-resource-creative .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-creative a.resrc-type[href$=".doc"]:before, .card-resource-creative .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-creative a.resrc-type[href$=".docx"]:before, .card-resource-creative .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-creative a.resrc-type[href$=".flv"]:before, .card-resource-creative .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-creative a.resrc-type[href$=".gif"]:before, .card-resource-creative .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-creative a.resrc-type[href$=".jpeg"]:before, .card-resource-creative .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-creative a.resrc-type[href$=".jpg"]:before, .card-resource-creative .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-creative a.resrc-type[href$=".mov"]:before, .card-resource-creative .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-creative a.resrc-type[href$=".mp4"]:before, .card-resource-creative .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-creative a.resrc-type[href$=".pdf"]:before, .card-resource-creative .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-creative a.resrc-type[href$=".png"]:before, .card-resource-creative .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-creative a.resrc-type[href$=".ppt"]:before, .card-resource-creative .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-creative a.resrc-type[href$=".pptx"]:before, .card-resource-creative .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-creative a.resrc-type[href$=".svg"]:before, .card-resource-creative .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-creative a.resrc-type[href$=".tiff"]:before, .card-resource-creative .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-creative a.resrc-type[href$=".wmv"]:before, .card-resource-creative .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-creative a.resrc-type[href$=".xls"]:before, .card-resource-creative .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-creative a.resrc-type[href$=".xlsx"]:before, .card-resource-creative .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-creative a.resrc-type[href$=".zip"]:before, .card-resource-creative .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-creative a.resrc-type[href$=".other"]:before, .card-resource-creative .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-creative .resrc-type.post-edit-link {
     color: #8dc63f; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.creative .hentry a, .single #page.creative .hentry a:active, .single #page.creative .hentry a:hover, .single #page.creative .hentry a:visited {
+  color: #8dc63f; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.environmental #main-nav.side-nav, .card_top-environmental, .btn-environmental {
@@ -10221,8 +10251,12 @@ blockquote {
   border-left-color: #F9845B; }
   .card-resource-environmental .btn, .card-resource-environmental .btn-large {
     background-color: #F9845B; }
-  .card-resource-environmental .fa.resrc-type {
+  .card-resource-environmental .fa.resrc-type, .card-resource-environmental .repo a.resrc-type[href^="http"]:before, .repo .card-resource-environmental a.resrc-type[href^="http"]:before, .card-resource-environmental .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-environmental a.resrc-type[href$=".article"]:before, .card-resource-environmental .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-environmental a.resrc-type[href$=".external-link"]:before, .card-resource-environmental .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-environmental a.resrc-type[href$=".multiple-files"]:before, .card-resource-environmental .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-environmental a.resrc-type[href$=".avi"]:before, .card-resource-environmental .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-environmental a.resrc-type[href$=".doc"]:before, .card-resource-environmental .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-environmental a.resrc-type[href$=".docx"]:before, .card-resource-environmental .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-environmental a.resrc-type[href$=".flv"]:before, .card-resource-environmental .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-environmental a.resrc-type[href$=".gif"]:before, .card-resource-environmental .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-environmental a.resrc-type[href$=".jpeg"]:before, .card-resource-environmental .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-environmental a.resrc-type[href$=".jpg"]:before, .card-resource-environmental .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-environmental a.resrc-type[href$=".mov"]:before, .card-resource-environmental .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-environmental a.resrc-type[href$=".mp4"]:before, .card-resource-environmental .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-environmental a.resrc-type[href$=".pdf"]:before, .card-resource-environmental .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-environmental a.resrc-type[href$=".png"]:before, .card-resource-environmental .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-environmental a.resrc-type[href$=".ppt"]:before, .card-resource-environmental .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-environmental a.resrc-type[href$=".pptx"]:before, .card-resource-environmental .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-environmental a.resrc-type[href$=".svg"]:before, .card-resource-environmental .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-environmental a.resrc-type[href$=".tiff"]:before, .card-resource-environmental .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-environmental a.resrc-type[href$=".wmv"]:before, .card-resource-environmental .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-environmental a.resrc-type[href$=".xls"]:before, .card-resource-environmental .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-environmental a.resrc-type[href$=".xlsx"]:before, .card-resource-environmental .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-environmental a.resrc-type[href$=".zip"]:before, .card-resource-environmental .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-environmental a.resrc-type[href$=".other"]:before, .card-resource-environmental .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-environmental .resrc-type.post-edit-link {
     color: #F9845B; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.environmental .hentry a, .single #page.environmental .hentry a:active, .single #page.environmental .hentry a:hover, .single #page.environmental .hentry a:visited {
+  color: #F9845B; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.hr #main-nav.side-nav, .card_top-hr, .btn-hr {
@@ -10237,8 +10271,12 @@ blockquote {
   border-left-color: #fbb03b; }
   .card-resource-hr .btn, .card-resource-hr .btn-large {
     background-color: #fbb03b; }
-  .card-resource-hr .fa.resrc-type {
+  .card-resource-hr .fa.resrc-type, .card-resource-hr .repo a.resrc-type[href^="http"]:before, .repo .card-resource-hr a.resrc-type[href^="http"]:before, .card-resource-hr .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-hr a.resrc-type[href$=".article"]:before, .card-resource-hr .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-hr a.resrc-type[href$=".external-link"]:before, .card-resource-hr .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-hr a.resrc-type[href$=".multiple-files"]:before, .card-resource-hr .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-hr a.resrc-type[href$=".avi"]:before, .card-resource-hr .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-hr a.resrc-type[href$=".doc"]:before, .card-resource-hr .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-hr a.resrc-type[href$=".docx"]:before, .card-resource-hr .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-hr a.resrc-type[href$=".flv"]:before, .card-resource-hr .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-hr a.resrc-type[href$=".gif"]:before, .card-resource-hr .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-hr a.resrc-type[href$=".jpeg"]:before, .card-resource-hr .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-hr a.resrc-type[href$=".jpg"]:before, .card-resource-hr .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-hr a.resrc-type[href$=".mov"]:before, .card-resource-hr .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-hr a.resrc-type[href$=".mp4"]:before, .card-resource-hr .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-hr a.resrc-type[href$=".pdf"]:before, .card-resource-hr .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-hr a.resrc-type[href$=".png"]:before, .card-resource-hr .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-hr a.resrc-type[href$=".ppt"]:before, .card-resource-hr .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-hr a.resrc-type[href$=".pptx"]:before, .card-resource-hr .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-hr a.resrc-type[href$=".svg"]:before, .card-resource-hr .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-hr a.resrc-type[href$=".tiff"]:before, .card-resource-hr .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-hr a.resrc-type[href$=".wmv"]:before, .card-resource-hr .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-hr a.resrc-type[href$=".xls"]:before, .card-resource-hr .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-hr a.resrc-type[href$=".xlsx"]:before, .card-resource-hr .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-hr a.resrc-type[href$=".zip"]:before, .card-resource-hr .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-hr a.resrc-type[href$=".other"]:before, .card-resource-hr .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-hr .resrc-type.post-edit-link {
     color: #fbb03b; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.hr .hentry a, .single #page.hr .hentry a:active, .single #page.hr .hentry a:hover, .single #page.hr .hentry a:visited {
+  color: #fbb03b; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.it #main-nav.side-nav, .card_top-it, .btn-it {
@@ -10253,8 +10291,12 @@ blockquote {
   border-left-color: #637a91; }
   .card-resource-it .btn, .card-resource-it .btn-large {
     background-color: #637a91; }
-  .card-resource-it .fa.resrc-type {
+  .card-resource-it .fa.resrc-type, .card-resource-it .repo a.resrc-type[href^="http"]:before, .repo .card-resource-it a.resrc-type[href^="http"]:before, .card-resource-it .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-it a.resrc-type[href$=".article"]:before, .card-resource-it .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-it a.resrc-type[href$=".external-link"]:before, .card-resource-it .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-it a.resrc-type[href$=".multiple-files"]:before, .card-resource-it .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-it a.resrc-type[href$=".avi"]:before, .card-resource-it .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-it a.resrc-type[href$=".doc"]:before, .card-resource-it .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-it a.resrc-type[href$=".docx"]:before, .card-resource-it .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-it a.resrc-type[href$=".flv"]:before, .card-resource-it .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-it a.resrc-type[href$=".gif"]:before, .card-resource-it .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-it a.resrc-type[href$=".jpeg"]:before, .card-resource-it .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-it a.resrc-type[href$=".jpg"]:before, .card-resource-it .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-it a.resrc-type[href$=".mov"]:before, .card-resource-it .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-it a.resrc-type[href$=".mp4"]:before, .card-resource-it .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-it a.resrc-type[href$=".pdf"]:before, .card-resource-it .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-it a.resrc-type[href$=".png"]:before, .card-resource-it .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-it a.resrc-type[href$=".ppt"]:before, .card-resource-it .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-it a.resrc-type[href$=".pptx"]:before, .card-resource-it .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-it a.resrc-type[href$=".svg"]:before, .card-resource-it .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-it a.resrc-type[href$=".tiff"]:before, .card-resource-it .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-it a.resrc-type[href$=".wmv"]:before, .card-resource-it .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-it a.resrc-type[href$=".xls"]:before, .card-resource-it .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-it a.resrc-type[href$=".xlsx"]:before, .card-resource-it .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-it a.resrc-type[href$=".zip"]:before, .card-resource-it .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-it a.resrc-type[href$=".other"]:before, .card-resource-it .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-it .resrc-type.post-edit-link {
     color: #637a91; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.it .hentry a, .single #page.it .hentry a:active, .single #page.it .hentry a:hover, .single #page.it .hentry a:visited {
+  color: #637a91; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.landscape-arch #main-nav.side-nav, .card_top-landscape-arch, .btn-landscape-arch {
@@ -10269,8 +10311,12 @@ blockquote {
   border-left-color: #c25975; }
   .card-resource-landscape-arch .btn, .card-resource-landscape-arch .btn-large {
     background-color: #c25975; }
-  .card-resource-landscape-arch .fa.resrc-type {
+  .card-resource-landscape-arch .fa.resrc-type, .card-resource-landscape-arch .repo a.resrc-type[href^="http"]:before, .repo .card-resource-landscape-arch a.resrc-type[href^="http"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".article"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".external-link"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".multiple-files"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".avi"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".doc"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".docx"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".flv"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".gif"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".jpeg"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".jpg"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".mov"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".mp4"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".pdf"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".png"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".ppt"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".pptx"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".svg"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".tiff"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".wmv"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".xls"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".xlsx"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".zip"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".other"]:before, .card-resource-landscape-arch .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-landscape-arch .resrc-type.post-edit-link {
     color: #c25975; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.landscape-arch .hentry a, .single #page.landscape-arch .hentry a:active, .single #page.landscape-arch .hentry a:hover, .single #page.landscape-arch .hentry a:visited {
+  color: #c25975; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.planning #main-nav.side-nav, .card_top-planning, .btn-planning {
@@ -10285,8 +10331,12 @@ blockquote {
   border-left-color: #f092b0; }
   .card-resource-planning .btn, .card-resource-planning .btn-large {
     background-color: #f092b0; }
-  .card-resource-planning .fa.resrc-type {
+  .card-resource-planning .fa.resrc-type, .card-resource-planning .repo a.resrc-type[href^="http"]:before, .repo .card-resource-planning a.resrc-type[href^="http"]:before, .card-resource-planning .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-planning a.resrc-type[href$=".article"]:before, .card-resource-planning .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-planning a.resrc-type[href$=".external-link"]:before, .card-resource-planning .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-planning a.resrc-type[href$=".multiple-files"]:before, .card-resource-planning .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-planning a.resrc-type[href$=".avi"]:before, .card-resource-planning .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-planning a.resrc-type[href$=".doc"]:before, .card-resource-planning .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-planning a.resrc-type[href$=".docx"]:before, .card-resource-planning .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-planning a.resrc-type[href$=".flv"]:before, .card-resource-planning .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-planning a.resrc-type[href$=".gif"]:before, .card-resource-planning .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-planning a.resrc-type[href$=".jpeg"]:before, .card-resource-planning .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-planning a.resrc-type[href$=".jpg"]:before, .card-resource-planning .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-planning a.resrc-type[href$=".mov"]:before, .card-resource-planning .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-planning a.resrc-type[href$=".mp4"]:before, .card-resource-planning .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-planning a.resrc-type[href$=".pdf"]:before, .card-resource-planning .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-planning a.resrc-type[href$=".png"]:before, .card-resource-planning .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-planning a.resrc-type[href$=".ppt"]:before, .card-resource-planning .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-planning a.resrc-type[href$=".pptx"]:before, .card-resource-planning .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-planning a.resrc-type[href$=".svg"]:before, .card-resource-planning .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-planning a.resrc-type[href$=".tiff"]:before, .card-resource-planning .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-planning a.resrc-type[href$=".wmv"]:before, .card-resource-planning .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-planning a.resrc-type[href$=".xls"]:before, .card-resource-planning .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-planning a.resrc-type[href$=".xlsx"]:before, .card-resource-planning .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-planning a.resrc-type[href$=".zip"]:before, .card-resource-planning .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-planning a.resrc-type[href$=".other"]:before, .card-resource-planning .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-planning .resrc-type.post-edit-link {
     color: #f092b0; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.planning .hentry a, .single #page.planning .hentry a:active, .single #page.planning .hentry a:hover, .single #page.planning .hentry a:visited {
+  color: #f092b0; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.roadway #main-nav.side-nav, .card_top-roadway, .btn-roadway {
@@ -10301,8 +10351,12 @@ blockquote {
   border-left-color: #39ADD1; }
   .card-resource-roadway .btn, .card-resource-roadway .btn-large {
     background-color: #39ADD1; }
-  .card-resource-roadway .fa.resrc-type {
+  .card-resource-roadway .fa.resrc-type, .card-resource-roadway .repo a.resrc-type[href^="http"]:before, .repo .card-resource-roadway a.resrc-type[href^="http"]:before, .card-resource-roadway .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-roadway a.resrc-type[href$=".article"]:before, .card-resource-roadway .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-roadway a.resrc-type[href$=".external-link"]:before, .card-resource-roadway .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-roadway a.resrc-type[href$=".multiple-files"]:before, .card-resource-roadway .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-roadway a.resrc-type[href$=".avi"]:before, .card-resource-roadway .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-roadway a.resrc-type[href$=".doc"]:before, .card-resource-roadway .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-roadway a.resrc-type[href$=".docx"]:before, .card-resource-roadway .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-roadway a.resrc-type[href$=".flv"]:before, .card-resource-roadway .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-roadway a.resrc-type[href$=".gif"]:before, .card-resource-roadway .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-roadway a.resrc-type[href$=".jpeg"]:before, .card-resource-roadway .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-roadway a.resrc-type[href$=".jpg"]:before, .card-resource-roadway .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-roadway a.resrc-type[href$=".mov"]:before, .card-resource-roadway .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-roadway a.resrc-type[href$=".mp4"]:before, .card-resource-roadway .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-roadway a.resrc-type[href$=".pdf"]:before, .card-resource-roadway .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-roadway a.resrc-type[href$=".png"]:before, .card-resource-roadway .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-roadway a.resrc-type[href$=".ppt"]:before, .card-resource-roadway .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-roadway a.resrc-type[href$=".pptx"]:before, .card-resource-roadway .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-roadway a.resrc-type[href$=".svg"]:before, .card-resource-roadway .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-roadway a.resrc-type[href$=".tiff"]:before, .card-resource-roadway .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-roadway a.resrc-type[href$=".wmv"]:before, .card-resource-roadway .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-roadway a.resrc-type[href$=".xls"]:before, .card-resource-roadway .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-roadway a.resrc-type[href$=".xlsx"]:before, .card-resource-roadway .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-roadway a.resrc-type[href$=".zip"]:before, .card-resource-roadway .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-roadway a.resrc-type[href$=".other"]:before, .card-resource-roadway .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-roadway .resrc-type.post-edit-link {
     color: #39ADD1; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.roadway .hentry a, .single #page.roadway .hentry a:active, .single #page.roadway .hentry a:hover, .single #page.roadway .hentry a:visited {
+  color: #39ADD1; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.structures #main-nav.side-nav, .card_top-structures, .btn-structures {
@@ -10317,8 +10371,12 @@ blockquote {
   border-left-color: #00CAD6; }
   .card-resource-structures .btn, .card-resource-structures .btn-large {
     background-color: #00CAD6; }
-  .card-resource-structures .fa.resrc-type {
+  .card-resource-structures .fa.resrc-type, .card-resource-structures .repo a.resrc-type[href^="http"]:before, .repo .card-resource-structures a.resrc-type[href^="http"]:before, .card-resource-structures .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-structures a.resrc-type[href$=".article"]:before, .card-resource-structures .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-structures a.resrc-type[href$=".external-link"]:before, .card-resource-structures .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-structures a.resrc-type[href$=".multiple-files"]:before, .card-resource-structures .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-structures a.resrc-type[href$=".avi"]:before, .card-resource-structures .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-structures a.resrc-type[href$=".doc"]:before, .card-resource-structures .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-structures a.resrc-type[href$=".docx"]:before, .card-resource-structures .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-structures a.resrc-type[href$=".flv"]:before, .card-resource-structures .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-structures a.resrc-type[href$=".gif"]:before, .card-resource-structures .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-structures a.resrc-type[href$=".jpeg"]:before, .card-resource-structures .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-structures a.resrc-type[href$=".jpg"]:before, .card-resource-structures .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-structures a.resrc-type[href$=".mov"]:before, .card-resource-structures .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-structures a.resrc-type[href$=".mp4"]:before, .card-resource-structures .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-structures a.resrc-type[href$=".pdf"]:before, .card-resource-structures .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-structures a.resrc-type[href$=".png"]:before, .card-resource-structures .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-structures a.resrc-type[href$=".ppt"]:before, .card-resource-structures .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-structures a.resrc-type[href$=".pptx"]:before, .card-resource-structures .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-structures a.resrc-type[href$=".svg"]:before, .card-resource-structures .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-structures a.resrc-type[href$=".tiff"]:before, .card-resource-structures .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-structures a.resrc-type[href$=".wmv"]:before, .card-resource-structures .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-structures a.resrc-type[href$=".xls"]:before, .card-resource-structures .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-structures a.resrc-type[href$=".xlsx"]:before, .card-resource-structures .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-structures a.resrc-type[href$=".zip"]:before, .card-resource-structures .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-structures a.resrc-type[href$=".other"]:before, .card-resource-structures .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-structures .resrc-type.post-edit-link {
     color: #00CAD6; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.structures .hentry a, .single #page.structures .hentry a:active, .single #page.structures .hentry a:hover, .single #page.structures .hentry a:visited {
+  color: #00CAD6; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.sue #main-nav.side-nav, .card_top-sue, .btn-sue {
@@ -10333,8 +10391,12 @@ blockquote {
   border-left-color: #838CC7; }
   .card-resource-sue .btn, .card-resource-sue .btn-large {
     background-color: #838CC7; }
-  .card-resource-sue .fa.resrc-type {
+  .card-resource-sue .fa.resrc-type, .card-resource-sue .repo a.resrc-type[href^="http"]:before, .repo .card-resource-sue a.resrc-type[href^="http"]:before, .card-resource-sue .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-sue a.resrc-type[href$=".article"]:before, .card-resource-sue .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-sue a.resrc-type[href$=".external-link"]:before, .card-resource-sue .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-sue a.resrc-type[href$=".multiple-files"]:before, .card-resource-sue .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-sue a.resrc-type[href$=".avi"]:before, .card-resource-sue .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-sue a.resrc-type[href$=".doc"]:before, .card-resource-sue .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-sue a.resrc-type[href$=".docx"]:before, .card-resource-sue .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-sue a.resrc-type[href$=".flv"]:before, .card-resource-sue .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-sue a.resrc-type[href$=".gif"]:before, .card-resource-sue .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-sue a.resrc-type[href$=".jpeg"]:before, .card-resource-sue .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-sue a.resrc-type[href$=".jpg"]:before, .card-resource-sue .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-sue a.resrc-type[href$=".mov"]:before, .card-resource-sue .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-sue a.resrc-type[href$=".mp4"]:before, .card-resource-sue .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-sue a.resrc-type[href$=".pdf"]:before, .card-resource-sue .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-sue a.resrc-type[href$=".png"]:before, .card-resource-sue .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-sue a.resrc-type[href$=".ppt"]:before, .card-resource-sue .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-sue a.resrc-type[href$=".pptx"]:before, .card-resource-sue .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-sue a.resrc-type[href$=".svg"]:before, .card-resource-sue .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-sue a.resrc-type[href$=".tiff"]:before, .card-resource-sue .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-sue a.resrc-type[href$=".wmv"]:before, .card-resource-sue .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-sue a.resrc-type[href$=".xls"]:before, .card-resource-sue .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-sue a.resrc-type[href$=".xlsx"]:before, .card-resource-sue .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-sue a.resrc-type[href$=".zip"]:before, .card-resource-sue .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-sue a.resrc-type[href$=".other"]:before, .card-resource-sue .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-sue .resrc-type.post-edit-link {
     color: #838CC7; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.sue .hentry a, .single #page.sue .hentry a:active, .single #page.sue .hentry a:hover, .single #page.sue .hentry a:visited {
+  color: #838CC7; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.survey #main-nav.side-nav, .card_top-survey, .btn-survey {
@@ -10349,8 +10411,12 @@ blockquote {
   border-left-color: #7D669E; }
   .card-resource-survey .btn, .card-resource-survey .btn-large {
     background-color: #7D669E; }
-  .card-resource-survey .fa.resrc-type {
+  .card-resource-survey .fa.resrc-type, .card-resource-survey .repo a.resrc-type[href^="http"]:before, .repo .card-resource-survey a.resrc-type[href^="http"]:before, .card-resource-survey .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-survey a.resrc-type[href$=".article"]:before, .card-resource-survey .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-survey a.resrc-type[href$=".external-link"]:before, .card-resource-survey .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-survey a.resrc-type[href$=".multiple-files"]:before, .card-resource-survey .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-survey a.resrc-type[href$=".avi"]:before, .card-resource-survey .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-survey a.resrc-type[href$=".doc"]:before, .card-resource-survey .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-survey a.resrc-type[href$=".docx"]:before, .card-resource-survey .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-survey a.resrc-type[href$=".flv"]:before, .card-resource-survey .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-survey a.resrc-type[href$=".gif"]:before, .card-resource-survey .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-survey a.resrc-type[href$=".jpeg"]:before, .card-resource-survey .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-survey a.resrc-type[href$=".jpg"]:before, .card-resource-survey .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-survey a.resrc-type[href$=".mov"]:before, .card-resource-survey .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-survey a.resrc-type[href$=".mp4"]:before, .card-resource-survey .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-survey a.resrc-type[href$=".pdf"]:before, .card-resource-survey .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-survey a.resrc-type[href$=".png"]:before, .card-resource-survey .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-survey a.resrc-type[href$=".ppt"]:before, .card-resource-survey .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-survey a.resrc-type[href$=".pptx"]:before, .card-resource-survey .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-survey a.resrc-type[href$=".svg"]:before, .card-resource-survey .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-survey a.resrc-type[href$=".tiff"]:before, .card-resource-survey .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-survey a.resrc-type[href$=".wmv"]:before, .card-resource-survey .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-survey a.resrc-type[href$=".xls"]:before, .card-resource-survey .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-survey a.resrc-type[href$=".xlsx"]:before, .card-resource-survey .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-survey a.resrc-type[href$=".zip"]:before, .card-resource-survey .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-survey a.resrc-type[href$=".other"]:before, .card-resource-survey .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-survey .resrc-type.post-edit-link {
     color: #7D669E; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.survey .hentry a, .single #page.survey .hentry a:active, .single #page.survey .hentry a:hover, .single #page.survey .hentry a:visited {
+  color: #7D669E; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.trans-planning #main-nav.side-nav, .card_top-trans-planning, .btn-trans-planning {
@@ -10365,8 +10431,12 @@ blockquote {
   border-left-color: #3079AB; }
   .card-resource-trans-planning .btn, .card-resource-trans-planning .btn-large {
     background-color: #3079AB; }
-  .card-resource-trans-planning .fa.resrc-type {
+  .card-resource-trans-planning .fa.resrc-type, .card-resource-trans-planning .repo a.resrc-type[href^="http"]:before, .repo .card-resource-trans-planning a.resrc-type[href^="http"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".article"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".external-link"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".multiple-files"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".avi"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".doc"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".docx"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".flv"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".gif"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".jpeg"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".jpg"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".mov"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".mp4"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".pdf"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".png"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".ppt"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".pptx"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".svg"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".tiff"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".wmv"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".xls"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".xlsx"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".zip"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".other"]:before, .card-resource-trans-planning .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-trans-planning .resrc-type.post-edit-link {
     color: #3079AB; }
+
+/* For an individual division post, color the links as the division color */
+.single #page.trans-planning .hentry a, .single #page.trans-planning .hentry a:active, .single #page.trans-planning .hentry a:hover, .single #page.trans-planning .hentry a:visited {
+  color: #3079AB; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.utilities #main-nav.side-nav, .card_top-utilities, .btn-utilities {
@@ -10381,77 +10451,12 @@ blockquote {
   border-left-color: #53BBB4; }
   .card-resource-utilities .btn, .card-resource-utilities .btn-large {
     background-color: #53BBB4; }
-  .card-resource-utilities .fa.resrc-type {
+  .card-resource-utilities .fa.resrc-type, .card-resource-utilities .repo a.resrc-type[href^="http"]:before, .repo .card-resource-utilities a.resrc-type[href^="http"]:before, .card-resource-utilities .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-utilities a.resrc-type[href$=".article"]:before, .card-resource-utilities .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-utilities a.resrc-type[href$=".external-link"]:before, .card-resource-utilities .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-utilities a.resrc-type[href$=".multiple-files"]:before, .card-resource-utilities .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-utilities a.resrc-type[href$=".avi"]:before, .card-resource-utilities .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-utilities a.resrc-type[href$=".doc"]:before, .card-resource-utilities .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-utilities a.resrc-type[href$=".docx"]:before, .card-resource-utilities .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-utilities a.resrc-type[href$=".flv"]:before, .card-resource-utilities .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-utilities a.resrc-type[href$=".gif"]:before, .card-resource-utilities .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-utilities a.resrc-type[href$=".jpeg"]:before, .card-resource-utilities .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-utilities a.resrc-type[href$=".jpg"]:before, .card-resource-utilities .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-utilities a.resrc-type[href$=".mov"]:before, .card-resource-utilities .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-utilities a.resrc-type[href$=".mp4"]:before, .card-resource-utilities .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-utilities a.resrc-type[href$=".pdf"]:before, .card-resource-utilities .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-utilities a.resrc-type[href$=".png"]:before, .card-resource-utilities .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-utilities a.resrc-type[href$=".ppt"]:before, .card-resource-utilities .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-utilities a.resrc-type[href$=".pptx"]:before, .card-resource-utilities .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-utilities a.resrc-type[href$=".svg"]:before, .card-resource-utilities .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-utilities a.resrc-type[href$=".tiff"]:before, .card-resource-utilities .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-utilities a.resrc-type[href$=".wmv"]:before, .card-resource-utilities .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-utilities a.resrc-type[href$=".xls"]:before, .card-resource-utilities .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-utilities a.resrc-type[href$=".xlsx"]:before, .card-resource-utilities .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-utilities a.resrc-type[href$=".zip"]:before, .card-resource-utilities .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-utilities a.resrc-type[href$=".other"]:before, .card-resource-utilities .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-utilities .resrc-type.post-edit-link {
     color: #53BBB4; }
 
-.fa.resrc-type-article:before {
-  content: '\f1ea'; }
-
-.fa.resrc-type-external-link:before {
-  content: '\f08e'; }
-
-.fa.resrc-type-multiple-files:before {
-  content: '\f0c5'; }
-
-.fa.resrc-type-avi:before {
-  content: '\f1c8'; }
-
-.fa.resrc-type-doc:before {
-  content: '\f1c2'; }
-
-.fa.resrc-type-docx:before {
-  content: '\f1c2'; }
-
-.fa.resrc-type-flv:before {
-  content: '\f1c8'; }
-
-.fa.resrc-type-gif:before {
-  content: '\f1c5'; }
-
-.fa.resrc-type-jpeg:before {
-  content: '\f1c5'; }
-
-.fa.resrc-type-jpg:before {
-  content: '\f1c5'; }
-
-.fa.resrc-type-mov:before {
-  content: '\f1c8'; }
-
-.fa.resrc-type-mp4:before {
-  content: '\f1c8'; }
-
-.fa.resrc-type-pdf:before {
-  content: '\f1c1'; }
-
-.fa.resrc-type-png:before {
-  content: '\f1c5'; }
-
-.fa.resrc-type-ppt:before {
-  content: '\f1c4'; }
-
-.fa.resrc-type-pptx:before {
-  content: '\f1c4'; }
-
-.fa.resrc-type-svg:before {
-  content: '\f1c5'; }
-
-.fa.resrc-type-tiff:before {
-  content: '\f1c5'; }
-
-.fa.resrc-type-wmv:before {
-  content: '\f1c8'; }
-
-.fa.resrc-type-xls:before {
-  content: '\f1c3'; }
-
-.fa.resrc-type-xlsx:before {
-  content: '\f1c3'; }
-
-.fa.resrc-type-zip:before {
-  content: '\f1c6'; }
-
-.fa.resrc-type-other:before {
-  content: '\f0f6'; }
+/* For an individual division post, color the links as the division color */
+.single #page.utilities .hentry a, .single #page.utilities .hentry a:active, .single #page.utilities .hentry a:hover, .single #page.utilities .hentry a:visited {
+  color: #53BBB4; }
 
 /* =========================================================================
    Layout
@@ -11812,24 +11817,25 @@ blockquote {
 /* Create left space equal to the size of the sidebar */
 #page {
   padding: 0 3em 1.5em;
+  /* Reduce padding on medium and small screens */
   /* If this is a page with the side nav, give left padding to account for this */ }
-  @media  (max-width: 40rem) {
+  @media  (max-width: 62rem) {
     #page {
-      padding-left: 1em;
-      padding-right: 1em; } }
+      padding-left: 1.5em;
+      padding-right: 1.5em; } }
   #page.has-side-nav {
     padding-left: 328px;
     /* Remove the left padding on all but large screens */ }
     @media  (max-width: 62rem) {
       #page.has-side-nav {
-        padding-left: 1em; } }
+        padding-left: 1.5em; } }
 
 /* Styles for the main header (entry title) on a page */
-h1.entry-title {
-  margin: 2.1rem 0;
+h1.entry-title, h1.page-title {
+  margin: 1.35rem 0 2.1rem;
   text-align: center;
   /* Create the gray border after an entry title */ }
-  h1.entry-title:after {
+  h1.entry-title:after, h1.page-title:after {
     content: '';
     background-color: #555;
     display: block;
@@ -11839,7 +11845,7 @@ h1.entry-title {
 
 /* Slightly increase the font size of an entry description */
 .entry-description {
-  font-size: 1.125rem; }
+  font-size: 1.25rem; }
 
 /* =========================================================================
    Components
@@ -11851,7 +11857,7 @@ h1.entry-title {
 #main-nav.side-nav {
   /* Give a little more shadow */
   /* Default side nav color is WGI green and width 280px */
-  background-color: #00833E;
+  background-color: #555;
   width: 280px;
   /* Side nav link styles */
   /* Side nav list item styles */
@@ -11874,11 +11880,288 @@ h1.entry-title {
       font-size: 0.875em;
       padding: 0.5em 0 0.5em 40px;
       /* Standard icon width for alignment purposes */ }
-      #main-nav.side-nav .side-nav_item-second a .fa {
+      #main-nav.side-nav .side-nav_item-second a .fa, #main-nav.side-nav .side-nav_item-second a .repo a[href^="http"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href^="http"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".article"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".article"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".external-link"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".external-link"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".multiple-files"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".multiple-files"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".avi"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".avi"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".doc"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".doc"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".docx"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".docx"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".flv"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".flv"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".gif"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".gif"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".jpeg"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".jpeg"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".jpg"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".jpg"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".mov"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".mov"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".mp4"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".mp4"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".pdf"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".pdf"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".png"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".png"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".ppt"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".ppt"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".pptx"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".pptx"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".svg"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".svg"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".tiff"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".tiff"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".wmv"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".wmv"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".xls"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".xls"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".xlsx"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".xlsx"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".zip"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".zip"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".other"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".other"]:before, #main-nav.side-nav .side-nav_item-second a .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link #main-nav.side-nav .side-nav_item-second a .post-edit-link {
         width: 20px; }
-  #main-nav.side-nav .fa {
+  #main-nav.side-nav .fa, #main-nav.side-nav .repo a[href^="http"]:before, .repo #main-nav.side-nav a[href^="http"]:before, #main-nav.side-nav .repo a[href$=".article"]:before, .repo #main-nav.side-nav a[href$=".article"]:before, #main-nav.side-nav .repo a[href$=".external-link"]:before, .repo #main-nav.side-nav a[href$=".external-link"]:before, #main-nav.side-nav .repo a[href$=".multiple-files"]:before, .repo #main-nav.side-nav a[href$=".multiple-files"]:before, #main-nav.side-nav .repo a[href$=".avi"]:before, .repo #main-nav.side-nav a[href$=".avi"]:before, #main-nav.side-nav .repo a[href$=".doc"]:before, .repo #main-nav.side-nav a[href$=".doc"]:before, #main-nav.side-nav .repo a[href$=".docx"]:before, .repo #main-nav.side-nav a[href$=".docx"]:before, #main-nav.side-nav .repo a[href$=".flv"]:before, .repo #main-nav.side-nav a[href$=".flv"]:before, #main-nav.side-nav .repo a[href$=".gif"]:before, .repo #main-nav.side-nav a[href$=".gif"]:before, #main-nav.side-nav .repo a[href$=".jpeg"]:before, .repo #main-nav.side-nav a[href$=".jpeg"]:before, #main-nav.side-nav .repo a[href$=".jpg"]:before, .repo #main-nav.side-nav a[href$=".jpg"]:before, #main-nav.side-nav .repo a[href$=".mov"]:before, .repo #main-nav.side-nav a[href$=".mov"]:before, #main-nav.side-nav .repo a[href$=".mp4"]:before, .repo #main-nav.side-nav a[href$=".mp4"]:before, #main-nav.side-nav .repo a[href$=".pdf"]:before, .repo #main-nav.side-nav a[href$=".pdf"]:before, #main-nav.side-nav .repo a[href$=".png"]:before, .repo #main-nav.side-nav a[href$=".png"]:before, #main-nav.side-nav .repo a[href$=".ppt"]:before, .repo #main-nav.side-nav a[href$=".ppt"]:before, #main-nav.side-nav .repo a[href$=".pptx"]:before, .repo #main-nav.side-nav a[href$=".pptx"]:before, #main-nav.side-nav .repo a[href$=".svg"]:before, .repo #main-nav.side-nav a[href$=".svg"]:before, #main-nav.side-nav .repo a[href$=".tiff"]:before, .repo #main-nav.side-nav a[href$=".tiff"]:before, #main-nav.side-nav .repo a[href$=".wmv"]:before, .repo #main-nav.side-nav a[href$=".wmv"]:before, #main-nav.side-nav .repo a[href$=".xls"]:before, .repo #main-nav.side-nav a[href$=".xls"]:before, #main-nav.side-nav .repo a[href$=".xlsx"]:before, .repo #main-nav.side-nav a[href$=".xlsx"]:before, #main-nav.side-nav .repo a[href$=".zip"]:before, .repo #main-nav.side-nav a[href$=".zip"]:before, #main-nav.side-nav .repo a[href$=".other"]:before, .repo #main-nav.side-nav a[href$=".other"]:before, #main-nav.side-nav .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link #main-nav.side-nav .post-edit-link {
     display: inline-block;
     width: 24px; }
+
+/**
+ * Set file type icons
+ *
+ * 1. Loop through file types map
+ * 2. Set icon based on file type
+ */
+/* Set default link to external link icon */
+.repo a[href^="http"]:before {
+  content: "\f08e";
+  margin-right: 0.5em; }
+
+/* Loop through map */
+/* Set resource card icons based on file type */
+.fa.resrc-type-article:before, .repo a.resrc-type-article[href^="http"]:before, .repo a.resrc-type-article[href$=".article"]:before, .repo a.resrc-type-article[href$=".external-link"]:before, .repo a.resrc-type-article[href$=".multiple-files"]:before, .repo a.resrc-type-article[href$=".avi"]:before, .repo a.resrc-type-article[href$=".doc"]:before, .repo a.resrc-type-article[href$=".docx"]:before, .repo a.resrc-type-article[href$=".flv"]:before, .repo a.resrc-type-article[href$=".gif"]:before, .repo a.resrc-type-article[href$=".jpeg"]:before, .repo a.resrc-type-article[href$=".jpg"]:before, .repo a.resrc-type-article[href$=".mov"]:before, .repo a.resrc-type-article[href$=".mp4"]:before, .repo a.resrc-type-article[href$=".pdf"]:before, .repo a.resrc-type-article[href$=".png"]:before, .repo a.resrc-type-article[href$=".ppt"]:before, .repo a.resrc-type-article[href$=".pptx"]:before, .repo a.resrc-type-article[href$=".svg"]:before, .repo a.resrc-type-article[href$=".tiff"]:before, .repo a.resrc-type-article[href$=".wmv"]:before, .repo a.resrc-type-article[href$=".xls"]:before, .repo a.resrc-type-article[href$=".xlsx"]:before, .repo a.resrc-type-article[href$=".zip"]:before, .repo a.resrc-type-article[href$=".other"]:before, .single #page #content .edit-link .resrc-type-article.post-edit-link:before {
+  content: '\f1ea'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".article"]:before {
+  content: "\f1ea";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-external-link:before, .repo a.resrc-type-external-link[href^="http"]:before, .repo a.resrc-type-external-link[href$=".article"]:before, .repo a.resrc-type-external-link[href$=".external-link"]:before, .repo a.resrc-type-external-link[href$=".multiple-files"]:before, .repo a.resrc-type-external-link[href$=".avi"]:before, .repo a.resrc-type-external-link[href$=".doc"]:before, .repo a.resrc-type-external-link[href$=".docx"]:before, .repo a.resrc-type-external-link[href$=".flv"]:before, .repo a.resrc-type-external-link[href$=".gif"]:before, .repo a.resrc-type-external-link[href$=".jpeg"]:before, .repo a.resrc-type-external-link[href$=".jpg"]:before, .repo a.resrc-type-external-link[href$=".mov"]:before, .repo a.resrc-type-external-link[href$=".mp4"]:before, .repo a.resrc-type-external-link[href$=".pdf"]:before, .repo a.resrc-type-external-link[href$=".png"]:before, .repo a.resrc-type-external-link[href$=".ppt"]:before, .repo a.resrc-type-external-link[href$=".pptx"]:before, .repo a.resrc-type-external-link[href$=".svg"]:before, .repo a.resrc-type-external-link[href$=".tiff"]:before, .repo a.resrc-type-external-link[href$=".wmv"]:before, .repo a.resrc-type-external-link[href$=".xls"]:before, .repo a.resrc-type-external-link[href$=".xlsx"]:before, .repo a.resrc-type-external-link[href$=".zip"]:before, .repo a.resrc-type-external-link[href$=".other"]:before, .single #page #content .edit-link .resrc-type-external-link.post-edit-link:before {
+  content: '\f08e'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".external-link"]:before {
+  content: "\f08e";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-multiple-files:before, .repo a.resrc-type-multiple-files[href^="http"]:before, .repo a.resrc-type-multiple-files[href$=".article"]:before, .repo a.resrc-type-multiple-files[href$=".external-link"]:before, .repo a.resrc-type-multiple-files[href$=".multiple-files"]:before, .repo a.resrc-type-multiple-files[href$=".avi"]:before, .repo a.resrc-type-multiple-files[href$=".doc"]:before, .repo a.resrc-type-multiple-files[href$=".docx"]:before, .repo a.resrc-type-multiple-files[href$=".flv"]:before, .repo a.resrc-type-multiple-files[href$=".gif"]:before, .repo a.resrc-type-multiple-files[href$=".jpeg"]:before, .repo a.resrc-type-multiple-files[href$=".jpg"]:before, .repo a.resrc-type-multiple-files[href$=".mov"]:before, .repo a.resrc-type-multiple-files[href$=".mp4"]:before, .repo a.resrc-type-multiple-files[href$=".pdf"]:before, .repo a.resrc-type-multiple-files[href$=".png"]:before, .repo a.resrc-type-multiple-files[href$=".ppt"]:before, .repo a.resrc-type-multiple-files[href$=".pptx"]:before, .repo a.resrc-type-multiple-files[href$=".svg"]:before, .repo a.resrc-type-multiple-files[href$=".tiff"]:before, .repo a.resrc-type-multiple-files[href$=".wmv"]:before, .repo a.resrc-type-multiple-files[href$=".xls"]:before, .repo a.resrc-type-multiple-files[href$=".xlsx"]:before, .repo a.resrc-type-multiple-files[href$=".zip"]:before, .repo a.resrc-type-multiple-files[href$=".other"]:before, .single #page #content .edit-link .resrc-type-multiple-files.post-edit-link:before {
+  content: '\f0c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".multiple-files"]:before {
+  content: "\f0c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-avi:before, .repo a.resrc-type-avi[href^="http"]:before, .repo a.resrc-type-avi[href$=".article"]:before, .repo a.resrc-type-avi[href$=".external-link"]:before, .repo a.resrc-type-avi[href$=".multiple-files"]:before, .repo a.resrc-type-avi[href$=".avi"]:before, .repo a.resrc-type-avi[href$=".doc"]:before, .repo a.resrc-type-avi[href$=".docx"]:before, .repo a.resrc-type-avi[href$=".flv"]:before, .repo a.resrc-type-avi[href$=".gif"]:before, .repo a.resrc-type-avi[href$=".jpeg"]:before, .repo a.resrc-type-avi[href$=".jpg"]:before, .repo a.resrc-type-avi[href$=".mov"]:before, .repo a.resrc-type-avi[href$=".mp4"]:before, .repo a.resrc-type-avi[href$=".pdf"]:before, .repo a.resrc-type-avi[href$=".png"]:before, .repo a.resrc-type-avi[href$=".ppt"]:before, .repo a.resrc-type-avi[href$=".pptx"]:before, .repo a.resrc-type-avi[href$=".svg"]:before, .repo a.resrc-type-avi[href$=".tiff"]:before, .repo a.resrc-type-avi[href$=".wmv"]:before, .repo a.resrc-type-avi[href$=".xls"]:before, .repo a.resrc-type-avi[href$=".xlsx"]:before, .repo a.resrc-type-avi[href$=".zip"]:before, .repo a.resrc-type-avi[href$=".other"]:before, .single #page #content .edit-link .resrc-type-avi.post-edit-link:before {
+  content: '\f1c8'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".avi"]:before {
+  content: "\f1c8";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-doc:before, .repo a.resrc-type-doc[href^="http"]:before, .repo a.resrc-type-doc[href$=".article"]:before, .repo a.resrc-type-doc[href$=".external-link"]:before, .repo a.resrc-type-doc[href$=".multiple-files"]:before, .repo a.resrc-type-doc[href$=".avi"]:before, .repo a.resrc-type-doc[href$=".doc"]:before, .repo a.resrc-type-doc[href$=".docx"]:before, .repo a.resrc-type-doc[href$=".flv"]:before, .repo a.resrc-type-doc[href$=".gif"]:before, .repo a.resrc-type-doc[href$=".jpeg"]:before, .repo a.resrc-type-doc[href$=".jpg"]:before, .repo a.resrc-type-doc[href$=".mov"]:before, .repo a.resrc-type-doc[href$=".mp4"]:before, .repo a.resrc-type-doc[href$=".pdf"]:before, .repo a.resrc-type-doc[href$=".png"]:before, .repo a.resrc-type-doc[href$=".ppt"]:before, .repo a.resrc-type-doc[href$=".pptx"]:before, .repo a.resrc-type-doc[href$=".svg"]:before, .repo a.resrc-type-doc[href$=".tiff"]:before, .repo a.resrc-type-doc[href$=".wmv"]:before, .repo a.resrc-type-doc[href$=".xls"]:before, .repo a.resrc-type-doc[href$=".xlsx"]:before, .repo a.resrc-type-doc[href$=".zip"]:before, .repo a.resrc-type-doc[href$=".other"]:before, .single #page #content .edit-link .resrc-type-doc.post-edit-link:before {
+  content: '\f1c2'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".doc"]:before {
+  content: "\f1c2";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-docx:before, .repo a.resrc-type-docx[href^="http"]:before, .repo a.resrc-type-docx[href$=".article"]:before, .repo a.resrc-type-docx[href$=".external-link"]:before, .repo a.resrc-type-docx[href$=".multiple-files"]:before, .repo a.resrc-type-docx[href$=".avi"]:before, .repo a.resrc-type-docx[href$=".doc"]:before, .repo a.resrc-type-docx[href$=".docx"]:before, .repo a.resrc-type-docx[href$=".flv"]:before, .repo a.resrc-type-docx[href$=".gif"]:before, .repo a.resrc-type-docx[href$=".jpeg"]:before, .repo a.resrc-type-docx[href$=".jpg"]:before, .repo a.resrc-type-docx[href$=".mov"]:before, .repo a.resrc-type-docx[href$=".mp4"]:before, .repo a.resrc-type-docx[href$=".pdf"]:before, .repo a.resrc-type-docx[href$=".png"]:before, .repo a.resrc-type-docx[href$=".ppt"]:before, .repo a.resrc-type-docx[href$=".pptx"]:before, .repo a.resrc-type-docx[href$=".svg"]:before, .repo a.resrc-type-docx[href$=".tiff"]:before, .repo a.resrc-type-docx[href$=".wmv"]:before, .repo a.resrc-type-docx[href$=".xls"]:before, .repo a.resrc-type-docx[href$=".xlsx"]:before, .repo a.resrc-type-docx[href$=".zip"]:before, .repo a.resrc-type-docx[href$=".other"]:before, .single #page #content .edit-link .resrc-type-docx.post-edit-link:before {
+  content: '\f1c2'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".docx"]:before {
+  content: "\f1c2";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-flv:before, .repo a.resrc-type-flv[href^="http"]:before, .repo a.resrc-type-flv[href$=".article"]:before, .repo a.resrc-type-flv[href$=".external-link"]:before, .repo a.resrc-type-flv[href$=".multiple-files"]:before, .repo a.resrc-type-flv[href$=".avi"]:before, .repo a.resrc-type-flv[href$=".doc"]:before, .repo a.resrc-type-flv[href$=".docx"]:before, .repo a.resrc-type-flv[href$=".flv"]:before, .repo a.resrc-type-flv[href$=".gif"]:before, .repo a.resrc-type-flv[href$=".jpeg"]:before, .repo a.resrc-type-flv[href$=".jpg"]:before, .repo a.resrc-type-flv[href$=".mov"]:before, .repo a.resrc-type-flv[href$=".mp4"]:before, .repo a.resrc-type-flv[href$=".pdf"]:before, .repo a.resrc-type-flv[href$=".png"]:before, .repo a.resrc-type-flv[href$=".ppt"]:before, .repo a.resrc-type-flv[href$=".pptx"]:before, .repo a.resrc-type-flv[href$=".svg"]:before, .repo a.resrc-type-flv[href$=".tiff"]:before, .repo a.resrc-type-flv[href$=".wmv"]:before, .repo a.resrc-type-flv[href$=".xls"]:before, .repo a.resrc-type-flv[href$=".xlsx"]:before, .repo a.resrc-type-flv[href$=".zip"]:before, .repo a.resrc-type-flv[href$=".other"]:before, .single #page #content .edit-link .resrc-type-flv.post-edit-link:before {
+  content: '\f1c8'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".flv"]:before {
+  content: "\f1c8";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-gif:before, .repo a.resrc-type-gif[href^="http"]:before, .repo a.resrc-type-gif[href$=".article"]:before, .repo a.resrc-type-gif[href$=".external-link"]:before, .repo a.resrc-type-gif[href$=".multiple-files"]:before, .repo a.resrc-type-gif[href$=".avi"]:before, .repo a.resrc-type-gif[href$=".doc"]:before, .repo a.resrc-type-gif[href$=".docx"]:before, .repo a.resrc-type-gif[href$=".flv"]:before, .repo a.resrc-type-gif[href$=".gif"]:before, .repo a.resrc-type-gif[href$=".jpeg"]:before, .repo a.resrc-type-gif[href$=".jpg"]:before, .repo a.resrc-type-gif[href$=".mov"]:before, .repo a.resrc-type-gif[href$=".mp4"]:before, .repo a.resrc-type-gif[href$=".pdf"]:before, .repo a.resrc-type-gif[href$=".png"]:before, .repo a.resrc-type-gif[href$=".ppt"]:before, .repo a.resrc-type-gif[href$=".pptx"]:before, .repo a.resrc-type-gif[href$=".svg"]:before, .repo a.resrc-type-gif[href$=".tiff"]:before, .repo a.resrc-type-gif[href$=".wmv"]:before, .repo a.resrc-type-gif[href$=".xls"]:before, .repo a.resrc-type-gif[href$=".xlsx"]:before, .repo a.resrc-type-gif[href$=".zip"]:before, .repo a.resrc-type-gif[href$=".other"]:before, .single #page #content .edit-link .resrc-type-gif.post-edit-link:before {
+  content: '\f1c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".gif"]:before {
+  content: "\f1c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-jpeg:before, .repo a.resrc-type-jpeg[href^="http"]:before, .repo a.resrc-type-jpeg[href$=".article"]:before, .repo a.resrc-type-jpeg[href$=".external-link"]:before, .repo a.resrc-type-jpeg[href$=".multiple-files"]:before, .repo a.resrc-type-jpeg[href$=".avi"]:before, .repo a.resrc-type-jpeg[href$=".doc"]:before, .repo a.resrc-type-jpeg[href$=".docx"]:before, .repo a.resrc-type-jpeg[href$=".flv"]:before, .repo a.resrc-type-jpeg[href$=".gif"]:before, .repo a.resrc-type-jpeg[href$=".jpeg"]:before, .repo a.resrc-type-jpeg[href$=".jpg"]:before, .repo a.resrc-type-jpeg[href$=".mov"]:before, .repo a.resrc-type-jpeg[href$=".mp4"]:before, .repo a.resrc-type-jpeg[href$=".pdf"]:before, .repo a.resrc-type-jpeg[href$=".png"]:before, .repo a.resrc-type-jpeg[href$=".ppt"]:before, .repo a.resrc-type-jpeg[href$=".pptx"]:before, .repo a.resrc-type-jpeg[href$=".svg"]:before, .repo a.resrc-type-jpeg[href$=".tiff"]:before, .repo a.resrc-type-jpeg[href$=".wmv"]:before, .repo a.resrc-type-jpeg[href$=".xls"]:before, .repo a.resrc-type-jpeg[href$=".xlsx"]:before, .repo a.resrc-type-jpeg[href$=".zip"]:before, .repo a.resrc-type-jpeg[href$=".other"]:before, .single #page #content .edit-link .resrc-type-jpeg.post-edit-link:before {
+  content: '\f1c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".jpeg"]:before {
+  content: "\f1c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-jpg:before, .repo a.resrc-type-jpg[href^="http"]:before, .repo a.resrc-type-jpg[href$=".article"]:before, .repo a.resrc-type-jpg[href$=".external-link"]:before, .repo a.resrc-type-jpg[href$=".multiple-files"]:before, .repo a.resrc-type-jpg[href$=".avi"]:before, .repo a.resrc-type-jpg[href$=".doc"]:before, .repo a.resrc-type-jpg[href$=".docx"]:before, .repo a.resrc-type-jpg[href$=".flv"]:before, .repo a.resrc-type-jpg[href$=".gif"]:before, .repo a.resrc-type-jpg[href$=".jpeg"]:before, .repo a.resrc-type-jpg[href$=".jpg"]:before, .repo a.resrc-type-jpg[href$=".mov"]:before, .repo a.resrc-type-jpg[href$=".mp4"]:before, .repo a.resrc-type-jpg[href$=".pdf"]:before, .repo a.resrc-type-jpg[href$=".png"]:before, .repo a.resrc-type-jpg[href$=".ppt"]:before, .repo a.resrc-type-jpg[href$=".pptx"]:before, .repo a.resrc-type-jpg[href$=".svg"]:before, .repo a.resrc-type-jpg[href$=".tiff"]:before, .repo a.resrc-type-jpg[href$=".wmv"]:before, .repo a.resrc-type-jpg[href$=".xls"]:before, .repo a.resrc-type-jpg[href$=".xlsx"]:before, .repo a.resrc-type-jpg[href$=".zip"]:before, .repo a.resrc-type-jpg[href$=".other"]:before, .single #page #content .edit-link .resrc-type-jpg.post-edit-link:before {
+  content: '\f1c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".jpg"]:before {
+  content: "\f1c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-mov:before, .repo a.resrc-type-mov[href^="http"]:before, .repo a.resrc-type-mov[href$=".article"]:before, .repo a.resrc-type-mov[href$=".external-link"]:before, .repo a.resrc-type-mov[href$=".multiple-files"]:before, .repo a.resrc-type-mov[href$=".avi"]:before, .repo a.resrc-type-mov[href$=".doc"]:before, .repo a.resrc-type-mov[href$=".docx"]:before, .repo a.resrc-type-mov[href$=".flv"]:before, .repo a.resrc-type-mov[href$=".gif"]:before, .repo a.resrc-type-mov[href$=".jpeg"]:before, .repo a.resrc-type-mov[href$=".jpg"]:before, .repo a.resrc-type-mov[href$=".mov"]:before, .repo a.resrc-type-mov[href$=".mp4"]:before, .repo a.resrc-type-mov[href$=".pdf"]:before, .repo a.resrc-type-mov[href$=".png"]:before, .repo a.resrc-type-mov[href$=".ppt"]:before, .repo a.resrc-type-mov[href$=".pptx"]:before, .repo a.resrc-type-mov[href$=".svg"]:before, .repo a.resrc-type-mov[href$=".tiff"]:before, .repo a.resrc-type-mov[href$=".wmv"]:before, .repo a.resrc-type-mov[href$=".xls"]:before, .repo a.resrc-type-mov[href$=".xlsx"]:before, .repo a.resrc-type-mov[href$=".zip"]:before, .repo a.resrc-type-mov[href$=".other"]:before, .single #page #content .edit-link .resrc-type-mov.post-edit-link:before {
+  content: '\f1c8'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".mov"]:before {
+  content: "\f1c8";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-mp4:before, .repo a.resrc-type-mp4[href^="http"]:before, .repo a.resrc-type-mp4[href$=".article"]:before, .repo a.resrc-type-mp4[href$=".external-link"]:before, .repo a.resrc-type-mp4[href$=".multiple-files"]:before, .repo a.resrc-type-mp4[href$=".avi"]:before, .repo a.resrc-type-mp4[href$=".doc"]:before, .repo a.resrc-type-mp4[href$=".docx"]:before, .repo a.resrc-type-mp4[href$=".flv"]:before, .repo a.resrc-type-mp4[href$=".gif"]:before, .repo a.resrc-type-mp4[href$=".jpeg"]:before, .repo a.resrc-type-mp4[href$=".jpg"]:before, .repo a.resrc-type-mp4[href$=".mov"]:before, .repo a.resrc-type-mp4[href$=".mp4"]:before, .repo a.resrc-type-mp4[href$=".pdf"]:before, .repo a.resrc-type-mp4[href$=".png"]:before, .repo a.resrc-type-mp4[href$=".ppt"]:before, .repo a.resrc-type-mp4[href$=".pptx"]:before, .repo a.resrc-type-mp4[href$=".svg"]:before, .repo a.resrc-type-mp4[href$=".tiff"]:before, .repo a.resrc-type-mp4[href$=".wmv"]:before, .repo a.resrc-type-mp4[href$=".xls"]:before, .repo a.resrc-type-mp4[href$=".xlsx"]:before, .repo a.resrc-type-mp4[href$=".zip"]:before, .repo a.resrc-type-mp4[href$=".other"]:before, .single #page #content .edit-link .resrc-type-mp4.post-edit-link:before {
+  content: '\f1c8'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".mp4"]:before {
+  content: "\f1c8";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-pdf:before, .repo a.resrc-type-pdf[href^="http"]:before, .repo a.resrc-type-pdf[href$=".article"]:before, .repo a.resrc-type-pdf[href$=".external-link"]:before, .repo a.resrc-type-pdf[href$=".multiple-files"]:before, .repo a.resrc-type-pdf[href$=".avi"]:before, .repo a.resrc-type-pdf[href$=".doc"]:before, .repo a.resrc-type-pdf[href$=".docx"]:before, .repo a.resrc-type-pdf[href$=".flv"]:before, .repo a.resrc-type-pdf[href$=".gif"]:before, .repo a.resrc-type-pdf[href$=".jpeg"]:before, .repo a.resrc-type-pdf[href$=".jpg"]:before, .repo a.resrc-type-pdf[href$=".mov"]:before, .repo a.resrc-type-pdf[href$=".mp4"]:before, .repo a.resrc-type-pdf[href$=".pdf"]:before, .repo a.resrc-type-pdf[href$=".png"]:before, .repo a.resrc-type-pdf[href$=".ppt"]:before, .repo a.resrc-type-pdf[href$=".pptx"]:before, .repo a.resrc-type-pdf[href$=".svg"]:before, .repo a.resrc-type-pdf[href$=".tiff"]:before, .repo a.resrc-type-pdf[href$=".wmv"]:before, .repo a.resrc-type-pdf[href$=".xls"]:before, .repo a.resrc-type-pdf[href$=".xlsx"]:before, .repo a.resrc-type-pdf[href$=".zip"]:before, .repo a.resrc-type-pdf[href$=".other"]:before, .single #page #content .edit-link .resrc-type-pdf.post-edit-link:before {
+  content: '\f1c1'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".pdf"]:before {
+  content: "\f1c1";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-png:before, .repo a.resrc-type-png[href^="http"]:before, .repo a.resrc-type-png[href$=".article"]:before, .repo a.resrc-type-png[href$=".external-link"]:before, .repo a.resrc-type-png[href$=".multiple-files"]:before, .repo a.resrc-type-png[href$=".avi"]:before, .repo a.resrc-type-png[href$=".doc"]:before, .repo a.resrc-type-png[href$=".docx"]:before, .repo a.resrc-type-png[href$=".flv"]:before, .repo a.resrc-type-png[href$=".gif"]:before, .repo a.resrc-type-png[href$=".jpeg"]:before, .repo a.resrc-type-png[href$=".jpg"]:before, .repo a.resrc-type-png[href$=".mov"]:before, .repo a.resrc-type-png[href$=".mp4"]:before, .repo a.resrc-type-png[href$=".pdf"]:before, .repo a.resrc-type-png[href$=".png"]:before, .repo a.resrc-type-png[href$=".ppt"]:before, .repo a.resrc-type-png[href$=".pptx"]:before, .repo a.resrc-type-png[href$=".svg"]:before, .repo a.resrc-type-png[href$=".tiff"]:before, .repo a.resrc-type-png[href$=".wmv"]:before, .repo a.resrc-type-png[href$=".xls"]:before, .repo a.resrc-type-png[href$=".xlsx"]:before, .repo a.resrc-type-png[href$=".zip"]:before, .repo a.resrc-type-png[href$=".other"]:before, .single #page #content .edit-link .resrc-type-png.post-edit-link:before {
+  content: '\f1c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".png"]:before {
+  content: "\f1c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-ppt:before, .repo a.resrc-type-ppt[href^="http"]:before, .repo a.resrc-type-ppt[href$=".article"]:before, .repo a.resrc-type-ppt[href$=".external-link"]:before, .repo a.resrc-type-ppt[href$=".multiple-files"]:before, .repo a.resrc-type-ppt[href$=".avi"]:before, .repo a.resrc-type-ppt[href$=".doc"]:before, .repo a.resrc-type-ppt[href$=".docx"]:before, .repo a.resrc-type-ppt[href$=".flv"]:before, .repo a.resrc-type-ppt[href$=".gif"]:before, .repo a.resrc-type-ppt[href$=".jpeg"]:before, .repo a.resrc-type-ppt[href$=".jpg"]:before, .repo a.resrc-type-ppt[href$=".mov"]:before, .repo a.resrc-type-ppt[href$=".mp4"]:before, .repo a.resrc-type-ppt[href$=".pdf"]:before, .repo a.resrc-type-ppt[href$=".png"]:before, .repo a.resrc-type-ppt[href$=".ppt"]:before, .repo a.resrc-type-ppt[href$=".pptx"]:before, .repo a.resrc-type-ppt[href$=".svg"]:before, .repo a.resrc-type-ppt[href$=".tiff"]:before, .repo a.resrc-type-ppt[href$=".wmv"]:before, .repo a.resrc-type-ppt[href$=".xls"]:before, .repo a.resrc-type-ppt[href$=".xlsx"]:before, .repo a.resrc-type-ppt[href$=".zip"]:before, .repo a.resrc-type-ppt[href$=".other"]:before, .single #page #content .edit-link .resrc-type-ppt.post-edit-link:before {
+  content: '\f1c4'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".ppt"]:before {
+  content: "\f1c4";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-pptx:before, .repo a.resrc-type-pptx[href^="http"]:before, .repo a.resrc-type-pptx[href$=".article"]:before, .repo a.resrc-type-pptx[href$=".external-link"]:before, .repo a.resrc-type-pptx[href$=".multiple-files"]:before, .repo a.resrc-type-pptx[href$=".avi"]:before, .repo a.resrc-type-pptx[href$=".doc"]:before, .repo a.resrc-type-pptx[href$=".docx"]:before, .repo a.resrc-type-pptx[href$=".flv"]:before, .repo a.resrc-type-pptx[href$=".gif"]:before, .repo a.resrc-type-pptx[href$=".jpeg"]:before, .repo a.resrc-type-pptx[href$=".jpg"]:before, .repo a.resrc-type-pptx[href$=".mov"]:before, .repo a.resrc-type-pptx[href$=".mp4"]:before, .repo a.resrc-type-pptx[href$=".pdf"]:before, .repo a.resrc-type-pptx[href$=".png"]:before, .repo a.resrc-type-pptx[href$=".ppt"]:before, .repo a.resrc-type-pptx[href$=".pptx"]:before, .repo a.resrc-type-pptx[href$=".svg"]:before, .repo a.resrc-type-pptx[href$=".tiff"]:before, .repo a.resrc-type-pptx[href$=".wmv"]:before, .repo a.resrc-type-pptx[href$=".xls"]:before, .repo a.resrc-type-pptx[href$=".xlsx"]:before, .repo a.resrc-type-pptx[href$=".zip"]:before, .repo a.resrc-type-pptx[href$=".other"]:before, .single #page #content .edit-link .resrc-type-pptx.post-edit-link:before {
+  content: '\f1c4'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".pptx"]:before {
+  content: "\f1c4";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-svg:before, .repo a.resrc-type-svg[href^="http"]:before, .repo a.resrc-type-svg[href$=".article"]:before, .repo a.resrc-type-svg[href$=".external-link"]:before, .repo a.resrc-type-svg[href$=".multiple-files"]:before, .repo a.resrc-type-svg[href$=".avi"]:before, .repo a.resrc-type-svg[href$=".doc"]:before, .repo a.resrc-type-svg[href$=".docx"]:before, .repo a.resrc-type-svg[href$=".flv"]:before, .repo a.resrc-type-svg[href$=".gif"]:before, .repo a.resrc-type-svg[href$=".jpeg"]:before, .repo a.resrc-type-svg[href$=".jpg"]:before, .repo a.resrc-type-svg[href$=".mov"]:before, .repo a.resrc-type-svg[href$=".mp4"]:before, .repo a.resrc-type-svg[href$=".pdf"]:before, .repo a.resrc-type-svg[href$=".png"]:before, .repo a.resrc-type-svg[href$=".ppt"]:before, .repo a.resrc-type-svg[href$=".pptx"]:before, .repo a.resrc-type-svg[href$=".svg"]:before, .repo a.resrc-type-svg[href$=".tiff"]:before, .repo a.resrc-type-svg[href$=".wmv"]:before, .repo a.resrc-type-svg[href$=".xls"]:before, .repo a.resrc-type-svg[href$=".xlsx"]:before, .repo a.resrc-type-svg[href$=".zip"]:before, .repo a.resrc-type-svg[href$=".other"]:before, .single #page #content .edit-link .resrc-type-svg.post-edit-link:before {
+  content: '\f1c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".svg"]:before {
+  content: "\f1c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-tiff:before, .repo a.resrc-type-tiff[href^="http"]:before, .repo a.resrc-type-tiff[href$=".article"]:before, .repo a.resrc-type-tiff[href$=".external-link"]:before, .repo a.resrc-type-tiff[href$=".multiple-files"]:before, .repo a.resrc-type-tiff[href$=".avi"]:before, .repo a.resrc-type-tiff[href$=".doc"]:before, .repo a.resrc-type-tiff[href$=".docx"]:before, .repo a.resrc-type-tiff[href$=".flv"]:before, .repo a.resrc-type-tiff[href$=".gif"]:before, .repo a.resrc-type-tiff[href$=".jpeg"]:before, .repo a.resrc-type-tiff[href$=".jpg"]:before, .repo a.resrc-type-tiff[href$=".mov"]:before, .repo a.resrc-type-tiff[href$=".mp4"]:before, .repo a.resrc-type-tiff[href$=".pdf"]:before, .repo a.resrc-type-tiff[href$=".png"]:before, .repo a.resrc-type-tiff[href$=".ppt"]:before, .repo a.resrc-type-tiff[href$=".pptx"]:before, .repo a.resrc-type-tiff[href$=".svg"]:before, .repo a.resrc-type-tiff[href$=".tiff"]:before, .repo a.resrc-type-tiff[href$=".wmv"]:before, .repo a.resrc-type-tiff[href$=".xls"]:before, .repo a.resrc-type-tiff[href$=".xlsx"]:before, .repo a.resrc-type-tiff[href$=".zip"]:before, .repo a.resrc-type-tiff[href$=".other"]:before, .single #page #content .edit-link .resrc-type-tiff.post-edit-link:before {
+  content: '\f1c5'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".tiff"]:before {
+  content: "\f1c5";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-wmv:before, .repo a.resrc-type-wmv[href^="http"]:before, .repo a.resrc-type-wmv[href$=".article"]:before, .repo a.resrc-type-wmv[href$=".external-link"]:before, .repo a.resrc-type-wmv[href$=".multiple-files"]:before, .repo a.resrc-type-wmv[href$=".avi"]:before, .repo a.resrc-type-wmv[href$=".doc"]:before, .repo a.resrc-type-wmv[href$=".docx"]:before, .repo a.resrc-type-wmv[href$=".flv"]:before, .repo a.resrc-type-wmv[href$=".gif"]:before, .repo a.resrc-type-wmv[href$=".jpeg"]:before, .repo a.resrc-type-wmv[href$=".jpg"]:before, .repo a.resrc-type-wmv[href$=".mov"]:before, .repo a.resrc-type-wmv[href$=".mp4"]:before, .repo a.resrc-type-wmv[href$=".pdf"]:before, .repo a.resrc-type-wmv[href$=".png"]:before, .repo a.resrc-type-wmv[href$=".ppt"]:before, .repo a.resrc-type-wmv[href$=".pptx"]:before, .repo a.resrc-type-wmv[href$=".svg"]:before, .repo a.resrc-type-wmv[href$=".tiff"]:before, .repo a.resrc-type-wmv[href$=".wmv"]:before, .repo a.resrc-type-wmv[href$=".xls"]:before, .repo a.resrc-type-wmv[href$=".xlsx"]:before, .repo a.resrc-type-wmv[href$=".zip"]:before, .repo a.resrc-type-wmv[href$=".other"]:before, .single #page #content .edit-link .resrc-type-wmv.post-edit-link:before {
+  content: '\f1c8'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".wmv"]:before {
+  content: "\f1c8";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-xls:before, .repo a.resrc-type-xls[href^="http"]:before, .repo a.resrc-type-xls[href$=".article"]:before, .repo a.resrc-type-xls[href$=".external-link"]:before, .repo a.resrc-type-xls[href$=".multiple-files"]:before, .repo a.resrc-type-xls[href$=".avi"]:before, .repo a.resrc-type-xls[href$=".doc"]:before, .repo a.resrc-type-xls[href$=".docx"]:before, .repo a.resrc-type-xls[href$=".flv"]:before, .repo a.resrc-type-xls[href$=".gif"]:before, .repo a.resrc-type-xls[href$=".jpeg"]:before, .repo a.resrc-type-xls[href$=".jpg"]:before, .repo a.resrc-type-xls[href$=".mov"]:before, .repo a.resrc-type-xls[href$=".mp4"]:before, .repo a.resrc-type-xls[href$=".pdf"]:before, .repo a.resrc-type-xls[href$=".png"]:before, .repo a.resrc-type-xls[href$=".ppt"]:before, .repo a.resrc-type-xls[href$=".pptx"]:before, .repo a.resrc-type-xls[href$=".svg"]:before, .repo a.resrc-type-xls[href$=".tiff"]:before, .repo a.resrc-type-xls[href$=".wmv"]:before, .repo a.resrc-type-xls[href$=".xls"]:before, .repo a.resrc-type-xls[href$=".xlsx"]:before, .repo a.resrc-type-xls[href$=".zip"]:before, .repo a.resrc-type-xls[href$=".other"]:before, .single #page #content .edit-link .resrc-type-xls.post-edit-link:before {
+  content: '\f1c3'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".xls"]:before {
+  content: "\f1c3";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-xlsx:before, .repo a.resrc-type-xlsx[href^="http"]:before, .repo a.resrc-type-xlsx[href$=".article"]:before, .repo a.resrc-type-xlsx[href$=".external-link"]:before, .repo a.resrc-type-xlsx[href$=".multiple-files"]:before, .repo a.resrc-type-xlsx[href$=".avi"]:before, .repo a.resrc-type-xlsx[href$=".doc"]:before, .repo a.resrc-type-xlsx[href$=".docx"]:before, .repo a.resrc-type-xlsx[href$=".flv"]:before, .repo a.resrc-type-xlsx[href$=".gif"]:before, .repo a.resrc-type-xlsx[href$=".jpeg"]:before, .repo a.resrc-type-xlsx[href$=".jpg"]:before, .repo a.resrc-type-xlsx[href$=".mov"]:before, .repo a.resrc-type-xlsx[href$=".mp4"]:before, .repo a.resrc-type-xlsx[href$=".pdf"]:before, .repo a.resrc-type-xlsx[href$=".png"]:before, .repo a.resrc-type-xlsx[href$=".ppt"]:before, .repo a.resrc-type-xlsx[href$=".pptx"]:before, .repo a.resrc-type-xlsx[href$=".svg"]:before, .repo a.resrc-type-xlsx[href$=".tiff"]:before, .repo a.resrc-type-xlsx[href$=".wmv"]:before, .repo a.resrc-type-xlsx[href$=".xls"]:before, .repo a.resrc-type-xlsx[href$=".xlsx"]:before, .repo a.resrc-type-xlsx[href$=".zip"]:before, .repo a.resrc-type-xlsx[href$=".other"]:before, .single #page #content .edit-link .resrc-type-xlsx.post-edit-link:before {
+  content: '\f1c3'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".xlsx"]:before {
+  content: "\f1c3";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-zip:before, .repo a.resrc-type-zip[href^="http"]:before, .repo a.resrc-type-zip[href$=".article"]:before, .repo a.resrc-type-zip[href$=".external-link"]:before, .repo a.resrc-type-zip[href$=".multiple-files"]:before, .repo a.resrc-type-zip[href$=".avi"]:before, .repo a.resrc-type-zip[href$=".doc"]:before, .repo a.resrc-type-zip[href$=".docx"]:before, .repo a.resrc-type-zip[href$=".flv"]:before, .repo a.resrc-type-zip[href$=".gif"]:before, .repo a.resrc-type-zip[href$=".jpeg"]:before, .repo a.resrc-type-zip[href$=".jpg"]:before, .repo a.resrc-type-zip[href$=".mov"]:before, .repo a.resrc-type-zip[href$=".mp4"]:before, .repo a.resrc-type-zip[href$=".pdf"]:before, .repo a.resrc-type-zip[href$=".png"]:before, .repo a.resrc-type-zip[href$=".ppt"]:before, .repo a.resrc-type-zip[href$=".pptx"]:before, .repo a.resrc-type-zip[href$=".svg"]:before, .repo a.resrc-type-zip[href$=".tiff"]:before, .repo a.resrc-type-zip[href$=".wmv"]:before, .repo a.resrc-type-zip[href$=".xls"]:before, .repo a.resrc-type-zip[href$=".xlsx"]:before, .repo a.resrc-type-zip[href$=".zip"]:before, .repo a.resrc-type-zip[href$=".other"]:before, .single #page #content .edit-link .resrc-type-zip.post-edit-link:before {
+  content: '\f1c6'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".zip"]:before {
+  content: "\f1c6";
+  margin-right: 0.5em; }
+
+/* Set resource card icons based on file type */
+.fa.resrc-type-other:before, .repo a.resrc-type-other[href^="http"]:before, .repo a.resrc-type-other[href$=".article"]:before, .repo a.resrc-type-other[href$=".external-link"]:before, .repo a.resrc-type-other[href$=".multiple-files"]:before, .repo a.resrc-type-other[href$=".avi"]:before, .repo a.resrc-type-other[href$=".doc"]:before, .repo a.resrc-type-other[href$=".docx"]:before, .repo a.resrc-type-other[href$=".flv"]:before, .repo a.resrc-type-other[href$=".gif"]:before, .repo a.resrc-type-other[href$=".jpeg"]:before, .repo a.resrc-type-other[href$=".jpg"]:before, .repo a.resrc-type-other[href$=".mov"]:before, .repo a.resrc-type-other[href$=".mp4"]:before, .repo a.resrc-type-other[href$=".pdf"]:before, .repo a.resrc-type-other[href$=".png"]:before, .repo a.resrc-type-other[href$=".ppt"]:before, .repo a.resrc-type-other[href$=".pptx"]:before, .repo a.resrc-type-other[href$=".svg"]:before, .repo a.resrc-type-other[href$=".tiff"]:before, .repo a.resrc-type-other[href$=".wmv"]:before, .repo a.resrc-type-other[href$=".xls"]:before, .repo a.resrc-type-other[href$=".xlsx"]:before, .repo a.resrc-type-other[href$=".zip"]:before, .repo a.resrc-type-other[href$=".other"]:before, .single #page #content .edit-link .resrc-type-other.post-edit-link:before {
+  content: '\f0f6'; }
+
+/* Set single post icons (where necessary) based on file type */
+.repo a[href$=".other"]:before {
+  content: "\f0f6";
+  margin-right: 0.5em; }
+
+/* ==========================================================================
+   Search
+   ========================================================================= */
+/* Styles for the search field */
+.search-field {
+  clear: both;
+  padding: 0.75em 0;
+  position: relative;
+  /* Give the label some styles by default and position next to input */
+  /* Styles for the search input */
+  /* When search field has focus, make label and input text darker */ }
+  .search-field label {
+    color: #A9A9A9;
+    left: 1em;
+    line-height: 2.25;
+    position: absolute; }
+  .search-field #search {
+    /* Make the placeholder a lighter gray by default */
+    /* Firefox */
+    /* Internet Explorer */
+    /* Webkit (Chrome, Safari, Opera) */
+    border: 2px solid #A9A9A9;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    color: #A9A9A9;
+    display: inline-block;
+    font-weight: 400;
+    height: auto;
+    line-height: 2.25;
+    margin: 0;
+    width: 100%;
+    padding-left: 3em;
+    /* On focus, change to darker gray border and color */ }
+    .search-field #search:-moz-placeholder {
+      color: #A9A9A9; }
+    .search-field #search::-moz-placeholder {
+      color: #A9A9A9; }
+    .search-field #search:-ms-input-placeholder {
+      color: #A9A9A9; }
+    .search-field #search::-webkit-input-placeholder {
+      color: #A9A9A9; }
+    .search-field #search:focus {
+      /* Firefox */
+      /* Internet Explorer */
+      /* Webkit (Chrome, Safari, Opera) */
+      border: 2px solid #666;
+      box-shadow: none; }
+      .search-field #search:focus:-moz-placeholder {
+        color: #666; }
+      .search-field #search:focus::-moz-placeholder {
+        color: #666; }
+      .search-field #search:focus:-ms-input-placeholder {
+        color: #666; }
+      .search-field #search:focus::-webkit-input-placeholder {
+        color: #666; }
+  .search-field.has-focus label, .search-field.has-focus #search {
+    color: #666; }
 
 /* ==========================================================================
    Cards
@@ -11886,7 +12169,28 @@ h1.entry-title {
 /* Make cards container clear their children */
 /* Give the cards a little breathing room */
 .card-container {
-  padding: 1.25em 0.75em; }
+  padding: 1.25em 0.75em;
+  /* Remove left padding for every 4th card when they're in rows of 3 */
+  /* Remove right padding for every 3rd card when they're in rows of 3 */
+  /* Remove left padding for every 3rd card when they're in rows of 2 */
+  /* Remove right padding for every 2nd card when they're in rows of 2 */
+  /* Remove left and right padding for all cards on small devices */ }
+  @media  (min-width: 62.0625rem) {
+    .card-container:nth-of-type(3n+1) {
+      padding-left: 0; } }
+  @media  (min-width: 62.0625rem) {
+    .card-container:nth-of-type(3n) {
+      padding-right: 0; } }
+  @media  (min-width: 40.0625rem) and (max-width: 62rem) {
+    .card-container:nth-of-type(2n+1) {
+      padding-left: 0; } }
+  @media  (min-width: 40.0625rem) and (max-width: 62rem) {
+    .card-container:nth-of-type(2n) {
+      padding-right: 0; } }
+  @media  (max-width: 40rem) {
+    .card-container {
+      padding-left: 0;
+      padding-right: 0; } }
 
 /* Card styles */
 .card {
@@ -11894,6 +12198,9 @@ h1.entry-title {
   border-radius: 0.25em;
   margin: 0;
   position: relative;
+  -webkit-transition: all 0.25s;
+          transition: all 0.25s;
+  /* Scale to slightly larger size on hover */
   /* Left and right padding for different layout pieces */
   /* Styles for the top of a card */
   /* Some top padding for the middle of a card */
@@ -11904,6 +12211,12 @@ h1.entry-title {
   /* Card title styles */
   /* Card description styles */
   /* Center align some parts of a card on small screens */ }
+  .card:active, .card:hover {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s; }
   .card_top, .card_middle, .card_bottom {
     padding: 0 1.5em; }
   .card_top {
@@ -11912,7 +12225,7 @@ h1.entry-title {
     border-top-right-radius: 0.25em;
     color: #fff;
     /* Styles for the icon */ }
-    .card_top .fa {
+    .card_top .fa, .card_top .repo a[href^="http"]:before, .repo .card_top a[href^="http"]:before, .card_top .repo a[href$=".article"]:before, .repo .card_top a[href$=".article"]:before, .card_top .repo a[href$=".external-link"]:before, .repo .card_top a[href$=".external-link"]:before, .card_top .repo a[href$=".multiple-files"]:before, .repo .card_top a[href$=".multiple-files"]:before, .card_top .repo a[href$=".avi"]:before, .repo .card_top a[href$=".avi"]:before, .card_top .repo a[href$=".doc"]:before, .repo .card_top a[href$=".doc"]:before, .card_top .repo a[href$=".docx"]:before, .repo .card_top a[href$=".docx"]:before, .card_top .repo a[href$=".flv"]:before, .repo .card_top a[href$=".flv"]:before, .card_top .repo a[href$=".gif"]:before, .repo .card_top a[href$=".gif"]:before, .card_top .repo a[href$=".jpeg"]:before, .repo .card_top a[href$=".jpeg"]:before, .card_top .repo a[href$=".jpg"]:before, .repo .card_top a[href$=".jpg"]:before, .card_top .repo a[href$=".mov"]:before, .repo .card_top a[href$=".mov"]:before, .card_top .repo a[href$=".mp4"]:before, .repo .card_top a[href$=".mp4"]:before, .card_top .repo a[href$=".pdf"]:before, .repo .card_top a[href$=".pdf"]:before, .card_top .repo a[href$=".png"]:before, .repo .card_top a[href$=".png"]:before, .card_top .repo a[href$=".ppt"]:before, .repo .card_top a[href$=".ppt"]:before, .card_top .repo a[href$=".pptx"]:before, .repo .card_top a[href$=".pptx"]:before, .card_top .repo a[href$=".svg"]:before, .repo .card_top a[href$=".svg"]:before, .card_top .repo a[href$=".tiff"]:before, .repo .card_top a[href$=".tiff"]:before, .card_top .repo a[href$=".wmv"]:before, .repo .card_top a[href$=".wmv"]:before, .card_top .repo a[href$=".xls"]:before, .repo .card_top a[href$=".xls"]:before, .card_top .repo a[href$=".xlsx"]:before, .repo .card_top a[href$=".xlsx"]:before, .card_top .repo a[href$=".zip"]:before, .repo .card_top a[href$=".zip"]:before, .card_top .repo a[href$=".other"]:before, .repo .card_top a[href$=".other"]:before, .card_top .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link .card_top .post-edit-link {
       font-size: 1.25rem;
       line-height: 2.8;
       margin-right: 0.5em;
@@ -11932,7 +12245,7 @@ h1.entry-title {
     font-size: 0.875rem;
     line-height: 4;
     /* Styles for the icon */ }
-    .card .num-items .fa {
+    .card .num-items .fa, .card .num-items .repo a[href^="http"]:before, .repo .card .num-items a[href^="http"]:before, .card .num-items .repo a[href$=".article"]:before, .repo .card .num-items a[href$=".article"]:before, .card .num-items .repo a[href$=".external-link"]:before, .repo .card .num-items a[href$=".external-link"]:before, .card .num-items .repo a[href$=".multiple-files"]:before, .repo .card .num-items a[href$=".multiple-files"]:before, .card .num-items .repo a[href$=".avi"]:before, .repo .card .num-items a[href$=".avi"]:before, .card .num-items .repo a[href$=".doc"]:before, .repo .card .num-items a[href$=".doc"]:before, .card .num-items .repo a[href$=".docx"]:before, .repo .card .num-items a[href$=".docx"]:before, .card .num-items .repo a[href$=".flv"]:before, .repo .card .num-items a[href$=".flv"]:before, .card .num-items .repo a[href$=".gif"]:before, .repo .card .num-items a[href$=".gif"]:before, .card .num-items .repo a[href$=".jpeg"]:before, .repo .card .num-items a[href$=".jpeg"]:before, .card .num-items .repo a[href$=".jpg"]:before, .repo .card .num-items a[href$=".jpg"]:before, .card .num-items .repo a[href$=".mov"]:before, .repo .card .num-items a[href$=".mov"]:before, .card .num-items .repo a[href$=".mp4"]:before, .repo .card .num-items a[href$=".mp4"]:before, .card .num-items .repo a[href$=".pdf"]:before, .repo .card .num-items a[href$=".pdf"]:before, .card .num-items .repo a[href$=".png"]:before, .repo .card .num-items a[href$=".png"]:before, .card .num-items .repo a[href$=".ppt"]:before, .repo .card .num-items a[href$=".ppt"]:before, .card .num-items .repo a[href$=".pptx"]:before, .repo .card .num-items a[href$=".pptx"]:before, .card .num-items .repo a[href$=".svg"]:before, .repo .card .num-items a[href$=".svg"]:before, .card .num-items .repo a[href$=".tiff"]:before, .repo .card .num-items a[href$=".tiff"]:before, .card .num-items .repo a[href$=".wmv"]:before, .repo .card .num-items a[href$=".wmv"]:before, .card .num-items .repo a[href$=".xls"]:before, .repo .card .num-items a[href$=".xls"]:before, .card .num-items .repo a[href$=".xlsx"]:before, .repo .card .num-items a[href$=".xlsx"]:before, .card .num-items .repo a[href$=".zip"]:before, .repo .card .num-items a[href$=".zip"]:before, .card .num-items .repo a[href$=".other"]:before, .repo .card .num-items a[href$=".other"]:before, .card .num-items .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link .card .num-items .post-edit-link {
       font-size: 0.875rem;
       line-height: 4;
       margin-right: 0.5em; }
@@ -12009,8 +12322,8 @@ h1.entry-title {
     right: 10px;
     position: absolute;
     top: 100%;
-    -webkit-transition: 0.125s ease-in-out;
-            transition: 0.125s ease-in-out; }
+    -webkit-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out; }
   .card-stack:before {
     height: 10px;
     left: 20px;
@@ -12024,9 +12337,10 @@ h1.entry-title {
    Buttons
    ========================================================================= */
 /* Display buttons inline block and make text white */
-.btn, .btn-large, .btn:active, .btn-large:active, .btn:hover, .btn-large:hover, .btn:visited, .btn-large:visited {
-  color: #fff;
+.btn, .btn-large {
   display: inline-block; }
+  .btn, .btn-large, .btn:active, .btn-large:active, .btn:hover, .btn-large:hover, .btn:visited, .btn-large:visited {
+    color: #fff; }
 
 /* =========================================================================
    Pages
@@ -12049,7 +12363,6 @@ h1.entry-title {
     border-left-width: 0.5em;
     padding: 0.75em 1.5em;
     /* Center align text on small screen */
-    /* More transparent on hover */
     /* Right padding equivalent to width of absolutely positioned button */
     /* Position the action button absolutely to the right and center */
     /* Increase title font size */
@@ -12058,8 +12371,6 @@ h1.entry-title {
     @media  (max-width: 40rem) {
       .cards-resources .card {
         text-align: center; } }
-    .cards-resources .card_link:active, .cards-resources .card_link:hover {
-      opacity: 0.5; }
     .cards-resources .card_info {
       padding-right: 8em; }
       @media  (max-width: 40rem) {
@@ -12078,12 +12389,33 @@ h1.entry-title {
     .cards-resources .card_name {
       font-size: 1.5rem; }
     .cards-resources .card .resrc-type {
-      margin-right: 0.25em; }
+      margin-right: 0.375em; }
     .cards-resources .card_updated {
       color: #A9A9A9;
       font-size: 0.75em;
       font-weight: 300;
+      line-height: 2;
       margin: 0; }
+
+/* ==========================================================================
+   Single Posts
+   ========================================================================= */
+/* Styles for a single post */
+.single #page #content {
+  position: relative;
+  /* Increase font size slightly for entry content */
+  /* Styles for the edit link */ }
+  .single #page #content .entry-extra, .single #page #content .entry-content {
+    font-size: 1.125rem; }
+  .single #page #content .edit-link {
+    display: block;
+    margin-bottom: 1.5em;
+    text-align: center;
+    /* Turn the post edit link into a pencil */ }
+    .single #page #content .edit-link .post-edit-link {
+      font-size: 2rem; }
+      .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link .post-edit-link:active, .single #page #content .edit-link .post-edit-link:hover, .single #page #content .edit-link .post-edit-link:visited {
+        color: #A9A9A9; }
 
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,29 @@
+/**
+ * Set file type icons
+ *
+ * 1. Loop through file types map
+ * 2. Set icon based on file type
+ */
+
+/* Set default link to external link icon */
+.repo a[href^="http"]:before {
+  @extend .fa;
+  content: "\f08e";
+  margin-right: 0.5em;
+}
+
+/* Loop through map */
+@each $file_type, $icon in $file_type_icons {
+
+  /* Set resource card icons based on file type */
+  .fa.resrc-type-#{$file_type}:before {
+    content: '#{$icon}';
+  }
+
+  /* Set single post icons (where necessary) based on file type */
+  .repo a[href$=".#{$file_type}"]:before {
+    @extend .fa;
+    content: "#{$icon}";
+    margin-right: 0.5em;
+  }
+}

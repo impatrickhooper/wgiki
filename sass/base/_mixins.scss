@@ -3,6 +3,59 @@
    ========================================================================== */
 
 /**
+ * Word Wrap
+ *
+ * Stop words (i.e. long URLs) from breaking outside the container
+ */
+@mixin word-wrap() {
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+}
+
+/**
+ * Color Input Placeholder
+ *
+ * Set input placeholder color for all browsers
+ */
+@mixin color-placeholder($placeholder-color) {
+
+  /* Firefox */
+  &:-moz-placeholder {
+    color: $placeholder-color;
+  }
+
+  &::-moz-placeholder {
+    color: $placeholder-color;
+  }
+
+  /* Internet Explorer */
+  &:-ms-input-placeholder {
+    color: $placeholder-color;
+  }
+
+  /* Webkit (Chrome, Safari, Opera) */
+  &::-webkit-input-placeholder {
+    color: $placeholder-color;
+  }
+}
+
+/**
+ * Color Links
+ *
+ * Set link color for all states
+ */
+@mixin color-links($link-color) {
+  &,
+  &:active,
+  &:hover,
+  &:visited {
+    color: $link-color;
+  }
+}
+
+/**
  * Line Clamp
  *
  * Cut off text at specified number of lines

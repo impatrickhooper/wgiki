@@ -123,7 +123,7 @@ function register_custom_taxonomies($key) {
     'update_count_callback' => '_update_post_term_count',
     'query_var'             => false,
     'rewrite'               => array(
-      'slug'  => preg_replace('/_/i', '-', $key)
+      'slug'  => preg_replace('/_/i', '-', $key) . '/category'
     ),
     'capabilities'          => array(
       'manage_terms'  =>  'edit_' . $key . '_resources',

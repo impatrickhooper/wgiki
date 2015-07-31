@@ -6,9 +6,10 @@
 #page {
   padding: 0 3em 1.5em;
 
-  @include breakpoint($mq_small) {
-    padding-left: 1em;
-    padding-right: 1em;
+  /* Reduce padding on medium and small screens */
+  @include breakpoint($mq_not_large) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
   }
 
   /* If this is a page with the side nav, give left padding to account for this */
@@ -17,14 +18,15 @@
 
     /* Remove the left padding on all but large screens */
     @include breakpoint($mq_not_large) {
-      padding-left: 1em;
+      padding-left: 1.5em;
     }
   }
 }
 
 /* Styles for the main header (entry title) on a page */
-h1.entry-title {
-  margin: 2.1rem 0;
+h1.entry-title,
+h1.page-title {
+  margin: 1.35rem 0 2.1rem;
   text-align: center;
 
   /* Create the gray border after an entry title */
@@ -40,5 +42,5 @@ h1.entry-title {
 
 /* Slightly increase the font size of an entry description */
 .entry-description {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }

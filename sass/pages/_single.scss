@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Single Posts
+   ========================================================================= */
+
+/* Styles for a single post */
+.single #page #content {
+  position: relative;
+
+  /* Increase font size slightly for entry content */
+  .entry-extra,
+  .entry-content {
+    font-size: 1.125rem;
+  }
+
+  /* Styles for the edit link */
+  .edit-link {
+    display: block;
+    margin-bottom: 1.5em;
+    text-align: center;
+
+    /* Turn the post edit link into a pencil */
+    .post-edit-link {
+      @extend .fa;
+      @extend .fa-pencil;
+      @include color-links($alternate_gray);
+
+      font-size: 2rem;
+    }
+  }
+}

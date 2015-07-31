@@ -2,14 +2,6 @@
    Color
    ========================================================================== */
 
-/* Make links green by default */
-a,
-a:active,
-a:hover,
-a:visited {
-  color: $wgi_green;
-}
-
 /* When hovering on links, make slightly transparent */
 a:active,
 a:hover {
@@ -76,10 +68,9 @@ blockquote {
       color: $color;
     }
   }
-}
 
-@each $file_type, $icon in $file_type_icons {
-  .fa.resrc-type-#{$file_type}:before {
-    content: '#{$icon}';
+  /* For an individual division post, color the links as the division color */
+  .single #page.#{$division} .hentry a {
+    @include color-links($color);
   }
 }

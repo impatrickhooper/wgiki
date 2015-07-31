@@ -123,7 +123,7 @@ function wgiki_entry_footer() {
     echo '</span>';
   }
 
-  edit_post_link( esc_html__( 'Edit', 'wgiki' ), '<span class="edit-link">', '</span>' );
+  edit_post_link( esc_html__( '', 'wgiki' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 

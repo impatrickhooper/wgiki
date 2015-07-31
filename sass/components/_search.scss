@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Search
+   ========================================================================= */
+
+/* Styles for the search field */
+.search-field {
+  clear: both;
+  padding: 0.75em 0;
+  position: relative;
+
+  /* Give the label some styles by default and position next to input */
+  label {
+    color: $alternate_gray;
+    left: 1em;
+    line-height: 2.25;
+    position: absolute;
+  }
+
+  /* Styles for the search input */
+  #search {
+
+    /* Make the placeholder a lighter gray by default */
+    @include color-placeholder($alternate_gray);
+
+    border: 2px solid $alternate_gray;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    color: $alternate_gray;
+    display: inline-block;
+    font-weight: 400;
+    height: auto;
+    line-height: 2.25;
+    margin: 0;
+    width: 100%;
+    padding-left: 3em;
+
+    /* On focus, change to darker gray border and color */
+    &:focus {
+      @include color-placeholder($text_gray);
+
+      border: 2px solid $text_gray;
+      box-shadow: none;
+    }
+  }
+
+  /* When search field has focus, make label and input text darker */
+  &.has-focus {
+    label,
+    #search {
+      color: $text_gray;
+    }
+  }
+}

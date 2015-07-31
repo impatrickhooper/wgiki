@@ -32,7 +32,12 @@
       if (!is_front_page()) {
         get_template_part('template-parts/content_wgiki', 'side-nav');
       }
+
+      /* Output the search bar */
+      get_template_part('template-parts/content_wgiki', 'search-form');
     ?>
+
+
 
     </header><!-- #masthead -->
 

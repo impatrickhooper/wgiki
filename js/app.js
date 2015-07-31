@@ -9,6 +9,17 @@
   /* Adds webkit class if this is a webkit browser, no-webkit otherwise */
   ($.browser.webkit) ? $('html').addClass('webkit') : $('html').addClass('no-webkit');
 
+/* Search
+   ========================================================================== */
+
+  /* Add class to indicate when this field is in focus or not */
+  $('#search').focusin(function() {
+    $(this).parent().addClass('has-focus');
+  }).focusout(function() {
+    $(this).parent().removeClass('has-focus');
+  });
+
+
 /* Navigation
    ========================================================================== */
 

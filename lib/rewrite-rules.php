@@ -65,7 +65,7 @@ function taxonomy_slug_rewrite($wp_rewrite) {
           foreach ($terms as $term) {
 
             /* Add a rewrite rule for each term that uses the post type slug */
-            $rules[$regex_object_type . '/' . $term->slug . '/?$'] = 'index.php?' . 'taxonomy=' . $term->taxonomy . '&term=' . $term->slug;
+            $rules[$regex_object_type . '/category/' . $term->slug . '/?$'] = 'index.php?' . 'taxonomy=' . $term->taxonomy . '&term=' . $term->slug;
           }
         }
       }

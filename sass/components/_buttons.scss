@@ -3,10 +3,8 @@
    ========================================================================= */
 
 /* Display buttons inline block and make text white */
-.btn,
-.btn:active,
-.btn:hover,
-.btn:visited {
-  color: $white;
+.btn {
+  @include color-links($white);
+
   display: inline-block;
 }

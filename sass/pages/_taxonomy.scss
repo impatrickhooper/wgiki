@@ -23,12 +23,6 @@
       text-align: center;
     }
 
-    /* More transparent on hover */
-    &_link:active,
-    &_link:hover {
-      opacity: 0.5;
-    }
-
     /* Right padding equivalent to width of absolutely positioned button */
     &_info {
       padding-right: 8em;
@@ -59,7 +53,7 @@
 
     /* Give icon a right margin */
     .resrc-type {
-      margin-right: 0.25em;
+      margin-right: 0.375em;
     }
 
     /* Style updated date: smaller and lighter color */
@@ -67,6 +61,7 @@
       color: $alternate_gray;
       font-size: 0.75em;
       font-weight: 300;
+      line-height: 2;
       margin: 0;
     }
   }
