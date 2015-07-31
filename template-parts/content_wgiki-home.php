@@ -41,7 +41,7 @@
         </div><!-- .card_middle -->
       </a><!-- .card_link -->
       <div class="card_bottom">
-        <a href="<?php echo $div_archive; ?>" class="btn btn-<?php echo $div_slug; ?>">View</a>
+        <a href="<?php echo $div_archive; ?>" class="btn btn-<?php echo $div_slug; ?> waves-effect waves-light">View</a>
       </div><!-- .card_bottom -->
     </div><!-- .card.card-division -->
   </div><!-- .card-container -->

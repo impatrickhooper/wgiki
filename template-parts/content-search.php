@@ -56,7 +56,7 @@
               if (!empty($resrc_tags)) {
 
                 /* Output an arrow */
-                echo ' > ';
+                echo ' -> ';
                 $tag_count = count($resrc_tags); // Get the number of tags
 
                 /* Loop through each tag */
@@ -79,7 +79,7 @@
         </div><!-- .card_info -->
       </a><!-- .card_link -->
       <div class="card_action">
-        <a href="<?php echo $resrc_link; ?>" target="<?php echo $resrc_targ; ?>" class="btn">View</a>
+        <a href="<?php echo $resrc_link; ?>" target="<?php echo $resrc_targ; ?>" class="btn waves-effect waves-light">View</a>
       </div><!-- .card_action -->
     </div><!-- .card.card-resource -->
   </div><!-- .card-container -->

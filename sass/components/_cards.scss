@@ -53,13 +53,13 @@
   border-radius: 0.25em;
   margin: 0;
   position: relative;
-  transition: all 0.25s;
+  transition: all 0.2s ease-out;
 
   /* Scale to slightly larger size on hover */
   &:active,
   &:hover {
     transform: scale(1.05);
-    transition: all 0.25s;
+    transition: all 0.2s ease-out;
   }
 
   /* Left and right padding for different layout pieces */
@@ -190,7 +190,7 @@
     right: 10px;
     position: absolute;
     top: 100%;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 
   /* Different height for before element */

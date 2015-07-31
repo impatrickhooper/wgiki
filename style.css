@@ -12222,8 +12222,8 @@ h1.entry-title, h1.page-title {
   border-radius: 0.25em;
   margin: 0;
   position: relative;
-  -webkit-transition: all 0.25s;
-          transition: all 0.25s;
+  -webkit-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
   /* Scale to slightly larger size on hover */
   /* Left and right padding for different layout pieces */
   /* Styles for the top of a card */
@@ -12239,8 +12239,8 @@ h1.entry-title, h1.page-title {
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);
-    -webkit-transition: all 0.25s;
-            transition: all 0.25s; }
+    -webkit-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out; }
   .card_top, .card_middle, .card_bottom {
     padding: 0 1.5em; }
   .card_top {
@@ -12346,8 +12346,8 @@ h1.entry-title, h1.page-title {
     right: 10px;
     position: absolute;
     top: 100%;
-    -webkit-transition: 0.3s ease-in-out;
-            transition: 0.3s ease-in-out; }
+    -webkit-transition: 0.2s ease-in-out;
+            transition: 0.2s ease-in-out; }
   .card-stack:before {
     height: 10px;
     left: 20px;
