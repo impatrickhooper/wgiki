@@ -35,7 +35,7 @@ get_header(); ?>
             $resrc_link = get_permalink($resrc_id); // Get the post permalink
             $resrc_targ = ''; // Set the link target to empty
             $resrc_type = get_field('resource_type', $resrc_id); // Get the resource type
-            $resrc_file_type = $resrc_type;
+            $resrc_file_type = $resrc_type; // Get the resource file type
 
             /* If this is an external link, get the link and open in new window */
             if ($resrc_type == 'external-link') {

@@ -24,20 +24,24 @@
   /* Firefox */
   &:-moz-placeholder {
     color: $placeholder-color;
+    transition: all 0.3s;
   }
 
   &::-moz-placeholder {
     color: $placeholder-color;
+    transition: all 0.3s;
   }
 
   /* Internet Explorer */
   &:-ms-input-placeholder {
     color: $placeholder-color;
+    transition: all 0.3s;
   }
 
   /* Webkit (Chrome, Safari, Opera) */
   &::-webkit-input-placeholder {
     color: $placeholder-color;
+    transition: all 0.3s;
   }
 }
 

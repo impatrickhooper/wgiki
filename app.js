@@ -8675,7 +8675,7 @@ Picker.extend( 'pickadate', DatePicker )
    ========================================================================== */
 
   /* Add class to indicate when this field is in focus or not */
-  $('#search').focusin(function() {
+  $('.search-field #s').focusin(function() {
     $(this).parent().addClass('has-focus');
   }).focusout(function() {
     $(this).parent().removeClass('has-focus');
