@@ -43,4 +43,13 @@ h1.page-title {
 /* Slightly increase the font size of an entry description */
 .entry-description {
   font-size: 1.25rem;
+
+  /* Align it's text in the center on small devices */
+  @include breakpoint($mq_small) {
+    text-align: center;
+  }
+}
+
+.entry-extra {
+  margin-bottom: 1.5em;
 }

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Tabs
+   ========================================================================= */
+
+/* Make tab links heading gray color */
+.tab a {
+  &,
+  &:active
+  &:hover,
+  &:visited {
+    color: $heading_gray !important;
+  }
+}
+
+/* Give tab content some padding */
+.tab_content {
+  padding: 1.5em 0;
+}

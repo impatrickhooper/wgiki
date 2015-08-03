@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Login Page
+   ========================================================================== */
+
+/* Styles for the body of the page */
+body {
+  background-color: #fff;
+  color: #9e9e9e;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Alter width and positioning of login form container */
+#login {
+  max-width: 30rem;
+  padding-top: 5%;
+  width: 100%;
+}
+
+/* Give some bottom margin to a login error message */
+#login #login_error {
+  margin-bottom: 0.75em;
+}
+
+/* Style the heading / title of the page */
+#login h1 {
+  color: #555;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 4rem;
+  margin: 1.35rem 0 2.1rem;
+  text-align: center;
+}
+
+/* Create the underline for the header / title */
+#login h1:after {
+  content: '';
+  background-color: #555;
+  display: block;
+  height: 4px;
+  margin: 8px auto 0;
+  width: 72px;
+}
+
+/* Hide the link (WordPress logo) */
+#login h1 a {
+  display: none;
+}
+
+/* Styles for the login + password reset forms */
+#loginform,
+#lostpasswordform {
+  box-shadow: none;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+}
+
+/* Styles for the login + password reset form labels */
+#loginform label,
+#lostpasswordform label {
+  color: #9e9e9e;
+  font-size: 1rem;
+}
+
+/* Styles for the login + password reset form inputs */
+#loginform input,
+#lostpasswordform input {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  color: #666;
+  font-size: 1rem;
+  height: 40px;
+  margin-top: 8px;
+  padding: 0 12px;
+}
+
+/* Styles for the login + password reset form inputs on focus (green outline) */
+#loginform input:focus,
+#lostpasswordform input:focus {
+  border-color: #00833E;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Placeholder color for input fields (light gray) */
+#login :-moz-placeholder {
+  color: #ddd;
+}
+
+#login ::-moz-placeholder {
+  color: #ddd;
+}
+
+#login :-ms-input-placeholder {
+  color: #ddd;
+}
+
+#login ::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+/* Styles for the login + password reset form submit button containers */
+#loginform .submit,
+#lostpasswordform .submit {
+  margin: 1.5em 0 !important;
+  text-align: center;
+}
+
+/* Styles for the login + password reset form submit buttons */
+#loginform #wp-submit,
+#lostpasswordform #wp-submit {
+  background-color: #00833E;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  color: #fff;
+  display: inline-block;
+  float: none;
+  height: 48px;
+  letter-spacing: .5px;
+  line-height: 48px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  width: auto;
+}
+
+/* Styles for the login + password reset form submit buttons on hover */
+#loginform #wp-submit:hover,
+#lostpasswordform #wp-submit:hover {
+  opacity: 0.5;
+}
+
+/* Styles for the navigation at the bottom of the login page */
+#login #nav {
+  font-size: 0.875rem;
+  padding: 0;
+  text-align: center;
+}
+
+/* Styles for the navigation at the bottom of the login page on active/hover (less opaque) */
+#login #nav a:active,
+#login #nav a:hover {
+  color: #9e9e9e;
+  opacity: 0.5;
+}
+
+/* Hide return to site link */
+#backtoblog {
+  display: none;
+}
+
+/* Login Form
+   ========================================================================== */
+
+/* For messages on the login page, give bottom margin and green left border */
+.login-action-login .message {
+  border-left-color: #00833E;
+  margin-bottom: 0.75em;
+}
+
+/* Styles for asterisks on the login form */
+#loginform .field-required {
+  color: #c74a4a;
+  margin: 0 0 0 8px;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+  top: 8px;
+}
+
+/* Styles for the "Forgot your password" field on the login form */
+#loginform .forgetmenot {
+  float: none;
+  margin-top: 8px;
+}
+
+/* Styles for the "Forgot your password" label on the login form */
+#loginform .forgetmenot label {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 18px;
+}
+
+/* Styles for the "Keep me signed in" checkbox on the login form */
+#loginform #rememberme {
+  height: 18px;
+  margin: -2px 16px 0 0;
+  width: 18px;
+}
+
+/* Styles when "Keep me signed in" checkbox is checked on login form */
+#loginform #rememberme:checked {
+  border-color: #00833E;
+}
+
+/* Styles (green color) for the "Keep me signed in" checkmark when checked on login form */
+#loginform #rememberme:checked:before {
+  color: #00833E;
+}
+
+/* Password Reset Form
+   ========================================================================== */
+
+/* Styles for a message on the password reset page */
+.login-action-lostpassword .message {
+  border-left: 0;
+  box-shadow: none;
+  font-size: 1rem;
+  padding: 0 0 1.25em;
+  text-align: center;
+}
+
+/* Styles for the submit button on the password reset form (no top margin) */
+.login-action-lostpassword #lostpasswordform .submit {
+  margin-top: 0 !important;
+}
+
+.login-action-lostpassword #nav {
+  display: none;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+/* Make h1 slightly smaller on smaller devices */
+@media and (max-width: 62rem) {
+  h1 {
+    font-size: 2.75rem;
+    line-height: 3.25rem;
+  }
+}

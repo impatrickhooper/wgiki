@@ -69,8 +69,17 @@ blockquote {
     }
   }
 
-  /* For an individual division post, color the links as the division color */
-  .single #page.#{$division} .hentry a {
-    @include color-links($color);
+  /* For an individual division post, color stuff */
+  .single #page.#{$division} {
+
+    /* Color links division specific color */
+    .hentry a {
+      @include color-links($color);
+    }
+
+    /* Color tabs indicator */
+    .tabs .indicator {
+      background-color: $color;
+    }
   }
 }

@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Collapsible
+   ========================================================================= */
+
+/* Styles for a collapsible header */
+.collapsible-header {
+  color: $heading_gray;
+  font-weight: 400;
+
+  /* Give the icon some right margin and transition properties */
+  i {
+    margin-right: 0.5em;
+    transition: all 0.25s;
+  }
+
+  /* When active, rotate the arrow to be pointing down */
+  &.active i {
+    transform: rotate(90deg);
+    transition: all 0.25s;
+  }
+}
+
+/* Give the body inside a collapsible item some padding */
+.collapsible-body {
+  padding: 1.5em;
+}

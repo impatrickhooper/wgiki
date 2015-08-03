@@ -4603,7 +4603,7 @@ span.badge {
 
 @font-face {
   font-family: "Material-Design-Icons";
-  src: url("../font/material-design-icons/Material-Design-Icons.eot?#iefix") format("embedded-opentype"), url("../font/material-design-icons/Material-Design-Icons.woff2") format("woff2"), url("../font/material-design-icons/Material-Design-Icons.woff") format("woff"), url("../font/material-design-icons/Material-Design-Icons.ttf") format("truetype"), url("../font/material-design-icons/Material-Design-Icons.svg#Material-Design-Icons") format("svg");
+  src: url("fonts/vendors/materialize/material-design-icons/Material-Design-Icons.eot?#iefix") format("embedded-opentype"), url("fonts/vendors/materialize/material-design-icons/Material-Design-Icons.woff2") format("woff2"), url("fonts/vendors/materialize/material-design-icons/Material-Design-Icons.woff") format("woff"), url("fonts/vendors/materialize/material-design-icons/Material-Design-Icons.ttf") format("truetype"), url("fonts/vendors/materialize/material-design-icons/Material-Design-Icons.svg#Material-Design-Icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -10194,9 +10194,14 @@ blockquote {
   .card-resource-accounting-admin .fa.resrc-type, .card-resource-accounting-admin .repo a.resrc-type[href^="http"]:before, .repo .card-resource-accounting-admin a.resrc-type[href^="http"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".article"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".external-link"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".multiple-files"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".avi"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".doc"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".docx"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".flv"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".gif"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".jpeg"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".jpg"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".mov"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".mp4"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".pdf"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".png"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".ppt"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".pptx"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".svg"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".tiff"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".wmv"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".xls"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".xlsx"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".zip"]:before, .card-resource-accounting-admin .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-accounting-admin a.resrc-type[href$=".other"]:before, .card-resource-accounting-admin .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-accounting-admin .resrc-type.post-edit-link {
     color: #00A653; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.accounting-admin .hentry a, .single #page.accounting-admin .hentry a:active, .single #page.accounting-admin .hentry a:hover, .single #page.accounting-admin .hentry a:visited {
-  color: #00A653; }
+/* For an individual division post, color stuff */
+.single #page.accounting-admin {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.accounting-admin .hentry a, .single #page.accounting-admin .hentry a:active, .single #page.accounting-admin .hentry a:hover, .single #page.accounting-admin .hentry a:visited {
+    color: #00A653; }
+  .single #page.accounting-admin .tabs .indicator {
+    background-color: #00A653; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.civil #main-nav.side-nav, .card_top-civil, .btn-civil {
@@ -10214,9 +10219,14 @@ blockquote {
   .card-resource-civil .fa.resrc-type, .card-resource-civil .repo a.resrc-type[href^="http"]:before, .repo .card-resource-civil a.resrc-type[href^="http"]:before, .card-resource-civil .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-civil a.resrc-type[href$=".article"]:before, .card-resource-civil .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-civil a.resrc-type[href$=".external-link"]:before, .card-resource-civil .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-civil a.resrc-type[href$=".multiple-files"]:before, .card-resource-civil .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-civil a.resrc-type[href$=".avi"]:before, .card-resource-civil .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-civil a.resrc-type[href$=".doc"]:before, .card-resource-civil .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-civil a.resrc-type[href$=".docx"]:before, .card-resource-civil .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-civil a.resrc-type[href$=".flv"]:before, .card-resource-civil .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-civil a.resrc-type[href$=".gif"]:before, .card-resource-civil .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-civil a.resrc-type[href$=".jpeg"]:before, .card-resource-civil .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-civil a.resrc-type[href$=".jpg"]:before, .card-resource-civil .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-civil a.resrc-type[href$=".mov"]:before, .card-resource-civil .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-civil a.resrc-type[href$=".mp4"]:before, .card-resource-civil .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-civil a.resrc-type[href$=".pdf"]:before, .card-resource-civil .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-civil a.resrc-type[href$=".png"]:before, .card-resource-civil .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-civil a.resrc-type[href$=".ppt"]:before, .card-resource-civil .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-civil a.resrc-type[href$=".pptx"]:before, .card-resource-civil .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-civil a.resrc-type[href$=".svg"]:before, .card-resource-civil .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-civil a.resrc-type[href$=".tiff"]:before, .card-resource-civil .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-civil a.resrc-type[href$=".wmv"]:before, .card-resource-civil .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-civil a.resrc-type[href$=".xls"]:before, .card-resource-civil .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-civil a.resrc-type[href$=".xlsx"]:before, .card-resource-civil .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-civil a.resrc-type[href$=".zip"]:before, .card-resource-civil .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-civil a.resrc-type[href$=".other"]:before, .card-resource-civil .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-civil .resrc-type.post-edit-link {
     color: #e15258; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.civil .hentry a, .single #page.civil .hentry a:active, .single #page.civil .hentry a:hover, .single #page.civil .hentry a:visited {
-  color: #e15258; }
+/* For an individual division post, color stuff */
+.single #page.civil {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.civil .hentry a, .single #page.civil .hentry a:active, .single #page.civil .hentry a:hover, .single #page.civil .hentry a:visited {
+    color: #e15258; }
+  .single #page.civil .tabs .indicator {
+    background-color: #e15258; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.creative #main-nav.side-nav, .card_top-creative, .btn-creative {
@@ -10234,9 +10244,14 @@ blockquote {
   .card-resource-creative .fa.resrc-type, .card-resource-creative .repo a.resrc-type[href^="http"]:before, .repo .card-resource-creative a.resrc-type[href^="http"]:before, .card-resource-creative .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-creative a.resrc-type[href$=".article"]:before, .card-resource-creative .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-creative a.resrc-type[href$=".external-link"]:before, .card-resource-creative .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-creative a.resrc-type[href$=".multiple-files"]:before, .card-resource-creative .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-creative a.resrc-type[href$=".avi"]:before, .card-resource-creative .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-creative a.resrc-type[href$=".doc"]:before, .card-resource-creative .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-creative a.resrc-type[href$=".docx"]:before, .card-resource-creative .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-creative a.resrc-type[href$=".flv"]:before, .card-resource-creative .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-creative a.resrc-type[href$=".gif"]:before, .card-resource-creative .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-creative a.resrc-type[href$=".jpeg"]:before, .card-resource-creative .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-creative a.resrc-type[href$=".jpg"]:before, .card-resource-creative .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-creative a.resrc-type[href$=".mov"]:before, .card-resource-creative .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-creative a.resrc-type[href$=".mp4"]:before, .card-resource-creative .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-creative a.resrc-type[href$=".pdf"]:before, .card-resource-creative .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-creative a.resrc-type[href$=".png"]:before, .card-resource-creative .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-creative a.resrc-type[href$=".ppt"]:before, .card-resource-creative .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-creative a.resrc-type[href$=".pptx"]:before, .card-resource-creative .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-creative a.resrc-type[href$=".svg"]:before, .card-resource-creative .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-creative a.resrc-type[href$=".tiff"]:before, .card-resource-creative .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-creative a.resrc-type[href$=".wmv"]:before, .card-resource-creative .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-creative a.resrc-type[href$=".xls"]:before, .card-resource-creative .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-creative a.resrc-type[href$=".xlsx"]:before, .card-resource-creative .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-creative a.resrc-type[href$=".zip"]:before, .card-resource-creative .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-creative a.resrc-type[href$=".other"]:before, .card-resource-creative .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-creative .resrc-type.post-edit-link {
     color: #8dc63f; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.creative .hentry a, .single #page.creative .hentry a:active, .single #page.creative .hentry a:hover, .single #page.creative .hentry a:visited {
-  color: #8dc63f; }
+/* For an individual division post, color stuff */
+.single #page.creative {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.creative .hentry a, .single #page.creative .hentry a:active, .single #page.creative .hentry a:hover, .single #page.creative .hentry a:visited {
+    color: #8dc63f; }
+  .single #page.creative .tabs .indicator {
+    background-color: #8dc63f; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.environmental #main-nav.side-nav, .card_top-environmental, .btn-environmental {
@@ -10254,9 +10269,14 @@ blockquote {
   .card-resource-environmental .fa.resrc-type, .card-resource-environmental .repo a.resrc-type[href^="http"]:before, .repo .card-resource-environmental a.resrc-type[href^="http"]:before, .card-resource-environmental .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-environmental a.resrc-type[href$=".article"]:before, .card-resource-environmental .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-environmental a.resrc-type[href$=".external-link"]:before, .card-resource-environmental .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-environmental a.resrc-type[href$=".multiple-files"]:before, .card-resource-environmental .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-environmental a.resrc-type[href$=".avi"]:before, .card-resource-environmental .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-environmental a.resrc-type[href$=".doc"]:before, .card-resource-environmental .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-environmental a.resrc-type[href$=".docx"]:before, .card-resource-environmental .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-environmental a.resrc-type[href$=".flv"]:before, .card-resource-environmental .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-environmental a.resrc-type[href$=".gif"]:before, .card-resource-environmental .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-environmental a.resrc-type[href$=".jpeg"]:before, .card-resource-environmental .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-environmental a.resrc-type[href$=".jpg"]:before, .card-resource-environmental .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-environmental a.resrc-type[href$=".mov"]:before, .card-resource-environmental .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-environmental a.resrc-type[href$=".mp4"]:before, .card-resource-environmental .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-environmental a.resrc-type[href$=".pdf"]:before, .card-resource-environmental .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-environmental a.resrc-type[href$=".png"]:before, .card-resource-environmental .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-environmental a.resrc-type[href$=".ppt"]:before, .card-resource-environmental .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-environmental a.resrc-type[href$=".pptx"]:before, .card-resource-environmental .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-environmental a.resrc-type[href$=".svg"]:before, .card-resource-environmental .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-environmental a.resrc-type[href$=".tiff"]:before, .card-resource-environmental .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-environmental a.resrc-type[href$=".wmv"]:before, .card-resource-environmental .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-environmental a.resrc-type[href$=".xls"]:before, .card-resource-environmental .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-environmental a.resrc-type[href$=".xlsx"]:before, .card-resource-environmental .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-environmental a.resrc-type[href$=".zip"]:before, .card-resource-environmental .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-environmental a.resrc-type[href$=".other"]:before, .card-resource-environmental .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-environmental .resrc-type.post-edit-link {
     color: #F9845B; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.environmental .hentry a, .single #page.environmental .hentry a:active, .single #page.environmental .hentry a:hover, .single #page.environmental .hentry a:visited {
-  color: #F9845B; }
+/* For an individual division post, color stuff */
+.single #page.environmental {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.environmental .hentry a, .single #page.environmental .hentry a:active, .single #page.environmental .hentry a:hover, .single #page.environmental .hentry a:visited {
+    color: #F9845B; }
+  .single #page.environmental .tabs .indicator {
+    background-color: #F9845B; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.hr #main-nav.side-nav, .card_top-hr, .btn-hr {
@@ -10274,9 +10294,14 @@ blockquote {
   .card-resource-hr .fa.resrc-type, .card-resource-hr .repo a.resrc-type[href^="http"]:before, .repo .card-resource-hr a.resrc-type[href^="http"]:before, .card-resource-hr .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-hr a.resrc-type[href$=".article"]:before, .card-resource-hr .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-hr a.resrc-type[href$=".external-link"]:before, .card-resource-hr .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-hr a.resrc-type[href$=".multiple-files"]:before, .card-resource-hr .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-hr a.resrc-type[href$=".avi"]:before, .card-resource-hr .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-hr a.resrc-type[href$=".doc"]:before, .card-resource-hr .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-hr a.resrc-type[href$=".docx"]:before, .card-resource-hr .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-hr a.resrc-type[href$=".flv"]:before, .card-resource-hr .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-hr a.resrc-type[href$=".gif"]:before, .card-resource-hr .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-hr a.resrc-type[href$=".jpeg"]:before, .card-resource-hr .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-hr a.resrc-type[href$=".jpg"]:before, .card-resource-hr .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-hr a.resrc-type[href$=".mov"]:before, .card-resource-hr .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-hr a.resrc-type[href$=".mp4"]:before, .card-resource-hr .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-hr a.resrc-type[href$=".pdf"]:before, .card-resource-hr .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-hr a.resrc-type[href$=".png"]:before, .card-resource-hr .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-hr a.resrc-type[href$=".ppt"]:before, .card-resource-hr .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-hr a.resrc-type[href$=".pptx"]:before, .card-resource-hr .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-hr a.resrc-type[href$=".svg"]:before, .card-resource-hr .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-hr a.resrc-type[href$=".tiff"]:before, .card-resource-hr .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-hr a.resrc-type[href$=".wmv"]:before, .card-resource-hr .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-hr a.resrc-type[href$=".xls"]:before, .card-resource-hr .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-hr a.resrc-type[href$=".xlsx"]:before, .card-resource-hr .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-hr a.resrc-type[href$=".zip"]:before, .card-resource-hr .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-hr a.resrc-type[href$=".other"]:before, .card-resource-hr .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-hr .resrc-type.post-edit-link {
     color: #fbb03b; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.hr .hentry a, .single #page.hr .hentry a:active, .single #page.hr .hentry a:hover, .single #page.hr .hentry a:visited {
-  color: #fbb03b; }
+/* For an individual division post, color stuff */
+.single #page.hr {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.hr .hentry a, .single #page.hr .hentry a:active, .single #page.hr .hentry a:hover, .single #page.hr .hentry a:visited {
+    color: #fbb03b; }
+  .single #page.hr .tabs .indicator {
+    background-color: #fbb03b; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.it #main-nav.side-nav, .card_top-it, .btn-it {
@@ -10294,9 +10319,14 @@ blockquote {
   .card-resource-it .fa.resrc-type, .card-resource-it .repo a.resrc-type[href^="http"]:before, .repo .card-resource-it a.resrc-type[href^="http"]:before, .card-resource-it .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-it a.resrc-type[href$=".article"]:before, .card-resource-it .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-it a.resrc-type[href$=".external-link"]:before, .card-resource-it .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-it a.resrc-type[href$=".multiple-files"]:before, .card-resource-it .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-it a.resrc-type[href$=".avi"]:before, .card-resource-it .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-it a.resrc-type[href$=".doc"]:before, .card-resource-it .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-it a.resrc-type[href$=".docx"]:before, .card-resource-it .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-it a.resrc-type[href$=".flv"]:before, .card-resource-it .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-it a.resrc-type[href$=".gif"]:before, .card-resource-it .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-it a.resrc-type[href$=".jpeg"]:before, .card-resource-it .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-it a.resrc-type[href$=".jpg"]:before, .card-resource-it .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-it a.resrc-type[href$=".mov"]:before, .card-resource-it .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-it a.resrc-type[href$=".mp4"]:before, .card-resource-it .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-it a.resrc-type[href$=".pdf"]:before, .card-resource-it .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-it a.resrc-type[href$=".png"]:before, .card-resource-it .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-it a.resrc-type[href$=".ppt"]:before, .card-resource-it .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-it a.resrc-type[href$=".pptx"]:before, .card-resource-it .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-it a.resrc-type[href$=".svg"]:before, .card-resource-it .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-it a.resrc-type[href$=".tiff"]:before, .card-resource-it .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-it a.resrc-type[href$=".wmv"]:before, .card-resource-it .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-it a.resrc-type[href$=".xls"]:before, .card-resource-it .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-it a.resrc-type[href$=".xlsx"]:before, .card-resource-it .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-it a.resrc-type[href$=".zip"]:before, .card-resource-it .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-it a.resrc-type[href$=".other"]:before, .card-resource-it .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-it .resrc-type.post-edit-link {
     color: #637a91; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.it .hentry a, .single #page.it .hentry a:active, .single #page.it .hentry a:hover, .single #page.it .hentry a:visited {
-  color: #637a91; }
+/* For an individual division post, color stuff */
+.single #page.it {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.it .hentry a, .single #page.it .hentry a:active, .single #page.it .hentry a:hover, .single #page.it .hentry a:visited {
+    color: #637a91; }
+  .single #page.it .tabs .indicator {
+    background-color: #637a91; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.landscape-arch #main-nav.side-nav, .card_top-landscape-arch, .btn-landscape-arch {
@@ -10314,9 +10344,14 @@ blockquote {
   .card-resource-landscape-arch .fa.resrc-type, .card-resource-landscape-arch .repo a.resrc-type[href^="http"]:before, .repo .card-resource-landscape-arch a.resrc-type[href^="http"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".article"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".external-link"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".multiple-files"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".avi"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".doc"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".docx"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".flv"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".gif"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".jpeg"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".jpg"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".mov"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".mp4"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".pdf"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".png"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".ppt"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".pptx"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".svg"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".tiff"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".wmv"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".xls"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".xlsx"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".zip"]:before, .card-resource-landscape-arch .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-landscape-arch a.resrc-type[href$=".other"]:before, .card-resource-landscape-arch .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-landscape-arch .resrc-type.post-edit-link {
     color: #c25975; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.landscape-arch .hentry a, .single #page.landscape-arch .hentry a:active, .single #page.landscape-arch .hentry a:hover, .single #page.landscape-arch .hentry a:visited {
-  color: #c25975; }
+/* For an individual division post, color stuff */
+.single #page.landscape-arch {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.landscape-arch .hentry a, .single #page.landscape-arch .hentry a:active, .single #page.landscape-arch .hentry a:hover, .single #page.landscape-arch .hentry a:visited {
+    color: #c25975; }
+  .single #page.landscape-arch .tabs .indicator {
+    background-color: #c25975; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.planning #main-nav.side-nav, .card_top-planning, .btn-planning {
@@ -10334,9 +10369,14 @@ blockquote {
   .card-resource-planning .fa.resrc-type, .card-resource-planning .repo a.resrc-type[href^="http"]:before, .repo .card-resource-planning a.resrc-type[href^="http"]:before, .card-resource-planning .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-planning a.resrc-type[href$=".article"]:before, .card-resource-planning .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-planning a.resrc-type[href$=".external-link"]:before, .card-resource-planning .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-planning a.resrc-type[href$=".multiple-files"]:before, .card-resource-planning .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-planning a.resrc-type[href$=".avi"]:before, .card-resource-planning .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-planning a.resrc-type[href$=".doc"]:before, .card-resource-planning .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-planning a.resrc-type[href$=".docx"]:before, .card-resource-planning .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-planning a.resrc-type[href$=".flv"]:before, .card-resource-planning .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-planning a.resrc-type[href$=".gif"]:before, .card-resource-planning .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-planning a.resrc-type[href$=".jpeg"]:before, .card-resource-planning .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-planning a.resrc-type[href$=".jpg"]:before, .card-resource-planning .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-planning a.resrc-type[href$=".mov"]:before, .card-resource-planning .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-planning a.resrc-type[href$=".mp4"]:before, .card-resource-planning .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-planning a.resrc-type[href$=".pdf"]:before, .card-resource-planning .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-planning a.resrc-type[href$=".png"]:before, .card-resource-planning .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-planning a.resrc-type[href$=".ppt"]:before, .card-resource-planning .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-planning a.resrc-type[href$=".pptx"]:before, .card-resource-planning .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-planning a.resrc-type[href$=".svg"]:before, .card-resource-planning .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-planning a.resrc-type[href$=".tiff"]:before, .card-resource-planning .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-planning a.resrc-type[href$=".wmv"]:before, .card-resource-planning .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-planning a.resrc-type[href$=".xls"]:before, .card-resource-planning .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-planning a.resrc-type[href$=".xlsx"]:before, .card-resource-planning .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-planning a.resrc-type[href$=".zip"]:before, .card-resource-planning .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-planning a.resrc-type[href$=".other"]:before, .card-resource-planning .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-planning .resrc-type.post-edit-link {
     color: #f092b0; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.planning .hentry a, .single #page.planning .hentry a:active, .single #page.planning .hentry a:hover, .single #page.planning .hentry a:visited {
-  color: #f092b0; }
+/* For an individual division post, color stuff */
+.single #page.planning {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.planning .hentry a, .single #page.planning .hentry a:active, .single #page.planning .hentry a:hover, .single #page.planning .hentry a:visited {
+    color: #f092b0; }
+  .single #page.planning .tabs .indicator {
+    background-color: #f092b0; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.roadway #main-nav.side-nav, .card_top-roadway, .btn-roadway {
@@ -10354,9 +10394,14 @@ blockquote {
   .card-resource-roadway .fa.resrc-type, .card-resource-roadway .repo a.resrc-type[href^="http"]:before, .repo .card-resource-roadway a.resrc-type[href^="http"]:before, .card-resource-roadway .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-roadway a.resrc-type[href$=".article"]:before, .card-resource-roadway .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-roadway a.resrc-type[href$=".external-link"]:before, .card-resource-roadway .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-roadway a.resrc-type[href$=".multiple-files"]:before, .card-resource-roadway .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-roadway a.resrc-type[href$=".avi"]:before, .card-resource-roadway .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-roadway a.resrc-type[href$=".doc"]:before, .card-resource-roadway .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-roadway a.resrc-type[href$=".docx"]:before, .card-resource-roadway .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-roadway a.resrc-type[href$=".flv"]:before, .card-resource-roadway .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-roadway a.resrc-type[href$=".gif"]:before, .card-resource-roadway .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-roadway a.resrc-type[href$=".jpeg"]:before, .card-resource-roadway .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-roadway a.resrc-type[href$=".jpg"]:before, .card-resource-roadway .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-roadway a.resrc-type[href$=".mov"]:before, .card-resource-roadway .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-roadway a.resrc-type[href$=".mp4"]:before, .card-resource-roadway .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-roadway a.resrc-type[href$=".pdf"]:before, .card-resource-roadway .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-roadway a.resrc-type[href$=".png"]:before, .card-resource-roadway .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-roadway a.resrc-type[href$=".ppt"]:before, .card-resource-roadway .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-roadway a.resrc-type[href$=".pptx"]:before, .card-resource-roadway .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-roadway a.resrc-type[href$=".svg"]:before, .card-resource-roadway .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-roadway a.resrc-type[href$=".tiff"]:before, .card-resource-roadway .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-roadway a.resrc-type[href$=".wmv"]:before, .card-resource-roadway .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-roadway a.resrc-type[href$=".xls"]:before, .card-resource-roadway .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-roadway a.resrc-type[href$=".xlsx"]:before, .card-resource-roadway .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-roadway a.resrc-type[href$=".zip"]:before, .card-resource-roadway .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-roadway a.resrc-type[href$=".other"]:before, .card-resource-roadway .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-roadway .resrc-type.post-edit-link {
     color: #39ADD1; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.roadway .hentry a, .single #page.roadway .hentry a:active, .single #page.roadway .hentry a:hover, .single #page.roadway .hentry a:visited {
-  color: #39ADD1; }
+/* For an individual division post, color stuff */
+.single #page.roadway {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.roadway .hentry a, .single #page.roadway .hentry a:active, .single #page.roadway .hentry a:hover, .single #page.roadway .hentry a:visited {
+    color: #39ADD1; }
+  .single #page.roadway .tabs .indicator {
+    background-color: #39ADD1; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.structures #main-nav.side-nav, .card_top-structures, .btn-structures {
@@ -10374,9 +10419,14 @@ blockquote {
   .card-resource-structures .fa.resrc-type, .card-resource-structures .repo a.resrc-type[href^="http"]:before, .repo .card-resource-structures a.resrc-type[href^="http"]:before, .card-resource-structures .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-structures a.resrc-type[href$=".article"]:before, .card-resource-structures .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-structures a.resrc-type[href$=".external-link"]:before, .card-resource-structures .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-structures a.resrc-type[href$=".multiple-files"]:before, .card-resource-structures .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-structures a.resrc-type[href$=".avi"]:before, .card-resource-structures .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-structures a.resrc-type[href$=".doc"]:before, .card-resource-structures .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-structures a.resrc-type[href$=".docx"]:before, .card-resource-structures .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-structures a.resrc-type[href$=".flv"]:before, .card-resource-structures .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-structures a.resrc-type[href$=".gif"]:before, .card-resource-structures .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-structures a.resrc-type[href$=".jpeg"]:before, .card-resource-structures .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-structures a.resrc-type[href$=".jpg"]:before, .card-resource-structures .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-structures a.resrc-type[href$=".mov"]:before, .card-resource-structures .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-structures a.resrc-type[href$=".mp4"]:before, .card-resource-structures .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-structures a.resrc-type[href$=".pdf"]:before, .card-resource-structures .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-structures a.resrc-type[href$=".png"]:before, .card-resource-structures .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-structures a.resrc-type[href$=".ppt"]:before, .card-resource-structures .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-structures a.resrc-type[href$=".pptx"]:before, .card-resource-structures .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-structures a.resrc-type[href$=".svg"]:before, .card-resource-structures .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-structures a.resrc-type[href$=".tiff"]:before, .card-resource-structures .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-structures a.resrc-type[href$=".wmv"]:before, .card-resource-structures .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-structures a.resrc-type[href$=".xls"]:before, .card-resource-structures .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-structures a.resrc-type[href$=".xlsx"]:before, .card-resource-structures .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-structures a.resrc-type[href$=".zip"]:before, .card-resource-structures .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-structures a.resrc-type[href$=".other"]:before, .card-resource-structures .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-structures .resrc-type.post-edit-link {
     color: #00CAD6; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.structures .hentry a, .single #page.structures .hentry a:active, .single #page.structures .hentry a:hover, .single #page.structures .hentry a:visited {
-  color: #00CAD6; }
+/* For an individual division post, color stuff */
+.single #page.structures {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.structures .hentry a, .single #page.structures .hentry a:active, .single #page.structures .hentry a:hover, .single #page.structures .hentry a:visited {
+    color: #00CAD6; }
+  .single #page.structures .tabs .indicator {
+    background-color: #00CAD6; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.sue #main-nav.side-nav, .card_top-sue, .btn-sue {
@@ -10394,9 +10444,14 @@ blockquote {
   .card-resource-sue .fa.resrc-type, .card-resource-sue .repo a.resrc-type[href^="http"]:before, .repo .card-resource-sue a.resrc-type[href^="http"]:before, .card-resource-sue .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-sue a.resrc-type[href$=".article"]:before, .card-resource-sue .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-sue a.resrc-type[href$=".external-link"]:before, .card-resource-sue .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-sue a.resrc-type[href$=".multiple-files"]:before, .card-resource-sue .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-sue a.resrc-type[href$=".avi"]:before, .card-resource-sue .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-sue a.resrc-type[href$=".doc"]:before, .card-resource-sue .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-sue a.resrc-type[href$=".docx"]:before, .card-resource-sue .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-sue a.resrc-type[href$=".flv"]:before, .card-resource-sue .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-sue a.resrc-type[href$=".gif"]:before, .card-resource-sue .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-sue a.resrc-type[href$=".jpeg"]:before, .card-resource-sue .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-sue a.resrc-type[href$=".jpg"]:before, .card-resource-sue .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-sue a.resrc-type[href$=".mov"]:before, .card-resource-sue .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-sue a.resrc-type[href$=".mp4"]:before, .card-resource-sue .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-sue a.resrc-type[href$=".pdf"]:before, .card-resource-sue .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-sue a.resrc-type[href$=".png"]:before, .card-resource-sue .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-sue a.resrc-type[href$=".ppt"]:before, .card-resource-sue .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-sue a.resrc-type[href$=".pptx"]:before, .card-resource-sue .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-sue a.resrc-type[href$=".svg"]:before, .card-resource-sue .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-sue a.resrc-type[href$=".tiff"]:before, .card-resource-sue .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-sue a.resrc-type[href$=".wmv"]:before, .card-resource-sue .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-sue a.resrc-type[href$=".xls"]:before, .card-resource-sue .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-sue a.resrc-type[href$=".xlsx"]:before, .card-resource-sue .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-sue a.resrc-type[href$=".zip"]:before, .card-resource-sue .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-sue a.resrc-type[href$=".other"]:before, .card-resource-sue .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-sue .resrc-type.post-edit-link {
     color: #838CC7; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.sue .hentry a, .single #page.sue .hentry a:active, .single #page.sue .hentry a:hover, .single #page.sue .hentry a:visited {
-  color: #838CC7; }
+/* For an individual division post, color stuff */
+.single #page.sue {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.sue .hentry a, .single #page.sue .hentry a:active, .single #page.sue .hentry a:hover, .single #page.sue .hentry a:visited {
+    color: #838CC7; }
+  .single #page.sue .tabs .indicator {
+    background-color: #838CC7; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.survey #main-nav.side-nav, .card_top-survey, .btn-survey {
@@ -10414,9 +10469,14 @@ blockquote {
   .card-resource-survey .fa.resrc-type, .card-resource-survey .repo a.resrc-type[href^="http"]:before, .repo .card-resource-survey a.resrc-type[href^="http"]:before, .card-resource-survey .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-survey a.resrc-type[href$=".article"]:before, .card-resource-survey .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-survey a.resrc-type[href$=".external-link"]:before, .card-resource-survey .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-survey a.resrc-type[href$=".multiple-files"]:before, .card-resource-survey .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-survey a.resrc-type[href$=".avi"]:before, .card-resource-survey .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-survey a.resrc-type[href$=".doc"]:before, .card-resource-survey .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-survey a.resrc-type[href$=".docx"]:before, .card-resource-survey .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-survey a.resrc-type[href$=".flv"]:before, .card-resource-survey .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-survey a.resrc-type[href$=".gif"]:before, .card-resource-survey .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-survey a.resrc-type[href$=".jpeg"]:before, .card-resource-survey .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-survey a.resrc-type[href$=".jpg"]:before, .card-resource-survey .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-survey a.resrc-type[href$=".mov"]:before, .card-resource-survey .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-survey a.resrc-type[href$=".mp4"]:before, .card-resource-survey .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-survey a.resrc-type[href$=".pdf"]:before, .card-resource-survey .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-survey a.resrc-type[href$=".png"]:before, .card-resource-survey .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-survey a.resrc-type[href$=".ppt"]:before, .card-resource-survey .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-survey a.resrc-type[href$=".pptx"]:before, .card-resource-survey .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-survey a.resrc-type[href$=".svg"]:before, .card-resource-survey .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-survey a.resrc-type[href$=".tiff"]:before, .card-resource-survey .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-survey a.resrc-type[href$=".wmv"]:before, .card-resource-survey .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-survey a.resrc-type[href$=".xls"]:before, .card-resource-survey .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-survey a.resrc-type[href$=".xlsx"]:before, .card-resource-survey .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-survey a.resrc-type[href$=".zip"]:before, .card-resource-survey .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-survey a.resrc-type[href$=".other"]:before, .card-resource-survey .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-survey .resrc-type.post-edit-link {
     color: #7D669E; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.survey .hentry a, .single #page.survey .hentry a:active, .single #page.survey .hentry a:hover, .single #page.survey .hentry a:visited {
-  color: #7D669E; }
+/* For an individual division post, color stuff */
+.single #page.survey {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.survey .hentry a, .single #page.survey .hentry a:active, .single #page.survey .hentry a:hover, .single #page.survey .hentry a:visited {
+    color: #7D669E; }
+  .single #page.survey .tabs .indicator {
+    background-color: #7D669E; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.trans-planning #main-nav.side-nav, .card_top-trans-planning, .btn-trans-planning {
@@ -10434,9 +10494,14 @@ blockquote {
   .card-resource-trans-planning .fa.resrc-type, .card-resource-trans-planning .repo a.resrc-type[href^="http"]:before, .repo .card-resource-trans-planning a.resrc-type[href^="http"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".article"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".external-link"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".multiple-files"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".avi"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".doc"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".docx"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".flv"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".gif"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".jpeg"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".jpg"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".mov"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".mp4"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".pdf"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".png"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".ppt"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".pptx"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".svg"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".tiff"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".wmv"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".xls"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".xlsx"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".zip"]:before, .card-resource-trans-planning .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-trans-planning a.resrc-type[href$=".other"]:before, .card-resource-trans-planning .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-trans-planning .resrc-type.post-edit-link {
     color: #3079AB; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.trans-planning .hentry a, .single #page.trans-planning .hentry a:active, .single #page.trans-planning .hentry a:hover, .single #page.trans-planning .hentry a:visited {
-  color: #3079AB; }
+/* For an individual division post, color stuff */
+.single #page.trans-planning {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.trans-planning .hentry a, .single #page.trans-planning .hentry a:active, .single #page.trans-planning .hentry a:hover, .single #page.trans-planning .hentry a:visited {
+    color: #3079AB; }
+  .single #page.trans-planning .tabs .indicator {
+    background-color: #3079AB; }
 
 /* Build selector based on division for page, top of card, and button */
 #page.utilities #main-nav.side-nav, .card_top-utilities, .btn-utilities {
@@ -10454,9 +10519,14 @@ blockquote {
   .card-resource-utilities .fa.resrc-type, .card-resource-utilities .repo a.resrc-type[href^="http"]:before, .repo .card-resource-utilities a.resrc-type[href^="http"]:before, .card-resource-utilities .repo a.resrc-type[href$=".article"]:before, .repo .card-resource-utilities a.resrc-type[href$=".article"]:before, .card-resource-utilities .repo a.resrc-type[href$=".external-link"]:before, .repo .card-resource-utilities a.resrc-type[href$=".external-link"]:before, .card-resource-utilities .repo a.resrc-type[href$=".multiple-files"]:before, .repo .card-resource-utilities a.resrc-type[href$=".multiple-files"]:before, .card-resource-utilities .repo a.resrc-type[href$=".avi"]:before, .repo .card-resource-utilities a.resrc-type[href$=".avi"]:before, .card-resource-utilities .repo a.resrc-type[href$=".doc"]:before, .repo .card-resource-utilities a.resrc-type[href$=".doc"]:before, .card-resource-utilities .repo a.resrc-type[href$=".docx"]:before, .repo .card-resource-utilities a.resrc-type[href$=".docx"]:before, .card-resource-utilities .repo a.resrc-type[href$=".flv"]:before, .repo .card-resource-utilities a.resrc-type[href$=".flv"]:before, .card-resource-utilities .repo a.resrc-type[href$=".gif"]:before, .repo .card-resource-utilities a.resrc-type[href$=".gif"]:before, .card-resource-utilities .repo a.resrc-type[href$=".jpeg"]:before, .repo .card-resource-utilities a.resrc-type[href$=".jpeg"]:before, .card-resource-utilities .repo a.resrc-type[href$=".jpg"]:before, .repo .card-resource-utilities a.resrc-type[href$=".jpg"]:before, .card-resource-utilities .repo a.resrc-type[href$=".mov"]:before, .repo .card-resource-utilities a.resrc-type[href$=".mov"]:before, .card-resource-utilities .repo a.resrc-type[href$=".mp4"]:before, .repo .card-resource-utilities a.resrc-type[href$=".mp4"]:before, .card-resource-utilities .repo a.resrc-type[href$=".pdf"]:before, .repo .card-resource-utilities a.resrc-type[href$=".pdf"]:before, .card-resource-utilities .repo a.resrc-type[href$=".png"]:before, .repo .card-resource-utilities a.resrc-type[href$=".png"]:before, .card-resource-utilities .repo a.resrc-type[href$=".ppt"]:before, .repo .card-resource-utilities a.resrc-type[href$=".ppt"]:before, .card-resource-utilities .repo a.resrc-type[href$=".pptx"]:before, .repo .card-resource-utilities a.resrc-type[href$=".pptx"]:before, .card-resource-utilities .repo a.resrc-type[href$=".svg"]:before, .repo .card-resource-utilities a.resrc-type[href$=".svg"]:before, .card-resource-utilities .repo a.resrc-type[href$=".tiff"]:before, .repo .card-resource-utilities a.resrc-type[href$=".tiff"]:before, .card-resource-utilities .repo a.resrc-type[href$=".wmv"]:before, .repo .card-resource-utilities a.resrc-type[href$=".wmv"]:before, .card-resource-utilities .repo a.resrc-type[href$=".xls"]:before, .repo .card-resource-utilities a.resrc-type[href$=".xls"]:before, .card-resource-utilities .repo a.resrc-type[href$=".xlsx"]:before, .repo .card-resource-utilities a.resrc-type[href$=".xlsx"]:before, .card-resource-utilities .repo a.resrc-type[href$=".zip"]:before, .repo .card-resource-utilities a.resrc-type[href$=".zip"]:before, .card-resource-utilities .repo a.resrc-type[href$=".other"]:before, .repo .card-resource-utilities a.resrc-type[href$=".other"]:before, .card-resource-utilities .single #page #content .edit-link .resrc-type.post-edit-link, .single #page #content .edit-link .card-resource-utilities .resrc-type.post-edit-link {
     color: #53BBB4; }
 
-/* For an individual division post, color the links as the division color */
-.single #page.utilities .hentry a, .single #page.utilities .hentry a:active, .single #page.utilities .hentry a:hover, .single #page.utilities .hentry a:visited {
-  color: #53BBB4; }
+/* For an individual division post, color stuff */
+.single #page.utilities {
+  /* Color links division specific color */
+  /* Color tabs indicator */ }
+  .single #page.utilities .hentry a, .single #page.utilities .hentry a:active, .single #page.utilities .hentry a:hover, .single #page.utilities .hentry a:visited {
+    color: #53BBB4; }
+  .single #page.utilities .tabs .indicator {
+    background-color: #53BBB4; }
 
 /* =========================================================================
    Layout
@@ -11845,7 +11915,14 @@ h1.entry-title, h1.page-title {
 
 /* Slightly increase the font size of an entry description */
 .entry-description {
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  /* Align it's text in the center on small devices */ }
+  @media  (max-width: 40rem) {
+    .entry-description {
+      text-align: center; } }
+
+.entry-extra {
+  margin-bottom: 1.5em; }
 
 /* =========================================================================
    Components
@@ -11878,6 +11955,7 @@ h1.entry-title, h1.page-title {
       background-color: transparent; }
     #main-nav.side-nav .side-nav_item-second a {
       font-size: 0.875em;
+      font-weight: 300;
       padding: 0.5em 0 0.5em 40px;
       /* Standard icon width for alignment purposes */ }
       #main-nav.side-nav .side-nav_item-second a .fa, #main-nav.side-nav .side-nav_item-second a .repo a[href^="http"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href^="http"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".article"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".article"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".external-link"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".external-link"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".multiple-files"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".multiple-files"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".avi"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".avi"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".doc"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".doc"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".docx"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".docx"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".flv"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".flv"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".gif"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".gif"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".jpeg"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".jpeg"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".jpg"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".jpg"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".mov"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".mov"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".mp4"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".mp4"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".pdf"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".pdf"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".png"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".png"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".ppt"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".ppt"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".pptx"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".pptx"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".svg"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".svg"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".tiff"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".tiff"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".wmv"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".wmv"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".xls"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".xls"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".xlsx"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".xlsx"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".zip"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".zip"]:before, #main-nav.side-nav .side-nav_item-second a .repo a[href$=".other"]:before, .repo #main-nav.side-nav .side-nav_item-second a a[href$=".other"]:before, #main-nav.side-nav .side-nav_item-second a .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link #main-nav.side-nav .side-nav_item-second a .post-edit-link {
@@ -12114,24 +12192,26 @@ h1.entry-title, h1.page-title {
   padding: 0.75em 0;
   position: relative;
   /* Give the label some styles by default and position next to input */
-  /* Styles for the search input */
-  /* When search field has focus, make label and input text darker */ }
+  /* On focus, change label color */
+  /* Styles for the search input */ }
   .search-field label {
-    color: #A9A9A9;
+    color: #ccc;
     left: 1em;
     line-height: 2.25;
     position: absolute;
     -webkit-transition: all 0.3s;
             transition: all 0.3s; }
+  .search-field.has-focus label {
+    color: #666; }
   .search-field #s {
     /* Make the placeholder a lighter gray by default */
     /* Firefox */
     /* Internet Explorer */
     /* Webkit (Chrome, Safari, Opera) */
-    border: 2px solid #A9A9A9;
+    border: 2px solid #ccc;
     border-radius: 0.25em;
     box-sizing: border-box;
-    color: #A9A9A9;
+    color: #666;
     display: inline-block;
     font-weight: 400;
     height: auto;
@@ -12143,16 +12223,16 @@ h1.entry-title, h1.page-title {
     width: 100%;
     /* On focus, change to darker gray border and color */ }
     .search-field #s:-moz-placeholder {
-      color: #A9A9A9;
+      color: #ccc;
       transition: color 0.3s; }
     .search-field #s::-moz-placeholder {
-      color: #A9A9A9;
+      color: #ccc;
       transition: color 0.3s; }
     .search-field #s:-ms-input-placeholder {
-      color: #A9A9A9;
+      color: #ccc;
       transition: color 0.3s; }
     .search-field #s::-webkit-input-placeholder {
-      color: #A9A9A9;
+      color: #ccc;
       -webkit-transition: color 0.3s;
               transition: color 0.3s; }
     .search-field #s:focus {
@@ -12176,8 +12256,6 @@ h1.entry-title, h1.page-title {
         color: #666;
         -webkit-transition: color 0.3s;
                 transition: color 0.3s; }
-  .search-field.has-focus label, .search-field.has-focus #s {
-    color: #666; }
 
 /* Increase font size of title on search results page */
 .search-title {
@@ -12337,8 +12415,8 @@ h1.entry-title, h1.page-title {
     right: 10px;
     position: absolute;
     top: 100%;
-    -webkit-transition: 0.1s ease-in-out;
-            transition: 0.1s ease-in-out; }
+    -webkit-transition: 0.25s ease-in-out;
+            transition: 0.25s ease-in-out; }
   .card-stack:before {
     height: 10px;
     left: 20px;
@@ -12356,6 +12434,41 @@ h1.entry-title, h1.page-title {
   display: inline-block; }
   .btn, .btn-large, .btn:active, .btn-large:active, .btn:hover, .btn-large:hover, .btn:visited, .btn-large:visited {
     color: #fff; }
+
+/* ==========================================================================
+   Collapsible
+   ========================================================================= */
+/* Styles for a collapsible header */
+.collapsible-header {
+  color: #555;
+  font-weight: 400;
+  /* Give the icon some right margin and transition properties */
+  /* When active, rotate the arrow to be pointing down */ }
+  .collapsible-header i {
+    margin-right: 0.5em;
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s; }
+  .collapsible-header.active i {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s; }
+
+/* Give the body inside a collapsible item some padding */
+.collapsible-body {
+  padding: 1.5em; }
+
+/* ==========================================================================
+   Tabs
+   ========================================================================= */
+/* Make tab links heading gray color */
+.tab a, .tab a:active .tab a:hover, .tab a:visited {
+  color: #555 !important; }
+
+/* Give tab content some padding */
+.tab_content {
+  padding: 1.5em 0; }
 
 /* =========================================================================
    Pages
@@ -12376,43 +12489,39 @@ h1.entry-title, h1.page-title {
     /* Give a big left border to look like tab and some padding */
     border-left-style: solid;
     border-left-width: 0.5em;
+    overflow: visible;
     padding: 0.75em 1.5em;
     -webkit-transition: all 0.25s ease-in-out;
             transition: all 0.25s ease-in-out;
     /* Scale to slightly larger size on hover */
     /* Center align text on small screen */
     /* Right padding equivalent to width of absolutely positioned button */
-    /* Position the action button absolutely to the right and center */
+    /* Give some top margin to resource type on small devices */
     /* Increase title font size */
     /* Give icon a right margin */
-    /* Style updated date: smaller and lighter color */ }
+    /* Style updated date: smaller and lighter color */
+    /* Position the action button absolutely to the right and center */ }
     .cards-resources .card:active, .cards-resources .card:hover {
-      -webkit-transform: scale(1.025);
-          -ms-transform: scale(1.025);
-              transform: scale(1.025);
+      -webkit-transform: scale(1.045);
+          -ms-transform: scale(1.045);
+              transform: scale(1.045);
       -webkit-transition: all 0.25s ease-in-out;
               transition: all 0.25s ease-in-out; }
     @media  (max-width: 40rem) {
       .cards-resources .card {
+        padding: 0.5em 1.5em;
         text-align: center; } }
     .cards-resources .card_info {
       padding-right: 8em; }
       @media  (max-width: 40rem) {
         .cards-resources .card_info {
           padding-right: 0; } }
-    .cards-resources .card_action {
-      position: absolute;
-      right: 1.5em;
-      top: 3.0625em;
-      /* Move back into normal flow on small devices */ }
-      @media  (max-width: 40rem) {
-        .cards-resources .card_action {
-          margin-top: 1.5em;
-          padding-bottom: 0.75em;
-          position: static; } }
+    @media  (max-width: 40rem) {
+      .cards-resources .card_type {
+        margin-top: 0.375em; } }
     .cards-resources .card_name {
       font-size: 1.5rem;
-      margin: 0.75em 0; }
+      margin: 0.375em 0; }
     .cards-resources .card .resrc-type {
       margin-right: 0.375em; }
     .cards-resources .card_updated {
@@ -12421,6 +12530,16 @@ h1.entry-title, h1.page-title {
       font-weight: 300;
       line-height: 2;
       margin: 0; }
+    .cards-resources .card_action {
+      position: absolute;
+      right: 1.5em;
+      top: 2.5em;
+      /* Move back into normal flow on small devices */ }
+      @media  (max-width: 40rem) {
+        .cards-resources .card_action {
+          margin-top: 1em;
+          padding-bottom: 0.75em;
+          position: static; } }
 
 /* ==========================================================================
    Single Posts
@@ -12438,7 +12557,7 @@ h1.entry-title, h1.page-title {
     text-align: center;
     /* Turn the post edit link into a pencil */ }
     .single #page #content .edit-link .post-edit-link {
-      font-size: 2rem; }
+      font-size: 1.75rem; }
       .single #page #content .edit-link .post-edit-link, .single #page #content .edit-link .post-edit-link:active, .single #page #content .edit-link .post-edit-link:hover, .single #page #content .edit-link .post-edit-link:visited {
         color: #A9A9A9; }
 

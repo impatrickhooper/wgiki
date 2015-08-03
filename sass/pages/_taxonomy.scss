@@ -16,18 +16,20 @@
     /* Give a big left border to look like tab and some padding */
     border-left-style: solid;
     border-left-width: 0.5em;
+    overflow: visible;
     padding: 0.75em 1.5em;
     transition: all 0.25s ease-in-out;
 
     /* Scale to slightly larger size on hover */
     &:active,
     &:hover {
-      transform: scale(1.025);
+      transform: scale(1.045);
       transition: all 0.25s ease-in-out;
     }
 
     /* Center align text on small screen */
     @include breakpoint($mq_small) {
+      padding: 0.5em 1.5em;
       text-align: center;
     }
 
@@ -40,24 +42,17 @@
       }
     }
 
-    /* Position the action button absolutely to the right and center */
-    &_action {
-      position: absolute;
-      right: 1.5em;
-      top: 3.0625em;
-
-      /* Move back into normal flow on small devices */
+    /* Give some top margin to resource type on small devices */
+    &_type {
       @include breakpoint($mq_small) {
-        margin-top: 1.5em;
-        padding-bottom: 0.75em;
-        position: static;
+        margin-top: 0.375em;
       }
     }
 
     /* Increase title font size */
     &_name {
       font-size: 1.5rem;
-      margin: 0.75em 0;
+      margin: 0.375em 0;
     }
 
     /* Give icon a right margin */
@@ -72,6 +67,20 @@
       font-weight: 300;
       line-height: 2;
       margin: 0;
+    }
+
+    /* Position the action button absolutely to the right and center */
+    &_action {
+      position: absolute;
+      right: 1.5em;
+      top: 2.5em;
+
+      /* Move back into normal flow on small devices */
+      @include breakpoint($mq_small) {
+        margin-top: 1em;
+        padding-bottom: 0.75em;
+        position: static;
+      }
     }
   }
 }

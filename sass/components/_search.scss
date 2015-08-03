@@ -10,23 +10,28 @@
 
   /* Give the label some styles by default and position next to input */
   label {
-    color: $alternate_gray;
+    color: $input_gray;
     left: 1em;
     line-height: 2.25;
     position: absolute;
     transition: all 0.3s;
   }
 
+  /* On focus, change label color */
+  &.has-focus label {
+    color: $text_gray;
+  }
+
   /* Styles for the search input */
   #s {
 
     /* Make the placeholder a lighter gray by default */
-    @include color-placeholder($alternate_gray);
+    @include color-placeholder($input_gray);
 
-    border: 2px solid $alternate_gray;
+    border: 2px solid $input_gray;
     border-radius: 0.25em;
     box-sizing: border-box;
-    color: $alternate_gray;
+    color: $text_gray;
     display: inline-block;
     font-weight: 400;
     height: auto;
@@ -43,14 +48,6 @@
       border: 2px solid $text_gray;
       box-shadow: none;
       transition: all 0.3s;
-    }
-  }
-
-  /* When search field has focus, make label and input text darker */
-  &.has-focus {
-    label,
-    #s {
-      color: $text_gray;
     }
   }
 }
