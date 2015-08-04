@@ -20,6 +20,7 @@ img {
   height: auto;
 }
 
+/* Add word wrap to links so they break onto new lines */
 a {
   @include word-wrap;
 }

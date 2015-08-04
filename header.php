@@ -28,8 +28,12 @@
     <header id="masthead" class="site-header clearfix" role="banner">
 
     <?php
-      /* Load the side nav on all but home page */
-      if (!is_front_page()) {
+
+      if(!is_front_page()) {
+        /* Output the mobile nav */
+        get_template_part('template-parts/content_wgiki', 'mobile-nav');
+
+        /* Output the side nav */
         get_template_part('template-parts/content_wgiki', 'side-nav');
       }
 

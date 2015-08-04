@@ -8,6 +8,13 @@
   margin: 3em -3em -1.5em;
   padding: 1.5em 3em 0;
 
+  /* Reduce margin and padding on mobile */
+  @include breakpoint($mq_not_large) {
+    margin: 3em -1em -1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
   /* Styles for section titles */
   &_title {
     color: #222;
