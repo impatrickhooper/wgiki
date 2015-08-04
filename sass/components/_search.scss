@@ -5,8 +5,13 @@
 /* Styles for the search field */
 .search-field {
   clear: both;
-  padding: 1.5em 0 0.75em;
+  padding: 1.5em 0 0;
   position: relative;
+
+  /* On home page, add some bottom padding */
+  .home & {
+    padding-bottom: 0.75em;
+  }
 
   /* Give the label some styles by default and position next to input */
   label {
@@ -55,7 +60,7 @@
 /* Increase font size of title on search results page */
 .search-title {
   font-size: 1.75rem;
-  margin: 0.5em 0;
+  margin: 0.75em 0 0.5em;
 }
 
 /* Make search terms italicized */
