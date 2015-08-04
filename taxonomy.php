@@ -64,7 +64,7 @@ get_header(); ?>
               </div><!-- .card_info -->
             </a><!-- .card_link -->
             <div class="card_action">
-              <a href="<?php echo $resrc_link; ?>" target="<?php echo $resrc_targ; ?>" class="btn waves-effect waves-light">View</a>
+              <a href="<?php echo $resrc_link; ?>" target="<?php echo $resrc_targ; ?>" class="btn btn-<?php echo $div_name; ?> waves-effect waves-light">View</a>
             </div><!-- .card_action -->
           </div><!-- .card.card-resource -->
         </div><!-- .card-container -->

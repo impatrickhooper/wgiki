@@ -2,25 +2,39 @@
    Collapsible
    ========================================================================= */
 
-/* Styles for a collapsible header */
-.collapsible-header {
-  color: $heading_gray;
-  font-weight: 400;
+/* Styles for collapsible component */
+.collapsible {
+  margin: 0 0 1.5em;
+  padding: 0;
 
-  /* Give the icon some right margin and transition properties */
-  i {
-    margin-right: 0.5em;
+  /* Styles for a collapsible header */
+  &-header {
+    color: $heading_gray;
+    font-weight: 400;
     transition: all 0.25s;
+
+    /* Make less opaque on hover on non-touch devices */
+    .no-touch &:active,
+    .no-touch &:hover {
+      opacity: 0.5;
+      transition: all 0.25s;
+    }
+
+    /* Give the icon some right margin and transition properties */
+    i {
+      margin-right: 0.5em;
+      transition: all 0.25s;
+    }
+
+    /* When active, rotate the arrow to be pointing down */
+    &.active i {
+      transform: rotate(90deg);
+      transition: all 0.25s;
+    }
   }
 
-  /* When active, rotate the arrow to be pointing down */
-  &.active i {
-    transform: rotate(90deg);
-    transition: all 0.25s;
+  /* Give the body inside a collapsible item some padding */
+  &-body {
+    padding: 1.5em;
   }
-}
-
-/* Give the body inside a collapsible item some padding */
-.collapsible-body {
-  padding: 1.5em;
 }

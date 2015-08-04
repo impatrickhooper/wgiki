@@ -7,4 +7,10 @@
   @include color-links($white);
 
   display: inline-block;
+
+  /* Keep opacity unaltered on hover */
+  &:active,
+  &:hover {
+    opacity: 1;
+  }
 }

@@ -192,8 +192,9 @@
     right: 20px;
   }
 
-  /* On hover, increase the height of the pseudo-elements to generate expansion */
-  &:hover {
+  /* On non-touch devices on hover, increase the height of the pseudo-elements to generate expansion */
+  &:hover,
+  &:active {
     &:before {
       height: 20px;
     }

@@ -8,8 +8,8 @@
   /* Give a little more shadow */
   @extend .z-depth-2;
 
-  /* Default side nav color is WGI green and width 280px */
-  background-color: $heading_gray;
+  /* Default side nav color styles */
+  background-color: #444;
   width: 280px;
 
   /* Side nav link styles */
@@ -50,4 +50,9 @@
     display: inline-block;
     width: 24px;
   }
+}
+
+#sidenav-overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 998;
 }

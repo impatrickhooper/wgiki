@@ -4,3 +4,9 @@
 
 /* Import other grid partials */
 @import "partials/unsemantic-grid-responsive-tablet";
+
+/* Remove margin and padding for grid container shortcode */
+.grid_builder {
+  margin: 0 0 1.5em;
+  padding: 0;
+}

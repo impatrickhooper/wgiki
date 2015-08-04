@@ -43,11 +43,12 @@ WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, 
    ========================================================================= */
 @import "layout/grid/grid";
 @import "layout/content";
+@import "layout/footer";
 
 /* =========================================================================
    Components
    ========================================================================= */
-@import "components/side-nav";
+@import "components/navigation/navigation";
 @import "components/icons";
 @import "components/search";
 @import "components/cards";

@@ -2,8 +2,11 @@
    Content
    ========================================================================== */
 
-/* Create left space equal to the size of the sidebar */
+/* Create left space equal to the size of the sidebar and flex for sticky footer */
 #page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 0 3em 1.5em;
 
   /* Reduce padding on medium and small screens */
@@ -21,6 +24,11 @@
       padding-left: 1.5em;
     }
   }
+}
+
+/* Flex content to create sticky footer */
+#content {
+  flex: 1;
 }
 
 /* Styles for the main header (entry title) on a page */
@@ -50,6 +58,7 @@ h1.page-title {
   }
 }
 
+/* Give some bottom margin below extra fields in an entry */
 .entry-extra {
   margin-bottom: 1.5em;
 }

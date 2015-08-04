@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* Footer styles: light gray and negatve margins to offset page margins */
+.footer {
+  background-color: #f9f9f9;
+  margin: 3em -3em -1.5em;
+  padding: 1.5em 3em 0;
+
+  /* Styles for section titles */
+  &_title {
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+
+    /* Styles for division titles in the footer */
+    &-div {
+      color: #444;
+      font-size: 0.875rem;
+      margin: 0 0 0.25em;
+    }
+  }
+
+  /* On small screens, give content managers column top margin */
+  &_managers {
+    @include breakpoint($mq_small) {
+      margin-top: 1.5em;
+    }
+  }
+
+  /* Styles for a division column in the content managers grid */
+  &_col-div {
+    padding: 0 0.75em 1.5em 0;
+
+    /* For every 5th element in the grid on large screens, clear floats */
+    &:nth-of-type(4n+2) {
+      @include breakpoint($mq_large) {
+        clear: both;
+      }
+    }
+
+    /* For every 4th element in the grid on medium screens, clear floats */
+    &:nth-of-type(3n+2) {
+      @include breakpoint($mq_medium) {
+        clear: both;
+      }
+    }
+
+    /* For every 3rd element in the grid on small screens, clear floats */
+    &:nth-of-type(2n+2) {
+      @include breakpoint($mq_small) {
+        clear: both;
+      }
+    }
+  }
+
+  /* Styles for footer paragraphs */
+  p {
+    line-height: 1;
+    margin: 0 0 0.125em;
+    padding: 0;
+  }
+
+  /* Styles for footer links */
+  a {
+    @include color-links($text_gray);
+
+    font-size: 0.75rem;
+
+    /* Underline on hover rather than alter opacity */
+    .no-touch &:active,
+    .no-touch &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+}

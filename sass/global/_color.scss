@@ -2,13 +2,21 @@
    Color
    ========================================================================== */
 
+/* Transition property for links */
+a {
+  transition: all 0.25s ease-in-out;
+}
+
 /* When hovering on links, make slightly transparent */
 a:active,
 a:hover {
   opacity: 0.5;
+  transition: all 0.25s ease-in-out;
 }
 
-.touch a[target="_blank"] {
+/* On touch screens, remove opacity on hover for links that open a new tab or mailto links */
+.touch a[target="_blank"],
+.touch a[href^="mailto:"] {
   &:hover,
   &:active {
     opacity: 1;
@@ -59,10 +67,6 @@ blockquote {
   /* For division resource card, color buttons, border, and icon */
   .card-resource-#{$division} {
     border-left-color: $color;
-
-    .btn {
-      background-color: $color;
-    }
 
     .fa.resrc-type {
       color: $color;

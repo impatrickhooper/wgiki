@@ -1,6 +1,6 @@
 <?php
 /**
- * WGIki custom post types
+ * WGIki custom post types, taxonomies, and roles
  *
  * @package WGIki
  */

@@ -6,18 +6,35 @@
  */
 
 /**
- * Grid system shortcode
+ * Grid shortcode
  *
- * 1. Gets value of "classes" attribute used in shortcode
- * 2. Replaces the shortcode with a div with the classes provided
+ * 1. Generates html for a grid container div
+ * 2. Runs shortcodes (if any) in the content
  * 3. Returns the html
  */
-//add_shortcode('grid_col', 'grid_col_shortcode');
-//function grid_col_shortcode($atts, $content, $tag) {
-//  $values = shortcode_atts(array('l' => '', 'm' =), $atts);
-//  $output = '<div class="' . $values['classes'] . '">' . $content . '</div>';
-//  return $output;
-//}
+add_shortcode('grid', 'grid_shortcode');
+function grid_shortcode($atts, $content, $tag) {
+  $grid_html = '<div class="grid_builder grid-container">';
+  $grid_html .= do_shortcode($content);
+  $grid_html .= "</div>";
+
+  return $grid_html;
+}
+
+
+/**
+ * Grid column shortcode
+ *
+ * 1. Gets value of "l" (large), "m" (medium), "s" (small) shortcode attributes
+ * 2. Generate html for a div with the appropriate screen size classes and widths
+ * 3. Returns the html width content included
+ */
+add_shortcode('grid_col', 'grid_col_shortcode');
+function grid_col_shortcode($atts, $content, $tag) {
+  $values = shortcode_atts(array('l' => '100', 'm' => '100', 's' => '100', 'gutter' => '0'), $atts);
+
+  return '<div class="grid_col grid-' . $values['l'] . ' tablet-grid-' . $values['m'] . ' mobile-grid-' . $values['s'] . '" style="padding: ' . $values['gutter'] . 'px;">' . $content . '</div>';
+}
 
 /**
  * Collapsible shortcode
@@ -31,11 +48,11 @@ add_shortcode('collapsible', 'collapsible_shortcode');
 function collapsible_shortcode($atts, $content, $tag) {
   $values = shortcode_atts(array('type' => 'accordion'), $atts);
 
-  $output = '<ul class="collapsible" data-collapsible="' . strtolower($values['type']) . '">';
-  $output .= do_shortcode($content);
-  $output .= '</ul>';
+  $collapsible_html = '<ul class="collapsible" data-collapsible="' . strtolower($values['type']) . '">';
+  $collapsible_html .= do_shortcode($content);
+  $collapsible_html .= '</ul>';
 
-  return $output;
+  return $collapsible_html;
 }
 
 /**
@@ -49,12 +66,12 @@ add_shortcode('collapsible_item', 'collapsible_item_shortcode');
 function collapsible_item_shortcode($atts, $content, $tag) {
   $values = shortcode_atts(array('title' => ''), $atts);
 
-  $output = '<li>';
-  $output .= '<div class="collapsible-header"><i class="mdi-hardware-keyboard-arrow-right"></i>' . $values['title'] . '</div>';
-  $output .= '<div class="collapsible-body">' . $content . '</div>';
-  $output .= '</li>';
+  $collapsible_item_html = '<li>';
+  $collapsible_item_html .= '<div class="collapsible-header"><i class="mdi-hardware-keyboard-arrow-right"></i>' . $values['title'] . '</div>';
+  $collapsible_item_html .= '<div class="collapsible-body">' . $content . '</div>';
+  $collapsible_item_html .= '</li>';
 
-  return $output;
+  return $collapsible_item_html;
 }
 
 /**
@@ -92,15 +109,15 @@ function tabs_nav_shortcode($atts, $content, $tag) {
 /**
  * Tabs Navigation Item shortcode
  *
- * 1. Get the id and width for this shortcode
+ * 1. Get the id for this shortcode
  * 2. Begins building html for Materialize tabs navigation item
  * 3. Returns the html
  */
 add_shortcode('tabs_nav_item', 'tabs_nav_item_shortcode');
 function tabs_nav_item_shortcode($atts, $content, $tag) {
-  $values = shortcode_atts(array('id' => '', 'width' => '100'), $atts);
+  $values = shortcode_atts(array('id' => ''), $atts);
 
-  return '<li class="tab" style="width: ' . $values['width'] . '%"><a href="#' . $values['id'] . '">' . $content . '</a></li>';
+  return '<li class="tab"><a href="#' . $values['id'] . '">' . $content . '</a></li>';
 }
 
 /**

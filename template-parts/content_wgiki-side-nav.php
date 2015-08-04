@@ -10,9 +10,17 @@
   $page_div = getPageDivision();
 ?>
 
-<a href="#" data-activates="main-nav" class="right side-nav_collapse hide-on-large-only waves-effect waves-circle">
-  <i class="fa fa-bars" title="Navigation"></i>
-</a><!-- .side-nav_collapse -->
+<div class="navbar-fixed">
+  <nav id="mobile-nav" class="nav-wrapper">
+    <ul class="right">
+      <li>
+        <a href="#" data-activates="main-nav" class="side-nav_collapse waves-effect waves-circle">
+          <i class="fa fa-bars" title="Navigation"></i>
+        </a><!-- .side-nav_collapse -->
+      </li><!-- .right -->
+    </ul>
+  </nav><!-- #mobile-nav.nav-wrapper -->
+</div><!-- .navbar-fixed -->
 
 <nav id="main-nav" class="side-nav fixed main-navigation" role="navigation">
 
