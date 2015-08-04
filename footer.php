@@ -16,6 +16,8 @@
         <p><a href="http://www.wantmangroup.com" target="_blank">WGI</a></p>
         <p><a href="http://wgicreative.com" target="_blank">WGI Creative</a></p>
         <p><a href="http://wgilds.com" target="_blank">WGI Land Design Services</a></p>
+        <p><br></p>
+        <p><a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i>Sign out</a></p>
       </div><!-- .footer_links -->
 
       <?php

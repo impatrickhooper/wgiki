@@ -41,8 +41,6 @@
       get_template_part('template-parts/content_wgiki', 'search-form');
     ?>
 
-
-
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">

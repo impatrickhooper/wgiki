@@ -22,11 +22,21 @@
     margin-bottom: 1.5em;
     text-transform: uppercase;
 
+    /* Increase font size on small devices */
+    @include breakpoint($mq_small) {
+      font-size: 1.125rem;
+    }
+
     /* Styles for division titles in the footer */
     &-div {
       color: #444;
       font-size: 0.875rem;
       margin: 0 0 0.25em;
+
+      /* Increase font size on small devices */
+      @include breakpoint($mq_small) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -76,11 +86,21 @@
 
     font-size: 0.75rem;
 
+    /* Increase font size on small devices */
+    @include breakpoint($mq_small) {
+      font-size: 0.875rem;
+    }
+
     /* Underline on hover rather than alter opacity */
     .no-touch &:active,
     .no-touch &:hover {
       opacity: 1;
       text-decoration: underline;
+    }
+
+    /* Styles for sign out icon */
+    .fa {
+      margin-right: 0.25em;
     }
   }
 }
