@@ -2,9 +2,14 @@
    Login Page
    ========================================================================== */
 
+/* Styles for html page */
+html {
+  background: #fff;
+}
+
 /* Styles for the body of the page */
 body {
-  background-color: #fff;
+  background: #fff;
   color: #9e9e9e;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   letter-spacing: 0.5px;

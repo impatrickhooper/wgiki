@@ -2,6 +2,15 @@
    Content
    ========================================================================== */
 
+/* Make height 100% on IE10 as fix for flexbo */
+.flexboxtweener {
+  &,
+  body,
+  #page {
+    height: 100%;
+  }
+}
+
 /* Create left space equal to the size of the sidebar and flex for sticky footer */
 #page {
   display: flex;
@@ -28,7 +37,7 @@
 
 /* Flex content to create sticky footer */
 #content {
-  flex: 1;
+  flex: 1 0 auto;
 }
 
 /* Styles for the main header (entry title) on a page */

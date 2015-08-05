@@ -9,6 +9,8 @@
   /* Adds webkit class if this is a webkit browser, no-webkit otherwise */
   ($.browser.webkit) ? $('html').addClass('webkit') : $('html').addClass('no-webkit');
 
+  Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign', 'end', true));
+
 /* Search
    ========================================================================== */
 
