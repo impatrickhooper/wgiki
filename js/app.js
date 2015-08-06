@@ -31,7 +31,10 @@
 
 
   /* When the search toggle is clicked on mobile, slide down the search form */
-  $('.search_toggle').on('click', function() {
+  $('.search_toggle').on('click', function(e) {
+
+    /* Prevent default link action */
+    e.preventDefault();
 
     /* Get element to activate */
     $activatedElement = $('#' + $(this).attr('data-activates'));
@@ -59,8 +62,6 @@
     /* If not a small device, show the form, otherwise hide it */
     if (Modernizr.mq('(min-width: 40.0625rem)')) {
       $searchForm.show();
-    } else {
-      $searchForm.hide();
     }
   }, 125);
 
