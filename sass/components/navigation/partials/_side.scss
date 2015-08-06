@@ -8,9 +8,10 @@
   /* Give a little more shadow */
   @extend .z-depth-2;
 
-  /* Default side nav color styles */
+  /* Default side nav color styles and z-index */
   background-color: $wgi_gray;
   width: 280px;
+  z-index: 1000;
 
   /* Side nav link styles */
   a {
@@ -68,5 +69,5 @@
 
 #sidenav-overlay {
   background-color: rgba(0, 0, 0, 0.85);
-  z-index: 998;
+  z-index: 999;
 }

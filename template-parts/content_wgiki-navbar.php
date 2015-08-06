@@ -9,7 +9,13 @@
 <div class="navbar-fixed">
   <nav id="navbar" class="nav-wrapper">
 
-    <?php get_template_part('template-parts/content_wgiki', 'search-form'); ?>
+    <?php
+      /* Get logo */
+      get_template_part('template-parts/content_wgiki', 'logo');
+
+      /* Get search */
+      get_template_part('template-parts/content_wgiki', 'search-form');
+    ?>
 
     <ul class="right">
       <li>

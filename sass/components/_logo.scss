@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Logo
+   ========================================================================== */
+
+/* Styles for logo */
+#navbar .brand-logo {
+  height: 56px;
+  left: 24px;
+  line-height: 56px;
+  max-width: 112px;
+  position: absolute;
+  width: 100%;
+
+  /* Full opacity on hover */
+  &:active,
+  &:hover {
+    opacity: 1;
+  }
+
+  /* Styles for div that contains the logo svg/img */
+  div {
+    height: 0;
+    padding-bottom: 27.2514071%; // Use padding hack for SVG elements
+    position: relative;
+
+    /* SVG styles */
+    svg {
+      left: 0;
+      position: absolute;
+      top: 12px;
+    }
+  }
+
+  /* Adjustments on devices */
+  @include breakpoint($mq_all) {
+    left: 16px;
+    transform: none;
+  }
+}

@@ -6,9 +6,9 @@
  */
 ?>
 
-<a href="<?php echo home_url(); ?>" class="brand-logo waves-effect grid-100 tablet-grid-100 mobile-grid-100 clearfix">
+<a href="<?php echo home_url(); ?>" class="brand-logo waves-effect">
   <div>
-    <svg viewBox="0 0 471.1 82">
+    <svg viewBox="0 0 213.2 58.1">
       <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/defs.svg#logo"></use>
     </svg>
   </div>

@@ -32,7 +32,11 @@
 
   /* When the search toggle is clicked on mobile, slide down the search form */
   $('.search_toggle').on('click', function() {
+
+    /* Get element to activate */
     $activatedElement = $('#' + $(this).attr('data-activates'));
+
+    /* Slide activated element into view */
     $activatedElement.slideDown();
 
     /* When the search form is opened, focus the input */
@@ -41,8 +45,28 @@
 
   /* When the close icon is clicked on the search field, slide up the search */
   $('#search-form .search-field_close-icon').on('click', function() {
+
+    /* Find the search form and slide it out of view */
     $(this).parents('#search-form').slideUp();
   });
+
+  /* Function to show/hide search form depending on device size */
+  var showSearch = _.debounce(function() {
+
+    /* Get search form as jQuery element */
+    $searchForm = $('#search-form');
+
+    /* If not a small device, show the form, otherwise hide it */
+    if (Modernizr.mq('(min-width: 40.0625rem)')) {
+      $searchForm.show();
+    } else {
+      $searchForm.hide();
+    }
+  }, 125);
+
+  /* Run on load and window resize (only every 125ms) */
+  showSearch();
+  $(window).resize(showSearch);
 
 /* Taxonomy Pages
    ========================================================================== */
@@ -68,7 +92,7 @@
     }
   }, 125);
 
-  /* Run on load and window resize (only every 300ms) */
+  /* Run on load and window resize (only every 125ms) */
   sizeResourceButton();
   $(window).resize(sizeResourceButton);
 
