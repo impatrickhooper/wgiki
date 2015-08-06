@@ -24,9 +24,9 @@
 
   /* Add class to indicate when this field is in focus or not */
   $('.search-field #s').focusin(function() {
-    $(this).parent().addClass('has-focus');
+    $(this).parents('label').addClass('has-focus');
   }).focusout(function() {
-    $(this).parent().removeClass('has-focus');
+    $(this).parents('label').removeClass('has-focus');
   });
 
 

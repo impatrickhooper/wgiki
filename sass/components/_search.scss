@@ -15,34 +15,53 @@
 
   /* Styles for the search field label */
   label {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.25em;
     display: inline-block;
     height: 36px;
     line-height: 36px;
     margin-top: -2px;
     position: relative;
+    transition: 0.25s ease-in-out;
     vertical-align: middle;
     width: 100%;
 
     /* Increase size on small devices and move up in the layer stack */
     @include breakpoint($mq_small) {
+      background-color: $wgi_gray;
       height: 56px;
       line-height: 56px;
       z-index: 2;
+    }
+
+    /* Styles for label when input is focused */
+    &.has-focus {
+      background-color: transparent;
+      transition: 0.25s ease-in-out;
+
+      @include breakpoint($mq_small) {
+        background-color: $wgi_green;
+      }
     }
   }
 
   /* Styles for search field icons */
   i {
+    border-bottom: 2px solid transparent;
     color: $white;
     font-size: 1.25rem;
     height: 36px;
     left: 24px;
     line-height: 36px;
-    margin-top: -1px;
     opacity: 0.75;
     position: absolute;
     transition: 0.25s ease-in-out;
-    width: 24px;
+    width: 40px;
+
+    /* Change alignment of icon slightly */
+    &:before {
+      vertical-align: 10%;
+    }
 
     /* Make larger on mobile */
     @include breakpoint($mq_small) {
@@ -59,6 +78,7 @@
 
     /* Hide the close icon inside the field by default */
     &.search-field_close-icon {
+      border-bottom-color: transparent !important;
       cursor: pointer;
       display: none;
       font-size: 1.5rem;
@@ -80,53 +100,57 @@
     }
   }
 
-  /* When the search field has focus, make icons full opacity */
+  /* When the search field has focus, make icons full opacity with bottom white border */
   .has-focus i {
+    border-bottom-color: $white;
     opacity: 1;
   }
 
-  /* Styles for the search input */
-  #s {
-
-    /* Make the placeholder a lighter gray by default */
-    @include color-placeholder($white, 0.75);
-
-    background-color: rgba(0, 0, 0, 0.1);
-    border: 0;
-    border-radius: 0.125em;
-    box-sizing: border-box;
-    color: $white;
+  /* Styles for span wrapping the search input */
+  span {
     height: 36px;
     line-height: 36px;
-    margin: 0;
-    padding-left: 72px;
-    padding-right: 1.5em;
-    transition: 0.25s ease-in-out;
-    width: 100%;
+    position: absolute;
+    right: 0;
+    left: 64px;
 
-    /* On small devices, make larger and alter other styles like color */
-    @include breakpoint($mq_small) {
-      background-color: $wgi_gray;
-      font-size: 1.125rem;
-      height: 56px;
-      line-height: 56px;
-      padding-left: 64px;
-    }
-
-    /* On focus, change to darker gray border and color */
-    &:focus {
-
-      /* Full white on focus */
-      @include color-placeholder($white, 1);
-
-      /* Slightly less transparent on focus */
-      background-color: rgba(0, 0, 0, 0.15);
-      box-shadow: none;
+    /* Styles for the search input */
+    #s {
+      border: 0;
+      border-bottom: 2px solid transparent;
+      box-sizing: border-box;
+      color: $white;
+      height: 36px;
+      line-height: 36px;
+      margin: 0;
+      padding-right: 1.5em;
       transition: 0.25s ease-in-out;
+      width: 100%;
 
-      /* On small devices, make focus background green */
+      /* Make the placeholder a lighter gray by default */
+      @include color-placeholder($white, 0.75);
+
+      /* On small devices, make larger */
       @include breakpoint($mq_small) {
-        background-color: $wgi_green;
+        font-size: 1.125rem;
+        height: 56px;
+        line-height: 56px;
+      }
+
+      /* On focus, change to darker gray border and color */
+      &:focus {
+        background-color: transparent;
+        border-bottom-color: $white;
+        box-shadow: none;
+        transition: 0.25s ease-in-out;
+
+        /* Full white on focus */
+        @include color-placeholder($white, 1);
+
+        /* Transparent border on small devices */
+        @include breakpoint($mq_small) {
+          border-bottom-color: transparent;
+        }
       }
     }
   }
