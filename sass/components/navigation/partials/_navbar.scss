@@ -62,6 +62,10 @@
         opacity: 1;
         transition: none;
       }
+
+      .touch & {
+        opacity: 1;
+      }
     }
 
     /* Hide search toggle button on medium and large devices */
