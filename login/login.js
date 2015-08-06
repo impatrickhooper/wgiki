@@ -18,7 +18,7 @@
   /* Change "Lost your password?" to "Forgot your password?" */
   $('.login-action-login #login #nav a[title="Password Lost and Found"]').text('Forgot your password?');
 
-/* Passowrd Reset Form
+/* Passowrd Reset Form: Request Reset
  ========================================================================== */
 
   /* Change header to "Password Reset" */
@@ -32,5 +32,17 @@
 
   /* Change "Get password" to "Reset My Password" */
   $(".login-action-lostpassword #login #wp-submit").val('Reset My Password');
+
+/* Passowrd Reset Form: New Password
+ ========================================================================== */
+
+  /* Change header to "Password Reset" */
+  $('.login-action-rp #login h1, .login-action-resetpass #login h1').addClass('entry-title').text('Password Reset');
+
+  /* Insert an asterisk for required fields */
+  $('.login-action-rp #resetpassform label br, .login-action-resetpass #resetpassform label br').before('<span class="field-required">*</span>');
+
+  /* Change submit button text to "Change My Password" */
+  $(".login-action-rp #login #wp-submit, .login-action-resetpass #login #wp-submit").val('Change My Password');
 
 })(jQuery);

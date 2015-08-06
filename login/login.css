@@ -24,6 +24,11 @@ body {
   width: 100%;
 }
 
+#login .message {
+  box-sizing: border-box;
+  width: 100% !important;
+}
+
 /* Give some bottom margin to a login error message */
 #login #login_error {
   margin-bottom: 0.75em;
@@ -56,23 +61,39 @@ body {
 
 /* Styles for the login + password reset forms */
 #loginform,
-#lostpasswordform {
+#lostpasswordform,
+#resetpassform {
   box-shadow: none;
   margin: 0;
   overflow: visible;
   padding: 0;
+  width: 100% !important;
 }
 
 /* Styles for the login + password reset form labels */
 #loginform label,
-#lostpasswordform label {
+#lostpasswordform label,
+#resetpassform label {
   color: #9e9e9e;
   font-size: 1rem;
 }
 
+/* Styles for asterisks on the login form */
+#loginform .field-required,
+#lostpasswordform .field-required,
+#resetpassform .field-required {
+  color: #c74a4a;
+  margin: 0 0 0 8px;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+  top: 8px;
+}
+
 /* Styles for the login + password reset form inputs */
 #loginform input,
-#lostpasswordform input {
+#lostpasswordform input,
+#resetpassform input {
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 2px;
@@ -85,7 +106,8 @@ body {
 
 /* Styles for the login + password reset form inputs on focus (green outline) */
 #loginform input:focus,
-#lostpasswordform input:focus {
+#lostpasswordform input:focus,
+#resetpassform input:focus {
   border-color: #00833E;
   box-shadow: none;
   outline: none;
@@ -110,14 +132,16 @@ body {
 
 /* Styles for the login + password reset form submit button containers */
 #loginform .submit,
-#lostpasswordform .submit {
+#lostpasswordform .submit,
+#resetpassform .submit {
   margin: 1.5em 0 !important;
   text-align: center;
 }
 
 /* Styles for the login + password reset form submit buttons */
 #loginform #wp-submit,
-#lostpasswordform #wp-submit {
+#lostpasswordform #wp-submit,
+#resetpassform #wp-submit {
   background-color: #00833E;
   border: none;
   border-radius: 2px;
@@ -138,8 +162,19 @@ body {
 
 /* Styles for the login + password reset form submit buttons on hover */
 #loginform #wp-submit:hover,
-#lostpasswordform #wp-submit:hover {
+#lostpasswordform #wp-submit:hover,
+#resetpassform #wp-submit:hover {
   opacity: 0.5;
+}
+
+/*Styles for Google ReCAPTCHA */
+.gglcptch {
+  margin: 1.15em 0  2.46em !important;
+}
+
+.g-recaptcha div:first-of-type div:first-of-type {
+  text-align: center;
+  width: 100% !important;
 }
 
 /* Styles for the navigation at the bottom of the login page */
@@ -168,16 +203,6 @@ body {
 .login-action-login .message {
   border-left-color: #00833E;
   margin-bottom: 0.75em;
-}
-
-/* Styles for asterisks on the login form */
-#loginform .field-required {
-  color: #c74a4a;
-  margin: 0 0 0 8px;
-  font-size: x-large;
-  font-weight: bold;
-  position: relative;
-  top: 8px;
 }
 
 /* Styles for the "Forgot your password" field on the login form */
@@ -210,7 +235,7 @@ body {
   color: #00833E;
 }
 
-/* Password Reset Form
+/* Password Reset Form: Request Reset
    ========================================================================== */
 
 /* Styles for a message on the password reset page */
@@ -227,8 +252,25 @@ body {
   margin-top: 0 !important;
 }
 
-.login-action-lostpassword #nav {
-  display: none;
+/* Password Reset Form
+   ========================================================================== */
+
+/* For messages on the login page, give bottom margin and green left border */
+.login-action-rp .message,
+.login-action-resetpass .message {
+  border-left-color: #00833E;
+  margin-bottom: 1.5em;
+}
+
+/* Styles for the password strength indicator */
+.login-action-rp #pass-strength-result,
+.login-action-resetpass #pass-strength-result {
+  border-radius: 2px;
+  border-width: 2px;
+  box-sizing: border-box;
+  color: #666;
+  float: none;
+  width: 100%;
 }
 
 /* Media Queries
@@ -241,6 +283,7 @@ body {
     line-height: 3.25rem;
   }
 
+  /* Alter font size of checkbox */
   #loginform #rememberme:checked:before {
     font-size: 1.375rem;
   }
