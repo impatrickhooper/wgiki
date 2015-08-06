@@ -33,7 +33,7 @@
   /* When the search toggle is clicked on mobile, slide down the search form */
   $('.search_toggle').on('click', function() {
     $activatedElement = $('#' + $(this).attr('data-activates'));
-    $activatedElement.slideDown(300);
+    $activatedElement.slideDown();
 
     /* When the search form is opened, focus the input */
     $activatedElement.find('#s').focus();
@@ -41,7 +41,7 @@
 
   /* When the close icon is clicked on the search field, slide up the search */
   $('#search-form .search-field_close-icon').on('click', function() {
-    $(this).parents('#search-form').slideUp(300);
+    $(this).parents('#search-form').slideUp();
   });
 
 /* Taxonomy Pages
