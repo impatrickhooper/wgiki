@@ -62,7 +62,10 @@
       cursor: pointer;
       display: none;
       font-size: 1.5rem;
+      left: 0;
       margin-top: -1px;
+      text-align: center;
+      width: 64px;
 
       /* On hover, full opacity */
       &:active,
@@ -104,7 +107,7 @@
     /* On small devices, make larger and alter other styles like color */
     @include breakpoint($mq_small) {
       background-color: $wgi_gray;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       height: 56px;
       line-height: 56px;
       padding-left: 64px;
@@ -131,8 +134,8 @@
 
 /* Increase font size of title on search results page */
 .search-title {
-  font-size: 1.75rem;
-  margin: 0.75em 0 0.5em;
+  font-size: 2rem;
+  margin: 1em 0 0.75em;
 }
 
 /* Make search terms italicized */
