@@ -5,15 +5,30 @@
  * @package WGIki
  */
 
+/* Get the current request URI */
+function getCurrentRequest() {
+  global $wp;
+
+  return $wp->request;
+}
+
+/**
+ * Return the current URL
+ */
+function getCurrentURL() {
+  return home_url(add_query_arg(array(), getCurrentRequest()));
+}
+
 /**
  * Return the division corresponding to the current page.
  */
 function getPageDivision() {
+
   /* Initialize empty array and division variable to hold uri matches */
   $page_uri = array();
 
-  /* Grab the first part of the URL after the first / and store in page_uri */
-  preg_match('/\/{1}([\w-_.]+)\/?/i', $_SERVER['REQUEST_URI'], $page_uri);
+  /* Grab the first part of the URL and store in $page_uri */
+  preg_match('/\/{0,1}([\w-_.]+)\/?/i', getCurrentRequest(), $page_uri);
 
   /* If the match was not empty, set the division to the matched part */
   if (count($page_uri) > 1) {

@@ -11,28 +11,11 @@
   }
 }
 
-/* Create left space equal to the size of the sidebar and flex for sticky footer */
+/* Flex for sticky footer */
 #page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 0 3em 1.5em;
-
-  /* Reduce padding on medium and small screens */
-  @include breakpoint($mq_not_large) {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  /* If this is a page with the side nav, give left padding to account for this */
-  &.has-side-nav {
-    padding-left: 328px;
-
-    /* Remove the left padding on all but large screens */
-    @include breakpoint($mq_not_large) {
-      padding-left: 1em;
-    }
-  }
 }
 
 /* Flex content to create sticky footer */
@@ -43,7 +26,7 @@
 /* Styles for the main header (entry title) on a page */
 h1.entry-title,
 h1.page-title {
-  margin: 1.35rem 0 0.85rem;
+  margin: 2.1rem 0;
   text-align: center;
 
   /* Create the gray border after an entry title */

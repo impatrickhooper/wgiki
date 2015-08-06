@@ -19,29 +19,33 @@
  *
  * Set input placeholder color for all browsers
  */
-@mixin color-placeholder($placeholder-color) {
+@mixin color-placeholder($placeholder-color, $opacity) {
 
   /* Firefox */
   &:-moz-placeholder {
     color: $placeholder-color;
-    transition: color 0.3s;
+    opacity: $opacity;
+    transition: opacity 0.25s ease-in-out;
   }
 
   &::-moz-placeholder {
     color: $placeholder-color;
-    transition: color 0.3s;
+    opacity:  $opacity;
+    transition: opacity 0.25s ease-in-out;
   }
 
   /* Internet Explorer */
   &:-ms-input-placeholder {
     color: $placeholder-color;
-    transition: color 0.3s;
+    opacity:  $opacity;
+    transition: opacity 0.25s ease-in-out;
   }
 
   /* Webkit (Chrome, Safari, Opera) */
   &::-webkit-input-placeholder {
     color: $placeholder-color;
-    transition: color 0.3s;
+    opacity:  $opacity;
+    transition: opacity 0.25s ease-in-out;
   }
 }
 

@@ -6,9 +6,12 @@
  */
 ?>
 
-<form role="search" method="get" action="<?php echo site_url(); ?>">
+<form id="search-form" role="search" method="get" action="<?php echo site_url(); ?>">
   <div class="search-field">
-    <label for="search" class="fa fa-search"></label>
-    <input id="s" name="s" type="search" placeholder="Search">
-  </div>
+    <label for="s">
+      <i class="fa fa-search search-field_search-icon"></i>
+      <i class="fa fa-times search-field_close-icon"></i>
+      <input id="s" name="s" type="search" placeholder="Search">
+    </label>
+  </div><!-- .search-field -->
 </form>

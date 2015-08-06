@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Navigation | Navbar
+   ========================================================================= */
+
+/* Give fixed nav bar and wrapper height + line height of 56px */
+.navbar-fixed,
+.nav-wrapper {
+  height: 56px;
+  line-height: 56px;
+}
+
+/* Styles for the mobile nav bar */
+#navbar {
+  background-color: $wgi_gray;
+  padding-left: 24px;
+  padding-right: 80px;
+  transition: 0.3s ease-in-out;
+
+  /* Reduce right padding on large screens and down */
+  @include breakpoint($mq_all) {
+    padding-left: 16px;
+    padding-right: 64px;
+  }
+
+  /* Pull ul of icons to the right and position absolutely */
+  .right {
+    float: none !important;
+    position: absolute;
+    right: 16px;
+    top: 0;
+
+    /* Move to the right on large screens and down */
+    @include breakpoint ($mq_all) {
+      right: 8px;
+    }
+
+    /* Make list items height + line height 56px */
+    li {
+      height: 56px;
+      line-height: 56px;
+
+      /* Transparent background color on hover */
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    /* Styles for the list item links */
+    a {
+      color: $white;
+      height: 48px;
+      line-height: 1;
+      opacity: 0.75;
+      padding: 0;
+      transition: none;
+      width: 48px;
+
+      /* Make full opacity on hover */
+      &:active,
+      &:hover {
+        opacity: 1;
+        transition: none;
+      }
+    }
+
+    /* Hide search toggle button on medium and large devices */
+    .search_toggle {
+      display: none;
+
+      /* Show on small devices */
+      @include breakpoint($mq_small) {
+        display: inline-block;
+      }
+    }
+
+    /* Styles for list item icons */
+    i {
+      font-size: 2rem;
+      height: 32px;
+      margin-top: 7px;
+      width: 32px;
+
+      /* On small devices, decrease size of search icon */
+      &.navbar_search-icon {
+        @include breakpoint($mq_small) {
+          font-size: 1.625rem;
+          margin-top: 9px;
+        }
+      }
+    }
+  }
+}

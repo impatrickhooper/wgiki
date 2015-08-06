@@ -51,7 +51,8 @@ blockquote {
  */
 @each $division, $color in $division_colors {
 
-  /* Build selector based on division for page, top of card, and button */
+  /* Build selector based on division for page, navbar, top of card, and button */
+  #page.#{$division} #navbar,
   #page.#{$division} #main-nav.side-nav,
   .card_top-#{$division},
   .btn-#{$division} {

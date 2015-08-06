@@ -2,57 +2,129 @@
    Search
    ========================================================================= */
 
+/* On small devices, make the search form span the entire navbar and not display by default */
+#search-form {
+  @include breakpoint($mq_small) {
+    display: none;
+    margin: 0px -64px 0px -16px;
+  }
+}
+
 /* Styles for the search field */
 .search-field {
-  clear: both;
-  padding: 1.5em 0 0;
-  position: relative;
 
-  /* On home page, add some bottom padding */
-  .home & {
-    padding-bottom: 0.75em;
-  }
-
-  /* Give the label some styles by default and position next to input */
+  /* Styles for the search field label */
   label {
-    color: $input_gray;
-    left: 1em;
-    line-height: 2.25;
-    position: absolute;
-    transition: all 0.3s;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    margin-top: -2px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+
+    /* Increase size on small devices and move up in the layer stack */
+    @include breakpoint($mq_small) {
+      height: 56px;
+      line-height: 56px;
+      z-index: 2;
+    }
   }
 
-  /* On focus, change label color */
-  &.has-focus label {
-    color: $text_gray;
+  /* Styles for search field icons */
+  i {
+    color: $white;
+    font-size: 1.25rem;
+    height: 36px;
+    left: 24px;
+    line-height: 36px;
+    margin-top: -1px;
+    opacity: 0.75;
+    position: absolute;
+    transition: 0.25s ease-in-out;
+    width: 24px;
+
+    /* Make larger on mobile */
+    @include breakpoint($mq_small) {
+      height: 56px;
+      line-height: 56px;
+    }
+
+    /* Hide the search icon inside the field on small devices */
+    &.search-field_search-icon {
+      @include breakpoint($mq_small) {
+        display: none;
+      }
+    }
+
+    /* Hide the close icon inside the field by default */
+    &.search-field_close-icon {
+      cursor: pointer;
+      display: none;
+      font-size: 1.5rem;
+      margin-top: -1px;
+
+      /* On hover, full opacity */
+      &:active,
+      &:hover {
+        opacity: 1;
+      }
+
+      /* Show icon on small devices */
+      @include breakpoint($mq_small) {
+        display: inline-block;
+      }
+    }
+  }
+
+  /* When the search field has focus, make icons full opacity */
+  .has-focus i {
+    opacity: 1;
   }
 
   /* Styles for the search input */
   #s {
 
     /* Make the placeholder a lighter gray by default */
-    @include color-placeholder($input_gray);
+    @include color-placeholder($white, 0.75);
 
-    border: 2px solid $input_gray;
-    border-radius: 0.25em;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0;
+    border-radius: 0.125em;
     box-sizing: border-box;
-    color: $text_gray;
-    display: inline-block;
-    font-weight: 400;
-    height: 2.5em;
-    line-height: 2.25;
+    color: $white;
+    height: 36px;
+    line-height: 36px;
     margin: 0;
-    padding-left: 3em;
-    transition: all 0.3s;
+    padding-left: 72px;
+    padding-right: 1.5em;
+    transition: 0.25s ease-in-out;
     width: 100%;
+
+    /* On small devices, make larger and alter other styles like color */
+    @include breakpoint($mq_small) {
+      background-color: $wgi_gray;
+      font-size: 1.125rem;
+      height: 56px;
+      line-height: 56px;
+      padding-left: 64px;
+    }
 
     /* On focus, change to darker gray border and color */
     &:focus {
-      @include color-placeholder($text_gray);
 
-      border: 2px solid $text_gray;
+      /* Full white on focus */
+      @include color-placeholder($white, 1);
+
+      /* Slightly less transparent on focus */
+      background-color: rgba(0, 0, 0, 0.15);
       box-shadow: none;
-      transition: all 0.3s;
+      transition: 0.25s ease-in-out;
+
+      /* On small devices, make focus background green */
+      @include breakpoint($mq_small) {
+        background-color: $wgi_green;
+      }
     }
   }
 }

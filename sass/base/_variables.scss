@@ -18,6 +18,7 @@ $mq_medium: $medium_min $medium_max; //  @media (min-width: 40.0625rem) and (max
 $mq_large: min-width $large_min; //  @media (min-width: 62.0625rem)
 $mq_medium_large: $medium_min $large_max; // @media (min-width: 40.0625rem) and (max-width: 75rem)
 $mq_not_large: max-width $medium_max; // @media (max-width: 62rem)
+$mq_all: max-width $large_max; // @media (max-width: 75rem)
 
 /* Colors
    ========================================================================== */

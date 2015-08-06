@@ -33,24 +33,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <?php $page_division = getPageDivision(); ?>
 
-  <div id="page" class="<?php if (!is_front_page()) { echo 'has-side-nav '; } echo $page_division; ?> hfeed site">
+  <div id="page" class="<?php echo $page_division; ?> hfeed site">
 
     <header id="masthead" class="site-header clearfix" role="banner">
 
     <?php
 
-      if(!is_front_page()) {
-        /* Output the mobile nav */
-        get_template_part('template-parts/content_wgiki', 'mobile-nav');
+      /* Output the navbar */
+      get_template_part('template-parts/content_wgiki', 'navbar');
 
-        /* Output the side nav */
-        get_template_part('template-parts/content_wgiki', 'side-nav');
-      }
-
-      /* Output the search bar */
-      get_template_part('template-parts/content_wgiki', 'search-form');
+      /* Output the side nav */
+      get_template_part('template-parts/content_wgiki', 'side-nav');
     ?>
 
     </header><!-- #masthead -->
 
-    <div id="content" class="site-content">
+    <div id="content" class="site-content grid-container">

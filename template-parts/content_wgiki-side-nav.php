@@ -7,10 +7,14 @@
 ?>
 
 <?php
+  /* Get the current url */
+  $currentURL = getCurrentURL();
+
+  /* Get the division this page belongs to */
   $page_div = getPageDivision();
 ?>
 
-<nav id="main-nav" class="side-nav fixed main-navigation" role="navigation">
+<nav id="main-nav" class="side-nav main-navigation" role="navigation">
 
   <div class="site-branding">
   </div><!-- .site-branding -->
@@ -23,11 +27,13 @@
 
     /* For each menu page, do stuff */
     foreach($menu_pages as $menu_page):
-      $menu_page_type = $menu_page->name;
+      $menu_page_type = $menu_page->name; // Get menu page type
+      $menu_page_archive_link = get_post_type_archive_link($menu_page_type); // Get menu page archive link
   ?>
 
     <li class="side-nav_item side-nav_item-first">
-      <a href="<?php echo get_post_type_archive_link($menu_page_type) ?>">
+
+      <a href="<?php echo $menu_page_archive_link; ?>" <?php echo ($menu_page_archive_link == $currentURL || $menu_page_archive_link == $currentURL . '/') ? 'class="active"' : ''; ?>>
         <i class="fa fa-book"></i><?php echo $menu_page->label; ?>
       </a>
 
@@ -56,10 +62,11 @@
           <?php
             /* For each category, do stuff */
             foreach ($cat_pages as $cat_page):
+              $cat_term_link = get_term_link($cat_page); // Get category page link
           ?>
 
           <li class="side-nav_item side-nav_item-second">
-            <a href="<?php echo get_term_link($cat_page); ?>">
+            <a href="<?php echo $cat_term_link; ?>" <?php echo ($cat_term_link == $currentURL || $cat_term_link == $currentURL . '/') ? 'class="active"' : ''; ?>>
               <i class="fa fa-bookmark"></i><?php echo $cat_page->cat_name; ?>
             </a>
           </li>

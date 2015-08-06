@@ -5,6 +5,17 @@
 /* Import other grid partials */
 @import "partials/unsemantic-grid-responsive-tablet";
 
+/* Make grid container 100% wide */
+.grid-container {
+  width: 100%;
+
+  /* On screens bigger than the max width, remove padding */
+  @media (min-width: 75.0625rem) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* Remove margin and padding for grid container shortcode */
 .grid_builder {
   margin: 0 0 1.5em;
