@@ -30,6 +30,7 @@
     /* Increase size on small devices and move up in the layer stack */
     @include breakpoint($mq_small) {
       background-color: $wgi_gray;
+      border-radius: 0;
       height: 56px;
       line-height: 56px;
       z-index: 2;
