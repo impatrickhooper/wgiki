@@ -18,13 +18,13 @@
     border-left-width: 0.5em;
     overflow: visible;
     padding: 0.75em 1.5em;
-    transition: 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 
     /* Scale to slightly larger size on hover */
     &:active,
     &:hover {
       transform: scale(1.03);
-      transition: 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
     }
 
     /* Center align text on small screen */
