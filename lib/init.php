@@ -110,3 +110,13 @@ add_action( 'widgets_init', 'wgiki_widgets_init' );
 
 /* Hide admin bar on front end */
 add_filter('show_admin_bar', '__return_false');
+
+/* Make number of search results unlimited */
+add_filter('post_limits', 'postsperpage');
+function postsperpage($limits) {
+  if (is_search()) {
+    global $wp_query;
+    $wp_query->query_vars['posts_per_page'] = -1;
+  }
+  return $limits;
+}
