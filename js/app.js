@@ -97,5 +97,17 @@
   sizeResourceButton();
   $(window).resize(sizeResourceButton);
 
+  $resrcCard = $('.cards-resources .card');
+
+  $resrcCard.on('mouseenter', addScaleWillChange).on('animationEnd', removeScaleWillChange);
+
+  var addScaleWillChange = function() {
+    $(this).css('will-change', 'transform');
+  }
+
+  var removeScaleWillChange = function() {
+    $(this).css('will-change', 'auto');
+  }
+
 })(jQuery);
 
