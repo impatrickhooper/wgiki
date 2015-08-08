@@ -9,30 +9,123 @@
   @extend .z-depth-2;
 
   /* Default side nav color styles and z-index */
-  background-color: $wgi_gray;
   width: 280px;
   z-index: 1000;
 
+  /* Styles for the top part of the side nav */
+  .side-nav_top {
+    background-color: $wgi_gray;
+    padding: 0.75em 1.5em;
+    position: relative;
+
+    /* Paragraph styles */
+    p {
+      color: $white;
+      line-height: 1;
+      margin: 0 0 0.25em;
+    }
+
+    /* Position sign out/profile links in top right corner */
+    &-links {
+      position: absolute;
+      right: 0.75em;
+      top: 0.75em;
+    }
+
+    /* Style the sign out/profile links */
+    .user-profile_link {
+      color: $white;
+      height: auto;
+      line-height: 1;
+      padding: 0;
+      text-align: center;
+
+      /* Make the icons a little bigger */
+      i {
+        font-size: 1.5em;
+        margin-bottom: 0.125em;
+      }
+
+      /* Make the text a little smaller */
+      span {
+        display: block;
+        font-size: 0.75em;
+      }
+    }
+
+    /* Give some breathing room below sign out link */
+    .user-profile_sign-out {
+      margin-bottom: 1em;
+    }
+
+    /* Styles for the user image */
+    .user-profile_img {
+      margin-bottom: 0.5em;
+
+      /* Round the image and float it left */
+      img {
+        border-radius: 50%;
+        float: left;
+        margin-bottom: 0.5em;
+        max-width: 100%;
+      }
+
+      /* Styles for the image link */
+      a {
+        @extend .clearfix;
+
+        display: inline-block;
+        height: auto;
+        line-height: 1;
+        padding: 0;
+      }
+    }
+
+    /* Make the user's name a bit more bold */
+    .user-profile_name {
+      font-weight: 500;
+    }
+
+    /* Decrease the user's email a little */
+    .user-profile_email {
+      font-size: 0.75em;
+      font-weight: 400;
+    }
+  }
+
   /* Side nav link styles */
-  a {
-    color: $white;
-    font-size: 1.125em;
+  li a {
+    color: $text_gray;
     height: auto;
     line-height: 1.5;
-    padding: 0.75em 0 0.75em 16px;
+    padding: 0.75em 0 0.75em 1.5em;
     transition: none;
 
+    /* Styles for hovering over a list item */
     &.active,
     &:active,
     &:hover {
-      background-color: $white;
+      background-color: rgba(0, 0, 0, 0.05);
       color: $text_gray;
       opacity: 1;
       transition: none;
     }
 
+    /* Active link is black text */
     &.active {
       color: #000;
+    }
+
+    /* Icon styles */
+    i {
+      font-size: 1.5rem;
+      margin-right: 16px;
+      text-align: center;
+      width: 32px;
+
+      &:before {
+        vertical-align: -10%;
+      }
     }
   }
 
@@ -49,13 +142,16 @@
 
     /* Styles for second level of list items */
     &-second a {
-      font-size: 0.875em;
+      font-size: 0.75em;
       font-weight: 300;
-      padding-left: 40px;
+      padding-left: 64px;
 
       /* Standard icon width for alignment purposes */
-      .fa {
-        width: 20px;
+      i {
+        font-size: 1.125rem;
+        margin-right: 8px;
+        text-align: left;
+        width: 16px;
       }
     }
   }

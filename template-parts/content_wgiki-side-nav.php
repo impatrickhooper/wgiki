@@ -12,14 +12,44 @@
 
   /* Get the division this page belongs to */
   $page_div = getPageDivision();
+
+  /* Load a few pieces of information for a user from their profile */
+  $user_profile_id = get_current_user_id(); // Get the user ID
+  $user_profile_division = strtolower(preg_replace('/&/i', 'and', preg_replace('/\s/i', '-', get_user_meta($user_profile_id, 'division', true)))); // Get the user division, replace "&" with "and", replace space with "-"
+  $user_profile_photo = get_user_meta($user_profile_id, 'profile_photo', true); // Get link to photo
+  $user_profile_data = get_userdata($user_profile_id); // Get user data
+  $user_profile_name = $user_profile_data->display_name; // Get user's name
+  $user_profile_email = $user_profile_data->user_email; // Get user's email
 ?>
 
 <nav id="main-nav" class="side-nav main-navigation" role="navigation">
+  <div class="side-nav_top <?php echo $user_profile_division; ?>">
 
-  <div class="site-branding">
-  </div><!-- .site-branding -->
+    <?php
+      /* If there's a user photo, load it here */
+      if ($user_profile_photo != '') {
+        echo '<p class="user-profile_img clearfix"><a href="https://wgiinformer.com/user" target="_blank"><img src="https://wgiinformer.com/wp-content/uploads/ultimatemember/' . $user_profile_id . '/profile_photo-100.jpg"></a></p>';
+      }
+      /* If no photo, use the default */
+      else {
+        echo '<p class="user-profile_img clearfix"><a href="https://wgiinformer.com/user" target="_blank"><img src="https://wgiinformer.com/wp-content/themes/wgiinformer/img/profile_photo-default.jpg"></a></p>';
+      }
+    ?>
+
+    <div class="side-nav_top-links">
+      <a href="<?php echo wp_logout_url(); ?>" class="user-profile_sign-out user-profile_link"><i class="fa fa-sign-out"></i><span>sign out</span></a>
+      <a href="https://wgiinformer.com/user" class="user-profile_account user-profile_link" target="_blank"><i class="fa fa-user"></i><span>profile</span></a>
+    </div><!-- side-nav_top-links -->
+
+    <p class="user-profile_name"><?php echo $user_profile_name; ?></p>
+    <p class="user-profile_email"><?php echo $user_profile_email; ?></p>
+  </div><!-- side-nav_top -->
 
   <ul class="site-navigation">
+
+    <li class="side-nav_item side-nav_item-first">
+      <a href="<?php echo home_url(); ?>" <?php if (is_front_page()) { echo 'class="active"'; } ?>><i class="fa fa-home"></i>Home</a>
+    </li>
 
   <?php
     /* Get menu pages based on division post types */
@@ -87,6 +117,5 @@
     wp_reset_postdata();
   ?>
 
-  </ul>
-
-</nav><!-- #site-navigation -->
+  </ul><!-- .side-navigation -->
+</nav><!-- #main-nav.side-nav -->
