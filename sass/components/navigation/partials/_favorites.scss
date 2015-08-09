@@ -3,16 +3,20 @@
    ========================================================================== */
 
 /* Styles for Favorites dropdown (using Materialize) */
-#favorites {
+#navbar #favorites {
   left: auto !important;
   max-height: none;
   min-width: 0;
   overflow-y: visible;
   padding: 0.75em;
-  right: 16px !important;
+  right: 8px !important;
   top: 56px !important;
   width: 240px !important;
   z-index: 999;
+
+  @include breakpoint($mq_all) {
+    right: 16px !important;
+  }
 
   /* Styles to add arrow to top of dropdown menu */
   &:before {

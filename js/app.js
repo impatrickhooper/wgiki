@@ -14,6 +14,22 @@
 /* Navigation
    ========================================================================== */
 
+  /* Initializes Favorites icon in navigation to open Favorites dropdown */
+  $('.favorites_toggle').dropdown();
+
+  /**
+   * Favorites height
+   *
+   * 1. Checks if the height of the Favorites extends past the bottom of the window
+   * 2. If yes, sets max height to space below header, automatically handles overflow
+   */
+  if($('#favorites').height() > ($(window).height() - $('#masthead').height())) {
+    $('#favorites').css({
+      'max-height': $(window).height() - $('#masthead').height(),
+      'overflow-y': 'auto'
+    });
+  }
+
   /* Initializes side navigation and toggle button */
   $('.side-nav_collapse').sideNav({
     menuWidth: 280
