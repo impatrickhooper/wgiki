@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Navigation | Favorites
+   ========================================================================== */
+
+/* Styles for Favorites dropdown (using Materialize) */
+#favorites {
+  left: auto !important;
+  max-height: none;
+  min-width: 0;
+  overflow-y: visible;
+  padding: 0.75em;
+  right: 16px !important;
+  top: 56px !important;
+  width: 240px !important;
+  z-index: 999;
+
+  /* Styles to add arrow to top of dropdown menu */
+  &:before {
+    border: 10px solid transparent;
+    border-bottom-color: $white;
+    content: ' ';
+    height: 0;
+    position: absolute;
+    right: 78px;
+    top: -20px;
+    width: 0;
+
+    /* On screens smaller than the max width, change right */
+    @include breakpoint($mq_all) {
+      right: 70px;
+    }
+
+    /* Move right some on small devices */
+    @include breakpoint($mq_small) {
+      right: 54px;
+    }
+  }
+
+  /* Styles for each Favorites item */
+  li {
+    clear: none;
+    display: inline-block;
+    height: auto;
+    padding: 0 0 0.25em;
+    text-align: center;
+    width: 72px;
+
+    /* On touch devices, make full opacity */
+    .touch & {
+      opacity: 1;
+    }
+
+    /* Favorites item link styles */
+    a {
+      color: $text_gray;
+      height: auto;
+      padding: 0;
+      width: auto;
+
+      /* Favorites item icons are 64x64px */
+      svg {
+        height: 64px;
+        width: 64px;
+      }
+
+      /* Favorites item images are slightly different sizes as they are not SVG icons */
+      .favorites_img {
+        height: 69px;
+        width: 64px;
+
+        img {
+          margin: 4px 0;
+          max-height: 56px;
+          max-width: 56px;
+        }
+      }
+
+      /* Favorites item paragraph/caption styles */
+      p {
+        margin: 0;
+        font-size: 0.75em;
+      }
+    }
+  }
+}

@@ -48,10 +48,12 @@ WGIki is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, 
 /* =========================================================================
    Components
    ========================================================================= */
+@import "components/ultimate-member";
 @import "components/navigation/navigation";
 @import "components/logo";
 @import "components/icons";
 @import "components/search";
+@import "components/datepicker";
 @import "components/cards";
 @import "components/buttons";
 @import "components/collapsible";

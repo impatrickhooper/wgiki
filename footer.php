@@ -8,8 +8,11 @@
  */
 ?>
     </div><!-- #content -->
-    <footer id="colophon" class="site-footer footer" role="contentinfo">
-      <div class="grid-container">
+    <footer id="colophon" class="site-footer" role="contentinfo">
+
+    <?php if (is_user_logged_in()): ?>
+
+      <div class="footer grid-container">
         <?php
           $footer_divs = getDivisionPostTypes(); // Get division post types
 
@@ -67,7 +70,10 @@
 
           <?php endif; ?>
 
-      </div><!-- .grid-container -->
+      </div><!-- .footer.grid-container -->
+
+    <?php endif; ?>
+
     </footer><!-- #colophon -->
   </div><!-- #page -->
 

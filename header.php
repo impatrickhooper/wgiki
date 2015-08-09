@@ -35,15 +35,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php $page_division = getPageDivision(); ?>
 
   <div id="page" class="<?php echo $page_division; ?> hfeed site">
-
     <header id="masthead" class="site-header clearfix" role="banner">
 
     <?php
-      /* Output the navbar */
-      get_template_part('template-parts/content_wgiki', 'navbar');
+      /* Output header stuff if user is logged in */
+      if (is_user_logged_in()) {
 
-      /* Output the side nav */
-      get_template_part('template-parts/content_wgiki', 'side-nav');
+        /* Output the navbar */
+        get_template_part('template-parts/content_wgiki', 'navbar');
+
+        /* Output the side nav */
+        get_template_part('template-parts/content_wgiki', 'side-nav');
+      }
     ?>
 
     </header><!-- #masthead -->
