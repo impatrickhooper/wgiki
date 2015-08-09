@@ -58,12 +58,12 @@
     /* Slide activated element into view */
     $activatedElement.slideDown();
 
-    /* When the search form is opened, focus the input and on focus on, clear val and hide form */
+    /* When the search form is opened, focus the input */
     $activatedElement.find('#s').focus().focusout(function() {
 
+      /* If this is a small device, hide search when it goes out of focus */
       if (Modernizr.mq('(max-width: 40rem)')) {
         $activatedElement.slideUp();
-        $(this).val('');
       }
     });
   });
