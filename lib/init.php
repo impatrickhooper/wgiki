@@ -108,9 +108,6 @@ function wgiki_widgets_init() {
 }
 add_action( 'widgets_init', 'wgiki_widgets_init' );
 
-/* Hide admin bar on front end */
-add_filter('show_admin_bar', '__return_false');
-
 /* Make number of search results unlimited */
 add_filter('post_limits', 'postsperpage');
 function postsperpage($limits) {
@@ -119,13 +116,4 @@ function postsperpage($limits) {
     $wp_query->query_vars['posts_per_page'] = -1;
   }
   return $limits;
-}
-
-/* Limit access to backend to administrator, editor, and content managers */
-add_action('init', 'hide_dashboard');
-function hide_dashboard() {
-if (is_admin() && !current_user_can('administrator') && !current_user_can('editor') && !current_user_can('manager_accounting_admin') && !current_user_can('manager_civil') && !current_user_can('manager_creative') && !current_user_can('manager_environmental') && !current_user_can('manager_hr') && !current_user_can('manager_it') && !current_user_can('manager_landscape_arch') && !current_user_can('manager_planning') && !current_user_can('manager_roadway') && !current_user_can('manager_structures') && !current_user_can('manager_sue') && !current_user_can('manager_survey') && !current_user_can('manager_trans_planning') && !current_user_can('manager_utilities') && !(defined('DOING_AJAX') && DOING_AJAX)) {
-    wp_redirect(home_url());
-    exit;
-  }
 }
