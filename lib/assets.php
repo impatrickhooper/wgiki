@@ -17,7 +17,7 @@ function custom_upload_mimes( $existing_mimes=array() ) {
 add_action('wp_enqueue_scripts', 'wgiki_scripts');
 function wgiki_scripts() {
   /* Current version */
-  $asset_version = '1.0.0';
+  $asset_version = '1.0.1';
 
   /* Load the stylesheet: handle name, stylesheet path, dependencies, version, media types */
   wp_enqueue_style('wgiki-style', get_stylesheet_uri(), array(), $asset_version, 'all');
@@ -30,7 +30,7 @@ function wgiki_scripts() {
 add_action('login_enqueue_scripts', 'wgiki_login_scripts');
 function wgiki_login_scripts() {
   /* Current version */
-  $asset_version = '1.0.0';
+  $asset_version = '1.0.1';
 
   /* Load the login stylesheet: handle name, stylesheet path, dependencies, version, media types */
   wp_enqueue_style('wgiki-login-style', get_stylesheet_directory_uri() . '/login/login.css', array(), $asset_version, 'all');

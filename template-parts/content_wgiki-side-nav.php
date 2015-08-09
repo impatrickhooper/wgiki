@@ -38,7 +38,7 @@
 
     <div class="side-nav_top-links">
       <a href="<?php echo wp_logout_url(); ?>" class="user-profile_sign-out user-profile_link"><i class="fa fa-sign-out"></i><span>sign out</span></a>
-      <a href="https://wgiinformer.com/user" class="user-profile_account user-profile_link" target="_blank"><i class="fa fa-user"></i><span>profile</span></a>
+      <a href="https://wgiinformer.com/user" class="user-profile_account user-profile_link" target="_blank"><i class="fa fa-user"></i><span>my profile</span></a>
     </div><!-- side-nav_top-links -->
 
     <p class="user-profile_name"><?php echo $user_profile_name; ?></p>
