@@ -14,3 +14,20 @@
     opacity: 1;
   }
 }
+
+/* Styles for fixed action (floating) buttons (using Materialize) */
+.fixed-action-btn {
+  bottom: 24px;
+  right: 24px;
+
+  /* Move them down and to the right on small devices */
+  @include breakpoint($mq_small) {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  /* Push the list up from the bottom */
+  ul {
+    bottom: 56px;
+  }
+}

@@ -73,7 +73,11 @@
         </div><!-- .grid-container -->
       </div><!-- .footer -->
 
-    <?php endif; ?>
+    <?php
+      /* Output fixed action floating buttons */
+      get_template_part('template-parts/content_wgiki', 'floating-buttons');
+      endif;
+    ?>
 
     </footer><!-- #colophon -->
   </div><!-- #page -->
