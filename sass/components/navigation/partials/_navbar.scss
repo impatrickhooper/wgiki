@@ -45,6 +45,7 @@
       height: 56px;
       line-height: 56px;
       text-align: center;
+      opacity: 0.75;
       width: 64px;
 
       @include breakpoint($mq_small) {
@@ -52,8 +53,10 @@
       }
 
       /* Transparent background color on hover */
+      &:active,
       &:hover {
         background-color: transparent;
+        opacity: 1;
       }
     }
 
@@ -62,17 +65,10 @@
       color: $white;
       height: 48px;
       line-height: 1;
-      opacity: 0.75;
+      opacity: 1;
       padding: 0;
       transition: none;
       width: 48px;
-
-      /* Make full opacity on hover */
-      &:active,
-      &:hover {
-        opacity: 1;
-        transition: none;
-      }
     }
 
     /* Hide search toggle button on medium and large devices */

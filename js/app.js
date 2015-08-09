@@ -58,15 +58,14 @@
     /* Slide activated element into view */
     $activatedElement.slideDown();
 
-    /* When the search form is opened, focus the input */
-    $activatedElement.find('#s').focus();
-  });
+    /* When the search form is opened, focus the input and on focus on, clear val and hide form */
+    $activatedElement.find('#s').focus().focusout(function() {
 
-  /* When the close icon is clicked on the search field, slide up the search */
-  $('#search-form .search-field_close-icon').on('click', function() {
-
-    /* Find the search form and slide it out of view */
-    $(this).parents('#search-form').slideUp();
+      if (Modernizr.mq('(max-width: 40rem)')) {
+        $activatedElement.slideUp();
+        $(this).val('');
+      }
+    });
   });
 
   /* Function to show/hide search form depending on device size */
