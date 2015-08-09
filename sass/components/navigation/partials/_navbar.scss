@@ -18,9 +18,14 @@
   transition: 0.3s ease-in-out;
 
   /* Reduce right padding on large screens and down */
-  @include breakpoint($mq_all) {
+  @include breakpoint($mq_medium_large) {
     padding-left: 176px;
     padding-right: 160px;
+  }
+
+  @include breakpoint($mq_small) {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   /* Pull ul of icons to the right and position absolutely */
@@ -67,10 +72,6 @@
       &:hover {
         opacity: 1;
         transition: none;
-      }
-
-      .touch & {
-        opacity: 1;
       }
     }
 
