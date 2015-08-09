@@ -34,7 +34,7 @@ function favorites_post_type() {
     'supports'            => array('title', 'page-attributes'),
     'public'              => false,
     'show_ui'             => true,
-    'menu_position'       => 30,
+    'menu_position'       => 26,
     'menu_icon'           => 'dashicons-star-filled',
     'capability_type'     => array('favorite', 'favorites'),
     'map_meta_cap'        => true,
@@ -69,23 +69,17 @@ function create_custom_post_types() {
     "utilities"         => "Utilities"
   );
 
-  /* Initialize menu position counter */
-  $menu_position = 31;
-
   /* Loop through divisions as key, value */
   foreach ($divisions as $key => $value) {
 
     /* Register custom post types using function */
-    register_custom_post_type($key, $value, $menu_position);
+    register_custom_post_type($key, $value, 27);
 
     /* Register custom taxonomies using function */
     register_custom_taxonomies($key);
 
     /* Register custom roles using function */
     register_custom_roles($key, $value);
-
-    /* Increment menu position counter */
-    $menu_position++;
   }
 }
 
