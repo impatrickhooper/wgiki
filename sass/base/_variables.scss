@@ -25,18 +25,23 @@ $mq_all: max-width $large_max; // @media (max-width: 75rem)
 
 /* Map of colors for divisions  */
 $division_colors: (
+  accounting-and-administration: #00A653,
   accounting-admin: #00A653,
   civil: #e15258,
   creative: #8dc63f,
   environmental: #F9845B,
+  human-resources: #fbb03b,
   hr: #fbb03b,
+  information-technology: #637a91,
   it: #637a91,
+  landscape-architecture: #c25975,
   landscape-arch: #c25975,
   planning: #f092b0,
   roadway: #39ADD1,
   structures: #00CAD6,
   sue: #838CC7,
   survey: #7D669E,
+  transportation-planning: #3079AB,
   trans-planning: #3079AB,
   utilities: #53BBB4
 );

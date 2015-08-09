@@ -53,7 +53,7 @@ blockquote {
 
   /* Build selector based on division for page, navbar, top of card, and button */
   #page.#{$division} #navbar,
-  .side-nav_top.#{$division},
+  #page #main-nav.side-nav .side-nav_top.#{$division},
   .card_top-#{$division},
   .btn-#{$division} {
     background-color: $color;
