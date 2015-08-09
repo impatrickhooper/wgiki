@@ -10,16 +10,6 @@
     </div><!-- #content -->
     <footer id="colophon" class="site-footer footer" role="contentinfo">
       <div class="grid-container">
-        <div class="footer_links footer_col grid-25 tablet-grid-33 mobile-grid-100">
-          <h5 class="footer_title">Links</h5>
-          <p><a href="https://wgiinformer.com" target="_blank">WGI Informer</a></p>
-          <p><a href="http://www.wantmangroup.com" target="_blank">WGI</a></p>
-          <p><a href="http://wgicreative.com" target="_blank">WGI Creative</a></p>
-          <p><a href="http://wgilds.com" target="_blank">WGI Land Design Services</a></p>
-          <p><br></p>
-          <p><a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i>Sign out</a></p>
-        </div><!-- .footer_links -->
-
         <?php
           $footer_divs = getDivisionPostTypes(); // Get division post types
 
@@ -27,7 +17,7 @@
           if (!empty($footer_divs)):
         ?>
 
-          <div class="footer_managers footer_col grid-75 tablet-grid-66 mobile-grid-100 grid-parent">
+          <div class="footer_managers footer_col grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
             <div class="grid-100">
               <h5 class="footer_title">Content Managers</h5>
             </div>
@@ -39,7 +29,7 @@
               $footer_div_label = $footer_div->label; // Get name of this division
           ?>
 
-            <div class="footer_div footer_col-div grid-25 tablet-grid-33 mobile-grid-50">
+            <div class="footer_div footer_col-div grid-20 tablet-grid-25 mobile-grid-50">
               <h6 class="footer_title-div"><?php echo $footer_div_label; ?></h6>
 
               <?php
