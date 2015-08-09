@@ -17,7 +17,7 @@ function custom_upload_mimes( $existing_mimes=array() ) {
 add_action('wp_enqueue_scripts', 'wgiki_scripts');
 function wgiki_scripts() {
   /* Current version */
-  $asset_version = '1.0.1';
+  $asset_version = '1.0.3';
 
   /* Load the stylesheet: handle name, stylesheet path, dependencies, version, media types */
   wp_enqueue_style('wgiki-style', get_stylesheet_uri(), array(), $asset_version, 'all');
