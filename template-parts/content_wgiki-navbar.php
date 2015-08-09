@@ -13,8 +13,9 @@
       /* Get logo */
       get_template_part('template-parts/content_wgiki', 'logo');
 
-      /* Get search */
-      get_template_part('template-parts/content_wgiki', 'search-form');
+      if (is_user_logged_in()):
+        /* Get search */
+        get_template_part('template-parts/content_wgiki', 'search-form');
     ?>
 
     <ul class="right">
@@ -29,5 +30,8 @@
         </a><!-- .side-nav_collapse -->
       </li><!-- .right -->
     </ul>
+
+    <?php endif; ?>
+
   </nav><!-- #mobile-nav.nav-wrapper -->
 </div><!-- .navbar-fixed -->

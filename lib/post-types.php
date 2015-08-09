@@ -46,8 +46,8 @@ function create_custom_post_types() {
     /* Register custom roles using function */
     register_custom_roles($key, $value);
 
-    /* Increment menu position counter */
-    $menu_position++;
+//    /* Increment menu position counter */
+//    $menu_position++;
   }
 }
 

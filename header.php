@@ -38,13 +38,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <header id="masthead" class="site-header clearfix" role="banner">
 
     <?php
-      /* Output header stuff if user is logged in */
-      if (is_user_logged_in()) {
-
         /* Output the navbar */
         get_template_part('template-parts/content_wgiki', 'navbar');
 
-        /* Output the side nav */
+      /* Output side nav if user is logged in */
+      if (is_user_logged_in()) {
         get_template_part('template-parts/content_wgiki', 'side-nav');
       }
     ?>
