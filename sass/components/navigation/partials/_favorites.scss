@@ -9,13 +9,13 @@
   min-width: 0;
   overflow-y: visible;
   padding: 0.75em;
-  right: 8px !important;
+  right: 16px !important;
   top: 56px !important;
   width: 240px !important;
   z-index: 999;
 
-  @include breakpoint($mq_all) {
-    right: 16px !important;
+  @include breakpoint($mq_small) {
+    right: 8px !important;
   }
 
   /* Styles to add arrow to top of dropdown menu */
@@ -25,14 +25,9 @@
     content: ' ';
     height: 0;
     position: absolute;
-    right: 78px;
+    right: 70px;
     top: -20px;
     width: 0;
-
-    /* On screens smaller than the max width, change right */
-    @include breakpoint($mq_all) {
-      right: 70px;
-    }
 
     /* Move right some on small devices */
     @include breakpoint($mq_small) {
