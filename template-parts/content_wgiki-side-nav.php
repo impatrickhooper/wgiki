@@ -28,16 +28,16 @@
     <?php
       /* If there's a user photo, load it here */
       if ($user_profile_photo != '') {
-        echo '<p class="user-profile_img clearfix"><a href="https://wgiinformer.com/user" target="_blank"><img src="https://wgiinformer.com/wp-content/uploads/ultimatemember/' . $user_profile_id . '/profile_photo-100.jpg"></a></p>';
+        echo '<p class="user-profile_img"><a href="https://wgiinformer.com/user"><img src="https://wgiinformer.com/wp-content/uploads/ultimatemember/' . $user_profile_id . '/profile_photo-100.jpg"></a></p>';
       }
       /* If no photo, use the default */
       else {
-        echo '<p class="user-profile_img clearfix"><a href="https://wgiinformer.com/user" target="_blank"><img src="https://wgiinformer.com/wp-content/themes/wgiinformer/img/profile_photo-default.jpg"></a></p>';
+        echo '<p class="user-profile_img"><a href="https://wgiinformer.com/user"><img src="' . get_stylesheet_directory_uri() . '/img/profile_photo-default.jpg"></a></p>';
       }
     ?>
 
     <div class="side-nav_top-links">
-      <a href="<?php echo wp_logout_url(); ?>" class="user-profile_sign-out user-profile_link"><i class="fa fa-sign-out"></i><span>sign out</span></a>
+      <a href="<?php echo site_url(); ?>/logout" class="user-profile_sign-out user-profile_link"><i class="fa fa-sign-out"></i><span>sign out</span></a>
       <a href="https://wgiinformer.com/user" class="user-profile_account user-profile_link" target="_blank"><i class="fa fa-user"></i><span>my profile</span></a>
     </div><!-- side-nav_top-links -->
 
