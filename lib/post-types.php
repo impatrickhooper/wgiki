@@ -6,7 +6,45 @@
  */
 
 /*
- * Create custom post types
+ * Favorites post type
+ *
+ * Supports a title and page attributes (like menu order) by default
+ * Is not public (so link to not page created)
+ */
+add_action('init', 'favorites_post_type', 0);
+function favorites_post_type() {
+  $labels = array(
+    'name'                => __('Favorites', 'Post Type General Name', 'twentyfifteen'),
+    'singular_name'       => __('Favorite', 'Post Type Singular Name', 'twentyfifteen'),
+    'menu_name'           => __('Favorites', 'twentyfifteen'),
+    'parent_item_colon'   => __('Parent Favorite', 'twentyfifteen'),
+    'all_items'           => __('All Favorites', 'twentyfifteen'),
+    'view_item'           => __('View Favorite', 'twentyfifteen'),
+    'add_new_item'        => __('Add New Favorite', 'twentyfifteen'),
+    'add_new'             => __('Add New Favorite', 'twentyfifteen'),
+    'edit_item'           => __('Edit Favorite', 'twentyfifteen'),
+    'update_item'         => __('Update Favorite', 'twentyfifteen'),
+    'search_items'        => __('Search Favorites', 'twentyfifteen'),
+    'not_found'           => __('Not Found', 'twentyfifteen'),
+    'not_found_in_trash'  => __('Not found in Trash', 'twentyfifteen'),
+  );
+
+  $args = array(
+    'labels'              => $labels,
+    'supports'            => array('title', 'page-attributes'),
+    'public'              => false,
+    'show_ui'             => true,
+    'menu_position'       => 30,
+    'menu_icon'           => 'dashicons-star-filled',
+    'capability_type'     => array('favorite', 'favorites'),
+    'map_meta_cap'        => true,
+  );
+
+  register_post_type('favorites', $args);
+}
+
+/*
+ * Create custom division post types
  */
 
 /* Hook into init and add create_cusotm_post_types */
@@ -32,7 +70,7 @@ function create_custom_post_types() {
   );
 
   /* Initialize menu position counter */
-  $menu_position = 30;
+  $menu_position = 31;
 
   /* Loop through divisions as key, value */
   foreach ($divisions as $key => $value) {
@@ -161,6 +199,20 @@ function register_custom_roles($key, $value) {
  */
 add_action('admin_init','register_custom_capabilities', 999);
 function register_custom_capabilities() {
+
+  /* Let administrator manage Favorites */
+  $role = get_role('administrator');
+  $role->add_cap('read');
+  $role->add_cap('read_favorite');
+  $role->add_cap('read_private_favorites');
+  $role->add_cap('edit_favorite');
+  $role->add_cap('edit_favorites');
+  $role->add_cap('edit_others_favorites');
+  $role->add_cap('edit_published_favorites');
+  $role->add_cap('publish_favorites');
+  $role->add_cap('delete_others_favorites');
+  $role->add_cap('delete_private_favorites');
+  $role->add_cap('delete_published_favorites');
 
   /* Initialize array of divisions */
   $division_keys = array(
