@@ -1,7 +1,7 @@
 # WGIki
 Hi. I'm the theme for wgiki.com!
 
-### Current Version : v1.0.4
+### Current Version : v1.0.5
 
 ## Supported Browsers:
 Chrome 35+, Firefox 31+, Safari 7+, IE 10+
