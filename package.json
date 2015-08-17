@@ -1,11 +1,11 @@
 {
   "name": "wgiki",
-  "version": "1.0.6",
-  "description": "Company wiki for Wantman Group, Inc.",
+  "version": "1.0.9",
+  "description": "A WordPress theme for the WGI wiki (https://wgiki.com).",
   "repository": {
     "type": "git"
   },
-  "author": "wgi.buzz",
+  "author": "Patrick Hooper (http://patrick.hoopr.io)",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",

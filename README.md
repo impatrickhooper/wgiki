@@ -1,7 +1,11 @@
 # WGIki
-Hi. I'm the theme for wgiki.com!
+A WordPress theme for the WGI wiki ([https://wgiki.com](https://wgiki.com)).
 
-### Current Version : v1.0.6
+### Current Version : v1.0.9
+
+## Contributors
+- Patrick Hooper ([http://patrick.hoopr.io](http://patrick.hoopr.io))
+- Marie Hooper ([http://marie.hoopr.io](http://marie.hoopr.io))
 
 ## Supported Browsers:
 Chrome 35+, Firefox 31+, Safari 7+, IE 10+
@@ -29,6 +33,7 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 - Unsemantic Grid System ([http://unsemantic.com/](http://unsemantic.com/))
 
 ## JavaScript Requirements
+- jQuery ([https://jquery.com/](https://jquery.com/))
 - Materialize ([http://materializecss.com/](http://materializecss.com/))
 - Modernizr ([http://modernizr.com/](http://modernizr.com/))
 - SVG for Everybody ([https://github.com/jonathantneal/svg4everybody)](https://github.com/jonathantneal/svg4everybody)
