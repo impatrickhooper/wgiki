@@ -34,7 +34,3 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 - Modernizr ([http://modernizr.com/](http://modernizr.com/))
 - SVG for Everybody ([https://github.com/jonathantneal/svg4everybody)](https://github.com/jonathantneal/svg4everybody)
 - Underscores Starter Theme ([http://underscores.me/](http://underscores.me/))
-
-## Contributors
-- Patrick Hooper ([http://patrick.hoopr.io](http://patrick.hoopr.io))
-- Marie Hooper ([http://marie.hoopr.io](http://marie.hoopr.io))
