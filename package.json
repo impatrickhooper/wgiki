@@ -2,10 +2,23 @@
   "name": "wgiki",
   "version": "1.0.10",
   "description": "A WordPress theme for the WGI wiki (https://wgiki.com).",
-  "repository": {
-    "type": "git"
+  "homepage": "https://wgiki.com",
+  "author": {
+    "name": "Patrick Hooper",
+    "email": "patrick.d.hooper@gmail.com",
+    "url": "http://patrick.hoopr.io"
   },
-  "author": "Patrick Hooper (http://patrick.hoopr.io)",
+  "contributors": [
+    {
+      "name": "Marie Hooper",
+      "email": "marie.ashtari@gmail.com",
+      "url": "http://marie.hoopr.io"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/impatrickhooper/wgiki"
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
