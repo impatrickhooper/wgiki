@@ -1,5 +1,5 @@
 # WGIki
-A WordPress theme for the WGI wiki.
+A [WordPress](https://wordpress.org/) theme for the WGI wiki.
 
 ### Current Version : v1.0.10
 
@@ -17,20 +17,20 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 4. `gulp` will compile .scss and .js files and then watch them. For production, use `NODE_ENV=prd gulp`
 
 ## Compile Requirements
-- Node.js ([https://nodejs.org/](https://nodejs.org/))
-- npm ([https://www.npmjs.com/](https://www.npmjs.com/))
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
 ## Sass Requirements
-- Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
-- Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
-- Materialize ([http://materializecss.com/](http://materializecss.com/))
-- Normalize ([https://necolas.github.io/normalize.css/](https://necolas.github.io/normalize.css/))
-- Sassy Maps ([https://github.com/at-import/Sassy-Maps](https://github.com/at-import/Sassy-Maps))
-- Unsemantic ([http://unsemantic.com/](http://unsemantic.com/))
+- [Breakpoint](http://breakpoint-sass.com/)
+- [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+- [Materialize](http://materializecss.com/)
+- [Normalize](https://necolas.github.io/normalize.css/)
+- [Sassy Maps](https://github.com/at-import/Sassy-Maps)
+- [Unsemantic](http://unsemantic.com/)
 
 ## JavaScript Requirements
-- jQuery ([https://jquery.com/](https://jquery.com/))
-- Materialize ([http://materializecss.com/](http://materializecss.com/))
-- Modernizr ([http://modernizr.com/](http://modernizr.com/))
-- SVG for Everybody ([https://github.com/jonathantneal/svg4everybody)](https://github.com/jonathantneal/svg4everybody)
-- Underscores ([http://underscores.me/](http://underscores.me/))
+- [jQuery](https://jquery.com/)
+- [Materialize](http://materializecss.com/)
+- [Modernizr](http://modernizr.com/)
+- [SVG for Everybody](https://github.com/jonathantneal/svg4everybody)
+- [Underscores](http://underscores.me/)
