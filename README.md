@@ -1,5 +1,5 @@
 # WGIki
-A WordPress theme for the WGI wiki ([https://wgiki.com](https://wgiki.com)).
+A WordPress theme for the WGI wiki.
 
 ### Current Version : v1.0.10
 
