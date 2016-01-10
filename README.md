@@ -24,13 +24,13 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
 - Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
 - Materialize ([http://materializecss.com/](http://materializecss.com/))
-- normalize.css ([https://necolas.github.io/normalize.css/](https://necolas.github.io/normalize.css/))
+- Normalize ([https://necolas.github.io/normalize.css/](https://necolas.github.io/normalize.css/))
 - Sassy Maps ([https://github.com/at-import/Sassy-Maps](https://github.com/at-import/Sassy-Maps))
-- Unsemantic Grid System ([http://unsemantic.com/](http://unsemantic.com/))
+- Unsemantic ([http://unsemantic.com/](http://unsemantic.com/))
 
 ## JavaScript Requirements
 - jQuery ([https://jquery.com/](https://jquery.com/))
 - Materialize ([http://materializecss.com/](http://materializecss.com/))
 - Modernizr ([http://modernizr.com/](http://modernizr.com/))
 - SVG for Everybody ([https://github.com/jonathantneal/svg4everybody)](https://github.com/jonathantneal/svg4everybody)
-- Underscores Starter Theme ([http://underscores.me/](http://underscores.me/))
+- Underscores ([http://underscores.me/](http://underscores.me/))
