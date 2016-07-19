@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/impatrickhooper/wgiki"
+    "url": "https://github.com/pdhoopr/wgiki"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
