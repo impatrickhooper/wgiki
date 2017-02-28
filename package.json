@@ -2,19 +2,12 @@
   "name": "wgiki",
   "version": "1.0.10",
   "description": "A WordPress theme for the WGI wiki.",
-  "homepage": "https://wgiki.com",
+  "homepage": "https://github.com/pdhoopr/wgiki#readme",
   "author": {
     "name": "Patrick Hooper",
     "email": "patrick.d.hooper@gmail.com",
-    "url": "http://patrick.hoopr.io"
+    "url": "https://patrickhooper.me"
   },
-  "contributors": [
-    {
-      "name": "Marie Hooper",
-      "email": "marie.ashtari@gmail.com",
-      "url": "http://marie.hoopr.io"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pdhoopr/wgiki"

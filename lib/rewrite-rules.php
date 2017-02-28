@@ -19,8 +19,8 @@ function wgiki_htaccess_rules($rules) {
 \n# BEGIN WGIki
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^wp-content/uploads/(.+)$ https://wgiki.com/protected/?file=$1 [QSA,L]
-RewriteRule ^(account|user)(/.*)$ https://wgiinformer.com/$1$2 [L]
+RewriteRule ^wp-content/uploads/(.+)$ https://WGI_WIKI_URL/protected/?file=$1 [QSA,L]
+RewriteRule ^(account|user)(/.*)$ https://WGI_INTRANET_URL/$1$2 [L]
 </IfModule>
 # END WGIki\n\n
 EOD;
